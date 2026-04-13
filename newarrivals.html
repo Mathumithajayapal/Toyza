@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Toyza · New Arrivals | Fresh Playful Discoveries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+          <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #2c2c2c;
+      color: #f5f5f5;
+    }
+
+    body.dark-mode .main-header {
+      background-color: #0f0f0f;
+      border-bottom-color: #2c2c2c;
+    }
+
+    body.dark-mode .category-link,
+    body.dark-mode .nav-link,
+    body.dark-mode .dropdown-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .category-link:hover,
+    body.dark-mode .nav-link:hover,
+    body.dark-mode .dropdown-btn:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .dropdown-content {
+      background-color: #1e1e1e;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .dropdown-content a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+      background-color: #2d2d2d;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .icon-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-menu {
+      background-color: #0f0f0f;
+    }
+
+    body.dark-mode .mobile-nav-link,
+    body.dark-mode .mobile-dropdown-toggle span:first-child {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-dropdown-content a {
+      color: #cccccc;
+    }
+
+    body.dark-mode .unique-footer {
+      background-color: #0a0a0a;
+      border-top-color: #f3ac00;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #bbbbbb;
+    }
+
+    body.dark-mode .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .newsletter-input input {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .footer-col h4::after {
+      background-color: #f3ac00;
+    }
+
+    body.dark-mode .social-links a {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .social-links a:hover {
+      background-color: #f3ac00;
+      color: #121212;
+    }
+
+    body.dark-mode .hero-banner {
+      background-color: #1e2a1a;
+    }
+
+    body.dark-mode .hero-banner h1,
+    body.dark-mode .hero-banner p {
+      color: #fef3d6;
+    }
+
+    body.dark-mode .product-card {
+      background-color: #1c1c1c;
+      border-color: #2e2e2e;
+    }
+
+    body.dark-mode .product-title {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .product-price {
+      color: #d4d4d4;
+    }
+
+    body.dark-mode .shop-now-btn {
+      background-color: #f3ac00;
+      color: #121212;
+    }
+
+    body.dark-mode .shop-now-btn:hover {
+      background-color: #e09d00;
+    }
+
+    body.dark-mode .section-badge {
+      background-color: #2c2c2c;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .why-toyza-section {
+      background-color: #1a1a1a;
+      border-color: #2e2e2e;
+    }
+
+    body.dark-mode .feature-box {
+      background-color: #262626;
+    }
+
+    body.dark-mode .feature-box h3 {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .feature-box p {
+      color: #cccccc;
+    }
+
+    /* FIX: Dark mode Login button (white text) + footer headings white - SAME AS OTHER PAGES */
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f !important;
+    }
+
+    body.dark-mode .footer-col h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .footer-brand p {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .footer-bottom span,
+    body.dark-mode .footer-bottom a {
+      color: #bbbbbb !important;
+    }
+
+    body.dark-mode .footer-bottom a:hover {
+      color: #f3ac00 !important;
+    }
+
+    /* Logo colors remain same in dark mode */
+    body.dark-mode .logo a {
+      color: #f3ac00 !important;
+    }
+
+    body.dark-mode .logo span {
+      color: #7da064 !important;
+    }
+
+    /* fix icon buttons hover */
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* mobile auth buttons in dark mode */
+    body.dark-mode .mobile-auth-btn {
+      color: #ffffff;
+      border-color: #444;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #2c3e2f;
+    }
+
+    /* RTL Support */
+    [dir="rtl"] .desktop-nav ul {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .right-icons {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .dropdown-content {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .mobile-menu {
+      right: auto;
+      left: -100%;
+    }
+
+    [dir="rtl"] .mobile-menu.active {
+      left: 0;
+      right: auto;
+    }
+
+    [dir="rtl"] .close-menu {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    [dir="rtl"] .footer-container {
+      text-align: right;
+    }
+
+    [dir="rtl"] .social-links {
+      justify-content: flex-end;
+    }
+
+    [dir="rtl"] .footer-col h4::after {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .product-grid {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .hero-banner {
+      text-align: right;
+    }
+
+    [dir="rtl"] .features-grid {
+      direction: rtl;
+    }
+
+    /* Top Banner */
+    .top-banner {
+      background-color: #fff8e7;
+      color: #5a4a2a;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow: hidden;
+      max-height: 60px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .top-banner.banner-hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: 0;
+      border: none;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #2a2a1a;
+      color: #f3ac00;
+    }
+
+    /* Main Header */
+    .main-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeef2;
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }
+
+    .logo span {
+      font-weight: 400;
+      color: #4a6a3b;
+    }
+
+    body.dark-mode .logo span {
+      color: #7da064;
+    }
+
+    /* Desktop Navigation */
+    .desktop-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link,
+    .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c3e2f;
+      padding: 0.5rem 0;
+      display: inline-block;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-btn i {
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+
+    .nav-item:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+
+    .nav-item:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(4px);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #2c3e2f;
+      transition: background 0.15s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fef5e0;
+      color: #f3ac00;
+    }
+
+    /* Right Icons Group */
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: scale(1.02);
+    }
+
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Auth buttons */
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 0.2rem;
+    }
+
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .auth-link.login {
+      color: #2c3e2f;
+    }
+
+    .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, 0.2);
+    }
+
+    .auth-link.signup:hover {
+      background-color: #e09d00;
+      transform: translateY(-1px);
+    }
+
+    .auth-link.login:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f !important;
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background-color: #2c3e2f;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    body.dark-mode .hamburger span {
+      background-color: #e0e0e0;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mobile-nav-item {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle span:first-child {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+    }
+
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    .mobile-dropdown-content.active {
+      max-height: 300px;
+    }
+
+    .mobile-dropdown-content a {
+      display: block;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
+
+    body.dark-mode .mobile-auth-btn {
+      border-color: #444;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #121212;
+    }
+
+    /* Hero Banner with Image */
+    .hero-banner {
+      width: 100%;
+      background: linear-gradient(135deg, #faf3e0 0%, #f0e5d2 100%);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #2c3e2f;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #4a5e4a;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-btn {
+      background-color: #2c3e2f;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .hero-btn:hover {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    body.dark-mode .hero-banner {
+      background: linear-gradient(135deg, #1e2a1a, #142010);
+    }
+
+    body.dark-mode .hero-content h1 {
+      color: #fef0cf;
+    }
+
+    body.dark-mode .hero-content p {
+      color: #cfdbc7;
+    }
+
+    body.dark-mode .hero-btn {
+      background-color: #f3ac00;
+      color: #121212;
+    }
+
+    body.dark-mode .hero-btn:hover {
+      background-color: #e09d00;
+      color: #121212;
+    }
+
+    /* New Arrivals Section */
+    .arrivals-section {
+      max-width: 1400px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background-color: #fef5e0;
+      color: #f3ac00;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e2f;
+    }
+
+    body.dark-mode .section-header h2 {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .section-badge {
+      background-color: #2c2c2c;
+      color: #f3ac00;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      border: 1px solid #f0e4d8;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+      border-color: #f3ac00;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #faf7f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #f3ac00;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: #6f7e6f;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #f3ac00;
+      margin-bottom: 1rem;
+    }
+
+    .shop-now-btn {
+      background-color: transparent;
+      border: 2px solid #f3ac00;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      color: #2c3e2f;
+    }
+
+    .shop-now-btn:hover {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+    }
+
+    body.dark-mode .product-title {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .product-desc {
+      color: #bbbbbb;
+    }
+
+    /* Why Toyza Section - NEW SECTION ADDED */
+    .why-toyza-section {
+      max-width: 1400px;
+      margin: 3rem auto 4rem;
+      padding: 3rem 2rem;
+      background-color: #fefaf5;
+      border-radius: 48px;
+      border: 1px solid #f0e4d8;
+    }
+
+    .why-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .why-badge {
+      display: inline-block;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .why-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e2f;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-box {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background-color: #ffffff;
+      border-radius: 28px;
+      transition: all 0.25s ease;
+      border: 1px solid #f0e4d8;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-4px);
+      border-color: #f3ac00;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #f3ac00;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #2c3e2f;
+    }
+
+    .feature-box p {
+      font-size: 0.9rem;
+      color: #6f7e6f;
+      line-height: 1.5;
+    }
+
+    body.dark-mode .why-toyza-section {
+      background-color: #1a1a1a;
+      border-color: #2e2e2e;
+    }
+
+    body.dark-mode .feature-box {
+      background-color: #262626;
+      border-color: #3a3a3a;
+    }
+
+    body.dark-mode .feature-box h3 {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .feature-box p {
+      color: #bbbbbb;
+    }
+
+    /* Footer */
+    .unique-footer {
+      background-color: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: 4rem;
+      transition: all 0.2s;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand p {
+      margin: 1.2rem 0 1.5rem;
+      color: #5a6e5a;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-links a:hover {
+      background-color: #f3ac00;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #f3ac00;
+      border-radius: 2px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    .newsletter p {
+      color: #5a6e5a;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-input:focus-within {
+      border-bottom-color: #f3ac00;
+    }
+
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: 0.4rem 0;
+      width: 100%;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .newsletter-input input::placeholder {
+      color: #aaa;
+    }
+
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      transition: transform 0.2s;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+
+      .right-icons .auth-buttons {
+        display: none;
+      }
+
+      .right-icons .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ACTIVE LINK STYLE */
+    .nav-link.active,
+    .mobile-nav-link.active {
+      color: #f3ac00;
+      font-weight: 700;
+    }
+
+    /* Underline effect */
+    .nav-link.active::after,
+    .mobile-nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #f3ac00;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+
+    /* Optional: dropdown active */
+    .dropdown-btn.active {
+      color: #f3ac00;
+      font-weight: 700;
+    }
+
+    body.dark-mode .why-header h2 {
+      color: #ffffff;
+    }
+
+    /* Tablet (iPad sizes: 768–1024) → 2x2 layout */
+    @media (max-width: 1024px) and (min-width: 601px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* Mobile → single column */
+    @media (max-width: 600px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo"><a href="index.html">Toyza</a></div>
+      <div class="desktop-nav">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="service.html" class="nav-link">Service</a></li>
+
+          <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+          <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
+          <li><a href="gifts.html" class="nav-link">Gifting</a></li>
+          <a href="contact.html" class="nav-link active">New Arrivals</a>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="right-icons">
+        <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+        <div class="auth-buttons">
+          <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+        </div>
+        <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
+          style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn">✕</button>
+    <ul class="mobile-nav-links">
+      <li class="mobile-nav-item" id="mobileCatItem">
+        <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
+        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+          <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+        </div>
+      </li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+      <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+      <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+      <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
+      <li class="mobile-nav-item">
+        <a href="about.html" class="mobile-nav-link active">New Arrivals</a>
+      </li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link"> Contact</a></li>
+      <li class="mobile-nav-item">
+        <div class="mobile-auth">
+          <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+        </div>
+      </li>
+      <li class="mobile-nav-item">
+        <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
+          <button class="icon-btn" id="mobileDarkToggle"
+            style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙
+            Dark</button>
+          <button class="icon-btn" id="mobileRtlToggle"
+            style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero Banner with image -->
+    <div class="hero-banner">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">Just Landed</span>
+          <h1>Fresh Finds<br>Playful Discoveries</h1>
+          <p>Explore our newest collection of eco-friendly toys designed to inspire curiosity and joy. Every toy is a
+            new adventure.</p>
+          <button class="hero-btn" id="heroShopBtn">Shop New Arrivals</button>
+        </div>
+        <div class="hero-image">
+          <img src="images/img (37).jpg"
+            alt="New arrivals hero showcase featuring colorful wooden toys and playful designs">
+        </div>
+      </div>
+    </div>
+
+    <!-- New Arrivals Product Grid -->
+    <div class="arrivals-section">
+      <div class="section-header">
+        <span class="section-badge">Fresh Collection</span>
+        <h2>New Arrivals</h2>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <!-- Products will be injected via JS -->
+      </div>
+    </div>
+
+    <!-- Why Toyza Section -->
+    <div class="why-toyza-section">
+      <div class="why-header">
+        <span class="why-badge">Why Families Love Us</span>
+        <h2>Playful. Conscious. Joyful.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Eco-Friendly Materials</h3>
+          <p>Sustainably sourced wood, organic fabrics, and non-toxic finishes — safe for kids and the planet.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3>Developmental Play</h3>
+          <p>Every toy is designed to nurture creativity, problem-solving, and fine motor skills through joyful
+            exploration.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fas fa-gift"></i></div>
+          <h3>Thoughtful Gifting</h3>
+          <p>Beautifully packaged, age-appropriate, and curated for lasting memories — perfect for every occasion.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Community Promise</h3>
+          <p>We give back 1% of sales to children's education initiatives. Play that makes a difference.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="unique-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="index.html" style="text-decoration: none;">
+            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
+          </a>
+        </div>
+        <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
+              class="fab fa-pinterest"></i></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Shop All</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Bestsellers</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>Join the Club</h4>
+        <p>Get 10% off your first order + early access to sales.</p>
+        <div class="newsletter-input"><input type="email" placeholder="Your email address"
+            id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a
+          href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+  </footer>
+
+  <script>
+    (function () {
+      // new arrivals product data
+      const products = [
+        { name: "Eco Wooden Builder Set", category: "Construction", desc: "Sustainable timber blocks for creative engineering", price: "$49.95", img: "images/img (38).jpg" },
+        { name: "Magnetic Puzzle World", category: "Puzzles", desc: "Interactive map puzzle with magnetic pieces", price: "$34.90", img: "images/img (39).jpg" },
+        { name: "Botany Lab Kit", category: "STEM", desc: "Grow and learn with real science experiments", price: "$59.00", img: "images/img (40).jpg" },
+        { name: "Soft Safari Plush Trio", category: "Plush", desc: "Three huggable animal friends, organic cotton", price: "$44.50", img: "images/img (41).jpg" },
+        { name: "Creative Art Easel", category: "Arts & Crafts", desc: "Double-sided easel with storage shelf", price: "$79.95", img: "images/img (42).jpg" },
+        { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (43).jpg" },
+        { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (44).jpg" },
+        { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (45).jpg" }
+
+      ];
+
+      const productGrid = document.getElementById('productGrid');
+      function renderProducts() {
+        if (!productGrid) return;
+        productGrid.innerHTML = products.map(p => `
+        <div class="product-card">
+          <div class="product-image"><img src="${p.img}" alt="${p.name}"></div>
+          <div class="product-info">
+            <div class="product-category">${p.category}</div>
+            <div class="product-title">${p.name}</div>
+            <div class="product-desc">${p.desc}</div>
+            <div class="product-price">${p.price}</div>
+            <button class="shop-now-btn" data-name="${p.name}">Shop Now</button>
+          </div>
+        </div>
+      `).join('');
+        document.querySelectorAll('.shop-now-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => { alert(`✨ Added ${btn.getAttribute('data-name')} to cart — playtime awaits!`); });
+        });
+      }
+      renderProducts();
+
+      // Hero button interaction
+      const heroBtn = document.getElementById('heroShopBtn');
+      if (heroBtn) heroBtn.addEventListener('click', () => { alert('Explore our latest playful arrivals!'); });
+
+      // Dark mode, RTL, mobile menu, banner logic
+      const darkToggle = document.getElementById('darkModeToggle');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      const rtlToggle = document.getElementById('rtlToggle');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMenu = document.getElementById('closeMenuBtn');
+      const topBanner = document.getElementById('topBanner');
+      const searchBtn = document.getElementById('searchBtn');
+      const newsletterBtn = document.getElementById('footerNewsletterBtn');
+      const newsletterEmail = document.getElementById('footerNewsletterEmail');
+
+      const applyDarkMode = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('toyzaDarkMode', isDark);
+        if (darkToggle) darkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+      };
+      const savedDark = localStorage.getItem('toyzaDarkMode') === 'true';
+      applyDarkMode(savedDark);
+      const toggleDark = () => applyDarkMode(!document.body.classList.contains('dark-mode'));
+      darkToggle?.addEventListener('click', toggleDark);
+      mobileDark?.addEventListener('click', toggleDark);
+
+      const applyRTL = (isRTL) => {
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        localStorage.setItem('toyzaRTLMode', isRTL);
+        const newLabel = isRTL ? 'LTR' : 'RTL';
+        if (rtlToggle) rtlToggle.innerText = newLabel;
+        if (mobileRtl) mobileRtl.innerText = newLabel;
+      };
+      const savedRTL = localStorage.getItem('toyzaRTLMode') === 'true';
+      applyRTL(savedRTL);
+      const toggleRTL = () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+      rtlToggle?.addEventListener('click', toggleRTL);
+      mobileRtl?.addEventListener('click', toggleRTL);
+
+      function openMobileMenu() { mobileMenu.classList.add('active'); if (window.innerWidth <= 1024 && topBanner) topBanner.classList.add('banner-hidden'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileMenu.classList.remove('active'); if (window.innerWidth <= 1024 && topBanner) topBanner.classList.remove('banner-hidden'); document.body.style.overflow = ''; }
+      hamburger?.addEventListener('click', openMobileMenu);
+      closeMenu?.addEventListener('click', closeMobileMenu);
+      document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+
+      const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle');
+      const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+      if (mobileCatToggle && mobileCatContent) {
+        mobileCatToggle.addEventListener('click', () => { mobileCatContent.classList.toggle('active'); });
+      }
+      searchBtn?.addEventListener('click', () => alert('Discover new arrivals and timeless toys!'));
+      const handleNewsletter = () => { const email = newsletterEmail?.value.trim(); if (email && email.includes('@')) { alert(`🎉 Thanks ${email}! Welcome to Toyza club.`); newsletterEmail.value = ''; } else alert('Please enter a valid email address.'); };
+      newsletterBtn?.addEventListener('click', handleNewsletter);
+      newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleNewsletter(); });
+
+      const authAlert = (type) => alert(`🔐 ${type} — Toyza family awaits!`);
+      document.getElementById('loginBtnDesktop')?.addEventListener('click', () => authAlert('Log in'));
+      document.getElementById('mobileLoginBtn')?.addEventListener('click', () => authAlert('Log in'));
+
+      // Redirect to login page
+      document.getElementById("loginBtnDesktop")?.addEventListener("click", function () {
+        window.location.href = "login.html";
+      });
+    })();
+  </script>
+</body>
+
+</html>

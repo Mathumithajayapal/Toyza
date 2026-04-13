@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Toyza · Playful Explorations | Premium Header & Footer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .top-banner { background-color: #2c2c2c; color: #f5f5f5; }
+    body.dark-mode .main-header { background-color: #0f0f0f; border-bottom-color: #2c2c2c; }
+    body.dark-mode .category-link, body.dark-mode .nav-link, body.dark-mode .dropdown-btn { color: #e0e0e0; }
+    body.dark-mode .category-link:hover, body.dark-mode .nav-link:hover, body.dark-mode .dropdown-btn:hover { color: #f3ac00; }
+    body.dark-mode .dropdown-content { background-color: #1e1e1e; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    body.dark-mode .dropdown-content a { color: #e0e0e0; }
+    body.dark-mode .dropdown-content a:hover { background-color: #2d2d2d; color: #f3ac00; }
+    body.dark-mode .icon-btn { color: #e0e0e0; }
+    body.dark-mode .mobile-menu { background-color: #0f0f0f; }
+    body.dark-mode .mobile-nav-link, body.dark-mode .mobile-dropdown-toggle span:first-child { color: #e0e0e0; }
+    body.dark-mode .mobile-dropdown-content a { color: #cccccc; }
+    body.dark-mode .unique-footer { background-color: #0a0a0a; border-top-color: #f3ac00; }
+    body.dark-mode .footer-col a { color: #bbbbbb; }
+    body.dark-mode .footer-col a:hover { color: #f3ac00; }
+    body.dark-mode .newsletter-input input { color: #f0f0f0; }
+    body.dark-mode .footer-col h4::after { background-color: #f3ac00; }
+    body.dark-mode .social-links a { background-color: #2c2c2c; color: #e0e0e0; }
+    body.dark-mode .social-links a:hover { background-color: #f3ac00; color: #121212; }
+
+    /* RTL Support */
+    [dir="rtl"] .desktop-nav ul { flex-direction: row-reverse; }
+    [dir="rtl"] .right-icons { flex-direction: row-reverse; }
+    [dir="rtl"] .dropdown-content { left: auto; right: 0; }
+    [dir="rtl"] .mobile-menu { right: auto; left: -100%; }
+    [dir="rtl"] .mobile-menu.active { left: 0; right: auto; }
+    [dir="rtl"] .close-menu { right: auto; left: 1.5rem; }
+    [dir="rtl"] .mobile-dropdown-content { padding-left: 0; padding-right: 1rem; }
+    [dir="rtl"] .footer-container { text-align: right; }
+    [dir="rtl"] .social-links { justify-content: flex-end; }
+    [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
+
+    /* Top Banner */
+    .top-banner {
+      background-color: #fff8e7;
+      color: #5a4a2a;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow: hidden;
+      max-height: 60px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-banner.banner-hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: 0;
+      border: none;
+    }
+    body.dark-mode .top-banner { background-color: #2a2a1a; color: #f3ac00; }
+
+    /* Main Header */
+    .main-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeef2;
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }
+    .logo span { font-weight: 400; color: #4a6a3b; }
+    body.dark-mode .logo span { color: #7da064; }
+
+    /* Desktop Navigation */
+    .desktop-nav { flex: 1; display: flex; justify-content: center; }
+    .nav-links { display: flex; list-style: none; gap: 1.8rem; align-items: center; flex-wrap: wrap; }
+    .nav-item { position: relative; }
+    .nav-link, .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c3e2f;
+      padding: 0.5rem 0;
+      display: inline-block;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .dropdown-btn { display: flex; align-items: center; gap: 6px; }
+    .dropdown-btn i { font-size: 0.75rem; transition: transform 0.2s; }
+    .nav-item:hover .dropdown-btn i { transform: rotate(180deg); }
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+    .nav-item:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(4px); }
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #2c3e2f;
+      transition: background 0.15s;
+    }
+    .dropdown-content a:hover { background-color: #fef5e0; color: #f3ac00; }
+
+    /* Right Icons Group */
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .icon-btn:hover { background-color: rgba(0, 0, 0, 0.05); transform: scale(1.02); }
+    body.dark-mode .icon-btn:hover { background-color: rgba(255, 255, 255, 0.1); }
+    
+    /* Login/Signup button style (text button) */
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 0.2rem;
+    }
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .auth-link.login {
+      color: #2c3e2f;
+    }
+    .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243,172,0,0.2);
+    }
+    .auth-link.signup:hover {
+      background-color: #e09d00;
+      transform: translateY(-1px);
+    }
+    .auth-link.login:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+    body.dark-mode .auth-link.login { color: #e0e0e0; }
+    body.dark-mode .auth-link.signup { background-color: #f3ac00; color: #1a1a1a; }
+    body.dark-mode .auth-link.login:hover { background-color: rgba(255,255,255,0.1); }
+    
+    .cart-icon { position: relative; }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+      min-width: 18px;
+      text-align: center;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span { width: 100%; height: 2px; background-color: #2c3e2f; border-radius: 2px; transition: all 0.2s; }
+    body.dark-mode .hamburger span { background-color: #e0e0e0; }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    }
+    .mobile-menu.active { right: 0; }
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+    .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+    .mobile-nav-item { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: 0.6rem 0;
+    }
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.6rem 0;
+    }
+    .mobile-dropdown-toggle span:first-child { font-size: 1.1rem; font-weight: 500; color: #2c3e2f; }
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+    }
+    [dir="rtl"] .mobile-dropdown-content { padding-left: 0; padding-right: 1rem; }
+    .mobile-dropdown-content.active { max-height: 300px; }
+    .mobile-dropdown-content a {
+      display: block;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
+    body.dark-mode .mobile-auth-btn { border-color: #444; color: #e0e0e0; }
+    body.dark-mode .mobile-auth-btn.signup-mobile { background: #f3ac00; color: #121212; }
+
+    /* Professional Footer */
+    .unique-footer {
+      background-color: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: 4rem;
+      transition: all 0.2s;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+    .footer-brand p { margin: 1.2rem 0 1.5rem; color: #5a6e5a; line-height: 1.5; font-size: 0.9rem; }
+    .social-links { display: flex; gap: 1.2rem; }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .social-links a:hover { background-color: #f3ac00; color: white; transform: translateY(-2px); }
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #f3ac00;
+      border-radius: 2px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.7rem; }
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover { color: #f3ac00; }
+    .newsletter p { color: #5a6e5a; margin-bottom: 1.2rem; font-size: 0.9rem; }
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input:focus-within { border-bottom-color: #f3ac00; }
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: 0.4rem 0;
+      width: 100%;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .newsletter-input input::placeholder { color: #aaa; }
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      transition: transform 0.2s;
+    }
+    .newsletter-input button:hover { transform: translateX(4px); }
+    [dir="rtl"] .newsletter-input button:hover { transform: translateX(-4px); }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom a {
+      color: #7a8a7a;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    .footer-bottom a:hover { color: #f3ac00; }
+    [dir="rtl"] .footer-bottom a { margin-left: 0; margin-right: 1.5rem; }
+
+    /* Responsive: On screens <= 1024px, hide desktop nav, show hamburger, hide extra icons except hamburger */
+    @media (max-width: 1024px) {
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+      .right-icons .auth-buttons {
+        display: none;
+      }
+      .right-icons .hamburger {
+        display: flex;
+      }
+      .right-icons {
+        gap: 0;
+      }
+    }
+    @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      [dir="rtl"] .footer-col h4::after { left: 50%; right: auto; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom a { margin: 0 0.8rem; }
+    }
+    @media (max-width: 640px) {
+      .main-header { padding: 0.7rem 1rem; }
+      .logo a { font-size: 1.5rem; }
+      .top-banner { font-size: 0.75rem; padding: 6px 12px; }
+    }
+    .hero-message { padding: 3rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .feature-card { background: #fefaf5; border-radius: 28px; padding: 2rem; margin-top: 2rem; border: 1px solid #f0e4d8; }
+    body.dark-mode .feature-card { background: #1c1c1c; border-color: #2c2c2c; }
+    .accent-badge { color: #f3ac00; font-weight: 700; }
+    .yellow-highlight { color: #f3ac00; }
+  </style>
+</head>
+<body>
+
+<div class="top-banner" id="topBanner">🧸 5% off on orders above Rs 1499 | Free shipping on all toys 🧸</div>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo"><a href="#">Toyza<span>.</span></a></div>
+    <div class="desktop-nav">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <button class="dropdown-btn">Shop By Categories <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content">
+            <a href="#">Wooden Toys</a><a href="#">Puzzles & Games</a><a href="#">Arts & Crafts</a><a href="#">Learning & STEM</a><a href="#">Plush & Soft Toys</a>
+          </div>
+        </li>
+        <li><a href="#" class="nav-link">Toys By Age</a></li>
+        <li><a href="#" class="nav-link">Bestsellers</a></li>
+        <li><a href="#" class="nav-link">Gifting</a></li>
+        <li><a href="#" class="nav-link">New Arrivals</a></li>
+        <li><a href="#" class="nav-link">Rewards Club</a></li>
+      </ul>
+    </div>
+    <div class="right-icons">
+      <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+      <!-- Login/Signup Buttons (desktop) -->
+      <div class="auth-buttons">
+        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+        <button class="auth-link signup" id="signupBtnDesktop">Sign up</button>
+      </div>
+      <div class="cart-icon"><button class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></button><span class="cart-badge">3</span></div>
+      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+      <!-- RTL button now shows text label "RTL/LTR" instead of icon, aligned with requirement -->
+      <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenuBtn">✕</button>
+  <ul class="mobile-nav-links">
+    <li class="mobile-nav-item" id="mobileCatItem">
+      <div class="mobile-dropdown-toggle"><span>Shop By Categories</span><span><i class="fas fa-chevron-down"></i></span></div>
+      <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+        <a href="#">Wooden Toys</a><a href="#">Puzzles & Games</a><a href="#">Arts & Crafts</a><a href="#">Learning & STEM</a><a href="#">Plush & Soft Toys</a>
+      </div>
+    </li>
+    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Toys By Age</a></li>
+    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Bestsellers</a></li>
+    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Gifting</a></li>
+    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">New Arrivals</a></li>
+    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Rewards Club</a></li>
+    <li class="mobile-nav-item">
+      <div class="mobile-auth">
+        <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+        <button class="mobile-auth-btn signup-mobile" id="mobileSignupBtn">Sign up</button>
+      </div>
+    </li>
+    <li class="mobile-nav-item">
+      <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
+        <button class="icon-btn" id="mobileDarkToggle" style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙 Dark</button>
+        <button class="icon-btn" id="mobileRtlToggle" style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<main>
+  <div class="hero-message">
+    <h1 style="font-size: 2.5rem; font-weight: 700;">Welcome to Toyza <span class="yellow-highlight">✨</span></h1>
+    <p style="margin-top: 0.8rem; font-size: 1.1rem; opacity: 0.8;">Where imagination meets play — sustainable, creative, and joyfully crafted.</p>
+    <div class="feature-card">
+      <i class="fas fa-star" style="font-size: 2rem; color: #f3ac00; margin-bottom: 1rem; display: inline-block;"></i>
+      <h3>✨ Primary Accent: <span class="accent-badge">#f3ac00 (Vibrant Yellow)</span></h3>
+      <p style="margin-top: 0.5rem;">✔️ Professional footer with newsletter & social links ✔️ RTL + Dark mode ✔️ Fully responsive</p>
+      <p style="margin-top: 0.75rem; font-size:0.9rem;">🎯 <strong>Enhanced Nav:</strong> RTL button toggles between "RTL" / "LTR" text label. Mobile menu hides all extras, only logo + hamburger visible.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="unique-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem;"><span style="color: #2c3e2f; font-size: 1.8rem; font-weight: 800;">Toyza<span style="color: #f3ac00;">.</span></span></div>
+      <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds. Thoughtfully designed for modern families.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+</footer>
+
+<script>
+  (function() {
+    const darkToggle = document.getElementById('darkModeToggle');
+    const mobileDark = document.getElementById('mobileDarkToggle');
+    const rtlToggle = document.getElementById('rtlToggle');
+    const mobileRtl = document.getElementById('mobileRtlToggle');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenuBtn');
+    const searchBtn = document.getElementById('searchBtn');
+    const newsletterBtn = document.getElementById('footerNewsletterBtn');
+    const newsletterEmail = document.getElementById('footerNewsletterEmail');
+    const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle');
+    const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+    const topBanner = document.getElementById('topBanner');
+    
+    const loginDesktop = document.getElementById('loginBtnDesktop');
+    const signupDesktop = document.getElementById('signupBtnDesktop');
+    const mobileLogin = document.getElementById('mobileLoginBtn');
+    const mobileSignup = document.getElementById('mobileSignupBtn');
+
+    let wasBannerHiddenByMenu = false;
+    function shouldApplyBannerBehavior() { return window.innerWidth <= 1024; }
+    function setBannerHidden(hide) {
+      if (!topBanner) return;
+      if (hide) { if (!topBanner.classList.contains('banner-hidden')) topBanner.classList.add('banner-hidden'); }
+      else { if (topBanner.classList.contains('banner-hidden')) topBanner.classList.remove('banner-hidden'); }
+    }
+    function handleMenuVisibility(menuActive) {
+      if (!shouldApplyBannerBehavior()) { if (topBanner?.classList.contains('banner-hidden')) setBannerHidden(false); return; }
+      if (menuActive) { setBannerHidden(true); wasBannerHiddenByMenu = true; }
+      else { if (wasBannerHiddenByMenu) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+    }
+    function openMobileMenu() { mobileMenu.classList.add('active'); handleMenuVisibility(true); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileMenu.classList.remove('active'); handleMenuVisibility(false); document.body.style.overflow = ''; }
+    
+    if (hamburger) hamburger.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.contains('active') ? closeMobileMenu() : openMobileMenu(); });
+    if (closeMenu) closeMenu.addEventListener('click', () => closeMobileMenu());
+    document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+    window.addEventListener('resize', () => {
+      const isMobile = window.innerWidth <= 1024;
+      if (!isMobile) { if (mobileMenu?.classList.contains('active')) closeMobileMenu(); else if (topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+      else { if (mobileMenu && !mobileMenu.classList.contains('active') && topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; }
+      if (mobileMenu?.classList.contains('active') && topBanner && !topBanner.classList.contains('banner-hidden')) { setBannerHidden(true); wasBannerHiddenByMenu = true; } }
+    });
+    
+    // Dark mode
+    const applyDarkMode = (isDark) => {
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('toyzaDarkMode', isDark);
+      if (darkToggle) { const icon = darkToggle.querySelector('i'); if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon'; }
+      if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    };
+    const savedDark = localStorage.getItem('toyzaDarkMode') === 'true';
+    applyDarkMode(savedDark);
+    const toggleDark = () => applyDarkMode(!document.body.classList.contains('dark-mode'));
+    darkToggle?.addEventListener('click', toggleDark);
+    mobileDark?.addEventListener('click', toggleDark);
+    
+    // RTL with dynamic text label (RTL <-> LTR)
+    const applyRTL = (isRTL) => {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('toyzaRTLMode', isRTL);
+      // Update button text on both desktop and mobile to show the opposite action
+      const newDesktopLabel = isRTL ? 'LTR' : 'RTL';
+      if (rtlToggle) rtlToggle.innerText = newDesktopLabel;
+      if (mobileRtl) mobileRtl.innerText = newDesktopLabel;
+    };
+    const savedRTL = localStorage.getItem('toyzaRTLMode') === 'true';
+    applyRTL(savedRTL);
+    const toggleRTL = () => {
+      const currentDir = document.documentElement.getAttribute('dir');
+      const newRTL = currentDir !== 'rtl';
+      applyRTL(newRTL);
+    };
+    rtlToggle?.addEventListener('click', toggleRTL);
+    mobileRtl?.addEventListener('click', toggleRTL);
+    
+    // Mobile dropdown
+    if (mobileCatToggle && mobileCatContent) {
+      mobileCatToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = mobileCatContent.classList.contains('active');
+        document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+        if (!isActive) mobileCatContent.classList.add('active');
+        const arrowIcon = mobileCatToggle.querySelector('span:last-child i');
+        if (arrowIcon) arrowIcon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    }
+    
+    searchBtn?.addEventListener('click', () => alert('🔎 Discover playful learning at Toyza!'));
+    const handleNewsletter = () => {
+      const email = newsletterEmail?.value.trim();
+      if (email && email.includes('@') && email.includes('.')) { alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); newsletterEmail.value = ''; }
+      else alert('Please enter a valid email address.');
+    };
+    newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(); });
+    newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleNewsletter(); } });
+    
+    const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
+    if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
+    if (signupDesktop) signupDesktop.addEventListener('click', () => showAuthAlert('Sign up'));
+    if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
+    if (mobileSignup) mobileSignup.addEventListener('click', () => showAuthAlert('Sign up'));
+    
+    if (topBanner && !shouldApplyBannerBehavior()) setBannerHidden(false);
+    else if (topBanner && shouldApplyBannerBehavior() && !mobileMenu?.classList.contains('active')) setBannerHidden(false);
+    if (topBanner?.classList.contains('banner-hidden') && !mobileMenu?.classList.contains('active')) setBannerHidden(false);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) closeMobileMenu(); });
+    if (darkToggle && document.body.classList.contains('dark-mode')) darkToggle.querySelector('i').className = 'fas fa-sun';
+  })();
+</script>
+</body>
+</html>
+
+
+
+  document.getElementById("loginBtnDesktop").addEventListener("click", function() {
+    window.location.href = "login.html"; // change to your page
+  });

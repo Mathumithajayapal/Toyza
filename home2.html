@@ -1,0 +1,2687 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Toyza · Wooden Toy & Educational Play Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #2c2c2c;
+      color: #f5f5f5;
+    }
+
+    body.dark-mode .main-header {
+      background-color: #0f0f0f;
+      border-bottom-color: #2c2c2c;
+    }
+
+    body.dark-mode .category-link,
+    body.dark-mode .nav-link,
+    body.dark-mode .dropdown-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .category-link:hover,
+    body.dark-mode .nav-link:hover,
+    body.dark-mode .dropdown-btn:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .dropdown-content {
+      background-color: #1e1e1e;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .dropdown-content a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+      background-color: #2d2d2d;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .icon-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-menu {
+      background-color: #0f0f0f;
+    }
+
+    body.dark-mode .mobile-nav-link,
+    body.dark-mode .mobile-dropdown-toggle span:first-child {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-dropdown-content a {
+      color: #cccccc;
+    }
+
+    body.dark-mode .unique-footer {
+      background-color: #0a0a0a;
+      border-top-color: #f3ac00;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #bbbbbb;
+    }
+
+    body.dark-mode .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .newsletter-input input {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .footer-col h4::after {
+      background-color: #f3ac00;
+    }
+
+    body.dark-mode .social-links a {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .social-links a:hover {
+      background-color: #f3ac00;
+      color: #121212;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #2a2a1a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .logo span {
+      color: #7da064;
+    }
+
+    /* Dark mode for category cards */
+    body.dark-mode .cat-card {
+      background: #1a1a0e;
+      border-color: #2c2c1e;
+    }
+
+    body.dark-mode .cat-card:hover {
+      background: #2a2200;
+    }
+
+    body.dark-mode .cat-name {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .cat-count {
+      color: #8a9e8a;
+    }
+
+    /* FIX: Dark mode Login button (white text) + footer headings white - SAME AS OTHER PAGES */
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f !important;
+    }
+
+    body.dark-mode .footer-col h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .footer-brand p {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .footer-bottom span,
+    body.dark-mode .footer-bottom a {
+      color: #bbbbbb !important;
+    }
+
+    body.dark-mode .footer-bottom a:hover {
+      color: #f3ac00 !important;
+    }
+
+    /* Logo colors remain same in dark mode */
+    body.dark-mode .logo a {
+      color: #f3ac00 !important;
+    }
+
+    body.dark-mode .logo span {
+      color: #7da064 !important;
+    }
+
+    /* fix icon buttons hover */
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* mobile auth buttons in dark mode */
+    body.dark-mode .mobile-auth-btn {
+      color: #ffffff;
+      border-color: #444;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #2c3e2f;
+    }
+
+    /* ===== RTL ===== */
+    [dir="rtl"] .desktop-nav ul {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .right-icons {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .dropdown-content {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .mobile-menu {
+      right: auto;
+      left: -100%;
+    }
+
+    [dir="rtl"] .mobile-menu.active {
+      left: 0;
+      right: auto;
+    }
+
+    [dir="rtl"] .close-menu {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    [dir="rtl"] .footer-container {
+      text-align: right;
+    }
+
+    [dir="rtl"] .social-links {
+      justify-content: flex-end;
+    }
+
+    [dir="rtl"] .footer-col h4::after {
+      left: auto;
+      right: 0;
+    }
+
+    /* ===== TOP BANNER ===== */
+    .top-banner {
+      background-color: #fff8e7;
+      color: #5a4a2a;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow: hidden;
+      max-height: 60px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .top-banner.banner-hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: 0;
+      border: none;
+    }
+
+    /* ===== MAIN HEADER ===== */
+    .main-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeef2;
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }
+
+    .logo span {
+      font-weight: 400;
+      color: #4a6a3b;
+    }
+
+    .desktop-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link,
+    .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c3e2f;
+      padding: 0.5rem 0;
+      display: inline-block;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-btn i {
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+
+    .nav-item:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+
+    .nav-item:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(4px);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #2c3e2f;
+      transition: background 0.15s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fef5e0;
+      color: #f3ac00;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: scale(1.02);
+    }
+
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 0.2rem;
+    }
+
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .auth-link.login {
+      color: #2c3e2f;
+    }
+
+    .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, 0.2);
+    }
+
+    .auth-link.signup:hover {
+      background-color: #e09d00;
+      transform: translateY(-1px);
+    }
+
+    .auth-link.login:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f !important;
+    }
+
+    body.dark-mode .auth-link.login:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background-color: #2c3e2f;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    body.dark-mode .hamburger span {
+      background-color: #e0e0e0;
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mobile-nav-item {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle span:first-child {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+    }
+
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    .mobile-dropdown-content.active {
+      max-height: 300px;
+    }
+
+    .mobile-dropdown-content a {
+      display: block;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
+
+    body.dark-mode .mobile-auth-btn {
+      border-color: #444;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #121212;
+    }
+
+    /* ===== HOME PAGE STYLES ===== */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+
+    .toy-card-img img,
+    .product-img img,
+    .blog-thumb img,
+    .age-emoji img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .toy-card-img,
+    .product-img,
+    .blog-thumb {
+      overflow: hidden;
+    }
+
+    .product-img img,
+    .toy-card-img img,
+    .blog-thumb img,
+    .age-emoji img {
+      background: transparent;
+    }
+
+    /* Category Card Styles - Full Image Background */
+    .cat-card {
+      background: #fefaf5;
+      border: 1.5px solid #f0e4d8;
+      border-radius: 20px;
+      padding: 0;
+      text-align: center;
+      text-decoration: none;
+      color: #2c3e2f;
+      transition: all 0.25s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1/1.2;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-6px);
+      border-color: #f3ac00;
+      box-shadow: 0 12px 30px rgba(243, 172, 0, 0.15);
+    }
+
+    .cat-image {
+      width: 100%;
+      height: 70%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cat-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .cat-card:hover .cat-image img {
+      transform: scale(1.05);
+    }
+
+    .cat-content {
+      padding: 1rem 0.8rem;
+      width: 100%;
+      background: inherit;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body.dark-mode .cat-content {
+      background: #1a1a0e;
+    }
+
+    .cat-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+      color: #1a2a1a;
+    }
+
+    body.dark-mode .cat-name {
+      color: #f0f0f0;
+    }
+
+    .cat-count {
+      font-size: 0.75rem;
+      color: #8a9e8a;
+      font-weight: 500;
+    }
+
+    body.dark-mode .cat-count {
+      color: #6a7e6a;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #fffbf0 0%, #fef6e4 40%, #f0f7e8 100%);
+      padding: 5rem 2rem 4rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #1a1800 0%, #161e10 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(243, 172, 0, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(74, 106, 59, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff8e7;
+      border: 1px solid #f3ac00;
+      color: #b07d00;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    body.dark-mode .hero-tag {
+      background: #2a2200;
+      border-color: #f3ac00;
+      color: #f3ac00;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #1a2a1a;
+      margin-bottom: 1.2rem;
+    }
+
+    body.dark-mode .hero-title {
+      color: #f0f0f0;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #f3ac00;
+    }
+
+    .hero-title span.green {
+      color: #4a6a3b;
+    }
+
+    body.dark-mode .hero-title span.green {
+      color: #7da064;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #4a5a4a;
+      max-width: 480px;
+      margin-bottom: 2.2rem;
+    }
+
+    body.dark-mode .hero-desc {
+      color: #a0b0a0;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(243, 172, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #e09d00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 172, 0, 0.45);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #2c3e2f;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid #d0d8cc;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: #4a6a3b;
+      color: #4a6a3b;
+    }
+
+    body.dark-mode .btn-secondary {
+      color: #e0e0e0;
+      border-color: #444;
+    }
+
+    body.dark-mode .btn-secondary:hover {
+      border-color: #7da064;
+      color: #7da064;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: #5a6e5a;
+      font-weight: 600;
+    }
+
+    body.dark-mode .trust-item {
+      color: #7a8a7a;
+    }
+
+    .trust-item i {
+      color: #4a6a3b;
+      font-size: 0.9rem;
+    }
+
+    body.dark-mode .trust-item i {
+      color: #7da064;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .toy-card-img {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: #fff8e7;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    body.dark-mode .toy-card-img {
+      background: #1e1e0e;
+    }
+
+    .toy-card-img:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .toy-card-img.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+      min-height: 280px;
+      background: #f0f7e8;
+    }
+
+    body.dark-mode .toy-card-img.tall {
+      background: #0e1e0a;
+    }
+
+    .toy-card-img .toy-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      text-align: center;
+    }
+
+    body.dark-mode .toy-card-img .toy-label {
+      background: rgba(20, 20, 10, 0.85);
+      color: #f0f0f0;
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 8px 14px;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(243, 172, 0, 0.4);
+      white-space: nowrap;
+    }
+
+    .floating-badge.top-left {
+      top: -12px;
+      left: -12px;
+    }
+
+    .floating-badge.bottom-right {
+      bottom: -12px;
+      right: -12px;
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      background: #2c3e2f;
+      color: #ffffff;
+      padding: 1.5rem 2rem;
+    }
+
+    body.dark-mode .stats-strip {
+      background: #1a2a1a;
+    }
+
+    .stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .stat-block {
+      padding: 0.5rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f3ac00;
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #a0b4a0;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Section */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef5e0;
+      color: #b07d00;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 40px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    body.dark-mode .section-eyebrow {
+      background: #2a2200;
+      color: #f3ac00;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: #1a2a1a;
+      line-height: 1.2;
+    }
+
+    body.dark-mode .section-title {
+      color: #f0f0f0;
+    }
+
+    .section-sub {
+      color: #5a6e5a;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0.8rem auto 0;
+    }
+
+    body.dark-mode .section-sub {
+      color: #8a9e8a;
+    }
+
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border: 1.5px solid #f0ebe4;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    body.dark-mode .product-card {
+      background: #1a1a12;
+      border-color: #2a2a1e;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      border-color: #f3ac00;
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      background: #fef9f0;
+      position: relative;
+    }
+
+    body.dark-mode .product-img {
+      background: #1e1a0a;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-new {
+      background: #4a6a3b;
+      color: #fff;
+    }
+
+    .badge-bestseller {
+      background: #f3ac00;
+      color: #2c3e2f;
+    }
+
+    .badge-montessori {
+      background: #e8f0e4;
+      color: #2c5a2a;
+      border: 1px solid #b0d0a8;
+    }
+
+    body.dark-mode .badge-montessori {
+      background: #1a300a;
+      border-color: #3a5a2a;
+      color: #90cc80;
+    }
+
+    .product-wishlist {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #bbb;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .product-wishlist:hover {
+      color: #e05a5a;
+      transform: scale(1.1);
+    }
+
+    body.dark-mode .product-wishlist {
+      background: rgba(20, 20, 10, 0.9);
+    }
+
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-age {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8a9e8a;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    body.dark-mode .product-age {
+      color: #6a7e6a;
+    }
+
+    .product-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1a2a1a;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    body.dark-mode .product-name {
+      color: #e8e8e0;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    .stars {
+      color: #f3ac00;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+    }
+
+    .rating-count {
+      font-size: 0.75rem;
+      color: #8a9e8a;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #2c3e2f;
+    }
+
+    body.dark-mode .product-price {
+      color: #e0e0e0;
+    }
+
+    .product-price-old {
+      font-size: 0.82rem;
+      color: #bbb;
+      text-decoration: line-through;
+    }
+
+    .add-to-cart {
+      background: #f3ac00;
+      color: #2c3e2f;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .add-to-cart:hover {
+      background: #e09d00;
+      transform: scale(1.1);
+    }
+
+    /* Age Guide */
+    .age-guide {
+      background: #f7fcf3;
+    }
+
+    body.dark-mode .age-guide {
+      background: #0e180a;
+    }
+
+    .age-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .age-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      color: inherit;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dark-mode .age-card {
+      background: #141e10;
+    }
+
+    .age-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .age-card.age-0 {
+      border-color: #ffd6d6;
+    }
+
+    .age-card.age-0:hover {
+      background: #fff5f5;
+      box-shadow: 0 12px 30px rgba(255, 100, 100, 0.12);
+    }
+
+    .age-card.age-1 {
+      border-color: #ffe6b3;
+    }
+
+    .age-card.age-1:hover {
+      background: #fffaf0;
+      box-shadow: 0 12px 30px rgba(243, 172, 0, 0.15);
+    }
+
+    .age-card.age-2 {
+      border-color: #b3e8c8;
+    }
+
+    .age-card.age-2:hover {
+      background: #f0faf5;
+      box-shadow: 0 12px 30px rgba(50, 150, 80, 0.12);
+    }
+
+    .age-card.age-3 {
+      border-color: #c8d8ff;
+    }
+
+    .age-card.age-3:hover {
+      background: #f5f7ff;
+      box-shadow: 0 12px 30px rgba(80, 100, 220, 0.1);
+    }
+
+    body.dark-mode .age-card.age-0 {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-0:hover {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-1 {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-1:hover {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-2 {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-2:hover {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-3 {
+      background: #0d0d0d;
+    }
+
+    body.dark-mode .age-card.age-3:hover {
+      background: #0d0d0d;
+    }
+
+    .age-emoji {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .age-range {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #1a2a1a;
+      margin-bottom: 0.4rem;
+    }
+
+    body.dark-mode .age-range {
+      color: #f0f0f0;
+    }
+
+    .age-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #4a5a4a;
+      margin-bottom: 0.6rem;
+    }
+
+    body.dark-mode .age-title {
+      color: #8a9e8a;
+    }
+
+    .age-desc {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: #7a8a7a;
+    }
+
+    body.dark-mode .age-desc {
+      color: #6a7a6a;
+    }
+
+    .age-count {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .age-card.age-0 .age-count {
+      background: #ffe0e0;
+      color: #c04040;
+    }
+
+    .age-card.age-1 .age-count {
+      background: #fff0c8;
+      color: #b07800;
+    }
+
+    .age-card.age-2 .age-count {
+      background: #d0f0e0;
+      color: #2a7a50;
+    }
+
+    .age-card.age-3 .age-count {
+      background: #d8e4ff;
+      color: #3040a0;
+    }
+
+    body.dark-mode .age-card.age-0 .age-count {
+      background: #300a0a;
+      color: #ff8080;
+    }
+
+    body.dark-mode .age-card.age-1 .age-count {
+      background: #2a1800;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .age-card.age-2 .age-count {
+      background: #062010;
+      color: #60cc90;
+    }
+
+    body.dark-mode .age-card.age-3 .age-count {
+      background: #0a1040;
+      color: #8090ff;
+    }
+
+    /* Blog/Tips */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: #ffffff;
+      border: 1.5px solid #f0e8e0;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    body.dark-mode .blog-card {
+      background: #141410;
+      border-color: #2a2420;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .blog-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #fef9f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+
+    body.dark-mode .blog-thumb {
+      background: #1e1a0e;
+    }
+
+    .blog-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-content {
+      padding: 1.4rem;
+    }
+
+    .blog-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: #1a2a1a;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    body.dark-mode .blog-title {
+      color: #e8e8e0;
+    }
+
+    .blog-meta {
+      font-size: 0.78rem;
+      color: #8a9e8a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    body.dark-mode .blog-meta {
+      color: #6a7a6a;
+    }
+
+    .blog-meta i {
+      font-size: 0.75rem;
+    }
+
+    /* Newsletter banner */
+    .newsletter-banner {
+      background: #fff8e7;
+      padding: 4rem 2rem;
+      border-top: 1px solid #f0e4cc;
+    }
+
+    body.dark-mode .newsletter-banner {
+      background: #1a1400;
+      border-top-color: #3a2800;
+    }
+
+    .nl-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nl-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1a2a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark-mode .nl-inner h2 {
+      color: #f0f0f0;
+    }
+
+    .nl-inner p {
+      color: #5a6e5a;
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+    }
+
+    body.dark-mode .nl-inner p {
+      color: #8a9e8a;
+    }
+
+    .nl-form {
+      display: flex;
+      gap: 0;
+      background: #fff;
+      border: 2px solid #e0d0b4;
+      border-radius: 50px;
+      overflow: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    body.dark-mode .nl-form {
+      background: #1a1400;
+      border-color: #4a3a00;
+    }
+
+    .nl-form input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.9rem;
+      color: #1a1a1a;
+      outline: none;
+      font-family: inherit;
+    }
+
+    body.dark-mode .nl-form input {
+      color: #f0f0f0;
+    }
+
+    .nl-form input::placeholder {
+      color: #aaa;
+    }
+
+    .nl-form button {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0 1.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+      border-radius: 0 50px 50px 0;
+      white-space: nowrap;
+    }
+
+    .nl-form button:hover {
+      background: #e09d00;
+    }
+
+    /* View All Link */
+    .view-all-wrap {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4a6a3b;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border-bottom: 2px solid #a0c890;
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .view-all:hover {
+      color: #f3ac00;
+      border-color: #f3ac00;
+    }
+
+    body.dark-mode .view-all {
+      color: #7da064;
+      border-color: #4a7a40;
+    }
+
+    /* ===== FOOTER ===== */
+    .unique-footer {
+      background-color: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: 0;
+      transition: all 0.2s;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand p {
+      margin: 1.2rem 0 1.5rem;
+      color: #5a6e5a;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-links a:hover {
+      background-color: #f3ac00;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #f3ac00;
+      border-radius: 2px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    .newsletter p {
+      color: #5a6e5a;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-input:focus-within {
+      border-bottom-color: #f3ac00;
+    }
+
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: 0.4rem 0;
+      width: 100%;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .newsletter-input input::placeholder {
+      color: #aaa;
+    }
+
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      transition: transform 0.2s;
+    }
+
+    .newsletter-input button:hover {
+      transform: translateX(4px);
+    }
+
+    [dir="rtl"] .newsletter-input button:hover {
+      transform: translateX(-4px);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom a {
+      color: #7a8a7a;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom a:hover {
+      color: #f3ac00;
+    }
+
+    [dir="rtl"] .footer-bottom a {
+      margin-left: 0;
+      margin-right: 1.5rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+
+      .right-icons .auth-buttons {
+        display: none;
+      }
+
+      .right-icons .hamburger {
+        display: flex;
+      }
+
+      .right-icons {
+        gap: 0;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .age-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-img-grid {
+        max-width: 360px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .age-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      [dir="rtl"] .footer-col h4::after {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-bottom a {
+        margin: 0 0.8rem;
+      }
+
+      .hero {
+        padding: 3rem 1rem 2.5rem;
+      }
+
+      .section {
+        padding: 3.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .main-header {
+        padding: 0.7rem 1rem;
+      }
+
+      .logo a {
+        font-size: 1.5rem;
+      }
+
+      .top-banner {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .fade-up-2 {
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .fade-up-3 {
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .fade-up-4 {
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .fade-up-5 {
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .hero-img-grid .toy-card-img:nth-child(1) {
+      animation: bounce 3.5s ease-in-out infinite;
+    }
+
+    .hero-img-grid .toy-card-img:nth-child(2) {
+      animation: bounce 4s 0.5s ease-in-out infinite;
+    }
+
+    .hero-img-grid .toy-card-img:nth-child(3) {
+      animation: bounce 3.8s 1s ease-in-out infinite;
+    }
+
+    .section-alt {
+      background: #fafbf9;
+    }
+
+    body.dark-mode .section-alt {
+      background: #101410;
+    }
+    .age-emoji {
+  display: block;
+  width: 100%;
+  height: 160px; /* control container height */
+  overflow: hidden;
+  border-radius: 12px; /* optional nice rounded look */
+}
+
+.age-emoji img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps image nicely cropped */
+  display: block;
+
+}
+/* Tablet (iPad sizes: 768–1024) → 2x2 layout */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile → single column */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BANNER -->
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo"><a href="index.html">Toyza</a></div>
+      <div class="desktop-nav">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="service.html" class="nav-link">Service</a></li>
+
+          <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+          <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
+          <li><a href="gifts.html" class="nav-link">Gifting</a></li>
+          <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="right-icons">
+        <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+        <div class="auth-buttons">
+          <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+        </div>
+        <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
+          style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn">✕</button>
+    <ul class="mobile-nav-links">
+      <li class="mobile-nav-item" id="mobileCatItem">
+        <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
+        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+          <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+        </div>
+      </li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+      <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+      <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+      <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
+      <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link"> Contact</a></li>
+      <li class="mobile-nav-item">
+        <div class="mobile-auth">
+          <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+        </div>
+      </li>
+      <li class="mobile-nav-item">
+        <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
+          <button class="icon-btn" id="mobileDarkToggle"
+            style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙
+            Dark</button>
+          <button class="icon-btn" id="mobileRtlToggle"
+            style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag fade-up"><i class="fas fa-seedling"></i> Montessori-Inspired Play</div>
+          <h1 class="hero-title fade-up-2">Handcrafted <em>Wooden</em> Toys for <span class="green">Curious Minds</span>
+          </h1>
+          <p class="hero-desc fade-up-3">Each toy is thoughtfully designed to spark imagination, develop motor skills,
+            and grow with your child. 100% eco-friendly, sustainably sourced, and crafted to last generations.</p>
+          <div class="hero-cta fade-up-4">
+            <button class="btn-primary"><i class="fas fa-play-circle"></i> Shop Collections</button>
+            <button class="btn-secondary"><i class="fas fa-gift"></i> Find the Perfect Gift</button>
+          </div>
+          <div class="hero-trust fade-up-5">
+            <div class="trust-item"><i class="fas fa-check-circle"></i> BIS Certified Safe</div>
+            <div class="trust-item"><i class="fas fa-leaf"></i> Sustainably Made</div>
+            <div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Rating</div>
+          </div>
+        </div>
+        <div class="hero-visual fade-up-3">
+          <div class="hero-img-grid">
+            <div class="toy-card-img tall" style="background: linear-gradient(135deg,#fef3d0,#fbe0a0);">
+              <img src="images\img (37).jpg" alt="Puzzles & Stacking" class="img-placeholder">
+              <div class="toy-label">Puzzles & Stacking</div>
+            </div>
+            <div class="toy-card-img" style="background: linear-gradient(135deg,#e8f5e0,#c8e8b0);">
+              <img src="images\img (38).jpg" alt="Motor Skills" class="img-placeholder">
+              <div class="toy-label">Motor Skills</div>
+            </div>
+            <div class="toy-card-img" style="background: linear-gradient(135deg,#fce8d8,#f8c8a8);">
+              <img src="images\img (39).jpg" alt="Creative Arts" class="img-placeholder">
+              <div class="toy-label">Creative Arts</div>
+            </div>
+          </div>
+          <div class="floating-badge bottom-right">🚚 Free Shipping!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS STRIP ===== -->
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-block"><span class="stat-num">50K+</span>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">200+</span>
+          <div class="stat-label">Handcrafted Toys</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">100%</span>
+          <div class="stat-label">Non-Toxic Materials</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">4.9★</span>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SHOP BY CATEGORY ===== -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-shapes"></i> Browse By Type</div>
+          <h2 class="section-title">Shop By Category</h2>
+          <p class="section-sub">From first building blocks to complex puzzles — every toy sparks a different kind of
+            wonder.</p>
+        </div>
+        <div class="category-grid">
+          <a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (40).jpg" alt="Wooden Building Blocks">
+            </div>
+            <div class="cat-content">
+              <div class="cat-name">Wooden Building Blocks</div>
+              <div class="cat-count">48 products</div>
+            </div>
+          </a>
+          <a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (41).jpg" alt="Puzzles & Games"></div>
+            <div class="cat-content">
+              <div class="cat-name">Puzzles & Games</div>
+              <div class="cat-count">62 products</div>
+            </div>
+          </a>
+          <a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (42).jpg" alt="Arts & Crafts"></div>
+            <div class="cat-content">
+              <div class="cat-name">Arts & Crafts</div>
+              <div class="cat-count">35 products</div>
+            </div>
+          </a>
+          <a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (43).jpg" alt="Learning & STEM"></div>
+            <div class="cat-content">
+              <div class="cat-name">Learning & STEM</div>
+              <div class="cat-count">29 products</div>
+            </div>
+          </a>
+          <a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (44).jpg" alt="Plush & Soft Toys"></div>
+            <div class="cat-content">
+              <div class="cat-name">Plush & Soft Toys</div>
+              <div class="cat-count">41 products</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BESTSELLERS ===== -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-fire-alt"></i> Most Loved</div>
+          <h2 class="section-title">Bestselling Toys</h2>
+          <p class="section-sub">Tried, tested, and adored by thousands of kids and parents across India.</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (45).jpg"
+                alt="Rainbow Stacking Tower"><span class="product-badge badge-bestseller">Bestseller</span><button
+                class="product-wishlist"><i class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 2–5</div>
+              <div class="product-name">Rainbow Stacking Tower</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 1,249</span><span class="product-price-old">₹ 1,599</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (43).jpg"
+                alt="Alphabet Shape Sorter"><span class="product-badge badge-montessori">Montessori</span><button
+                class="product-wishlist"><i class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 3–7</div>
+              <div class="product-name">Alphabet Shape Sorter</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(198)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 899</span><span class="product-price-old">₹ 1,199</span></div><button
+                  class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (44).jpg" alt="Wooden Train Set"><span
+                class="product-badge badge-new">New</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 3–8</div>
+              <div class="product-name">Wooden Train Set — Forest Edition</div>
+              <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(87)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 2,499</span><span class="product-price-old">₹ 2,999</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (45).jpg" alt="Sensory Nature Kit"><span
+                class="product-badge badge-montessori">Montessori</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 1–4</div>
+              <div class="product-name">Sensory Nature Exploration Kit</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(254)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 1,799</span><span class="product-price-old">₹ 2,199</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-wrap"><a href="#" class="view-all">View All 200+ Products <i
+              class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+
+    <!-- ===== AGE-BASED GUIDE ===== -->
+    <section class="section age-guide">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-child"></i> Smart Shopping</div>
+          <h2 class="section-title">Shop By Your Child's Age</h2>
+          <p class="section-sub">Every stage of development brings new capabilities. We curate toys that perfectly match
+            your child's current milestones.</p>
+        </div>
+        <div class="age-grid">
+          <a class="age-card age-0" href="#"><span class="age-emoji"><img src="images\img (46).jpg"
+                alt="0-12 mo"></span>
+            <div class="age-range">0 – 12 mo</div>
+            <div class="age-title">Sensory Starters</div>
+            <div class="age-desc">Soft, safe, and stimulating toys to develop touch, sight, and sound.</div><span
+              class="age-count">24 Toys</span>
+          </a>
+          <a class="age-card age-1" href="#"><span class="age-emoji"><img src="images\img (47).jpg"
+                alt="1-3 yrs"></span>
+            <div class="age-range">1 – 3 yrs</div>
+            <div class="age-title">Early Explorers</div>
+            <div class="age-desc">Stacking, sorting, and grasping toys for growing motor skills.</div><span
+              class="age-count">58 Toys</span>
+          </a>
+          <a class="age-card age-2" href="#"><span class="age-emoji"><img src="images\img (48).jpg"
+                alt="3-6 yrs"></span>
+            <div class="age-range">3 – 6 yrs</div>
+            <div class="age-title">Creative Thinkers</div>
+            <div class="age-desc">Puzzles, building sets, and imaginative play for preschoolers.</div><span
+              class="age-count">72 Toys</span>
+          </a>
+          <a class="age-card age-3" href="#"><span class="age-emoji"><img src="images\img (49).jpg"
+                alt="6-12 yrs"></span>
+            <div class="age-range">6 – 12 yrs</div>
+            <div class="age-title">Problem Solvers</div>
+            <div class="age-desc">STEM kits, strategy games, and complex builds for school-age kids.</div><span
+              class="age-count">49 Toys</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-lightbulb"></i> Play Better</div>
+          <h2 class="section-title">From The Toyza Play Studio</h2>
+          <p class="section-sub">Expert guides, activity ideas, and Montessori tips for parents who love to engage.</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (50).jpg" alt="Math puzzle"><span
+                class="blog-tag">Montessori</span></div>
+            <div class="blog-content">
+              <div class="blog-title">5 Wooden Toy Activities That Teach Math Without Worksheets</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 4 min read &bull; <i class="far fa-calendar"></i> 15
+                Mar 2026</div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (51).jpg" alt="Natural materials"></div>
+            <div class="blog-content">
+              <div class="blog-title">Why Natural Materials Matter in Early Childhood Play</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 6 min read &bull; <i class="far fa-calendar"></i> 8
+                Mar 2026</div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (52).jpg" alt="Screen vs Wooden"></div>
+            <div class="blog-content">
+              <div class="blog-title">Screen vs. Wooden Toys: What the Research Actually Says</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 8 min read &bull; <i class="far fa-calendar"></i> 1
+                Mar 2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-wrap"><a href="#" class="view-all">Read All Articles <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-banner">
+      <div class="nl-inner">
+        <h2>Join 50,000+ Playful Families</h2>
+        <p>Get early access to new arrivals, exclusive discounts, and free Montessori activity guides delivered to your
+          inbox.</p>
+        <div class="nl-form"><input type="email" placeholder="Enter your email address" id="nlEmailInput"><button
+            id="nlSubmitBtn">Get 10% Off</button></div>
+      </div>
+    </div>
+  </main>
+
+   <footer class="unique-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="index.html" style="text-decoration: none;">
+            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
+          </a>
+        </div>
+        <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
+              class="fab fa-pinterest"></i></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Shop All</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Bestsellers</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>Join the Club</h4>
+        <p>Get 10% off your first order + early access to sales.</p>
+        <div class="newsletter-input"><input type="email" placeholder="Your email address"
+            id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a
+          href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+  </footer>
+
+  <script>
+    (function () {
+      const darkToggle = document.getElementById('darkModeToggle');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      const rtlToggle = document.getElementById('rtlToggle');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMenu = document.getElementById('closeMenuBtn');
+      const searchBtn = document.getElementById('searchBtn');
+      const newsletterBtn = document.getElementById('footerNewsletterBtn');
+      const newsletterEmail = document.getElementById('footerNewsletterEmail');
+      const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle');
+      const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+      const topBanner = document.getElementById('topBanner');
+      const loginDesktop = document.getElementById('loginBtnDesktop');
+      const mobileLogin = document.getElementById('mobileLoginBtn');
+      const nlSubmit = document.getElementById('nlSubmitBtn');
+      const nlEmail = document.getElementById('nlEmailInput');
+
+      let wasBannerHiddenByMenu = false;
+      function shouldApplyBannerBehavior() { return window.innerWidth <= 1024; }
+      function setBannerHidden(hide) {
+        if (!topBanner) return;
+        if (hide) { if (!topBanner.classList.contains('banner-hidden')) topBanner.classList.add('banner-hidden'); }
+        else { if (topBanner.classList.contains('banner-hidden')) topBanner.classList.remove('banner-hidden'); }
+      }
+      function handleMenuVisibility(menuActive) {
+        if (!shouldApplyBannerBehavior()) { if (topBanner?.classList.contains('banner-hidden')) setBannerHidden(false); return; }
+        if (menuActive) { setBannerHidden(true); wasBannerHiddenByMenu = true; }
+        else { if (wasBannerHiddenByMenu) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+      }
+      function openMobileMenu() { mobileMenu.classList.add('active'); handleMenuVisibility(true); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileMenu.classList.remove('active'); handleMenuVisibility(false); document.body.style.overflow = ''; }
+
+      if (hamburger) hamburger.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.contains('active') ? closeMobileMenu() : openMobileMenu(); });
+      if (closeMenu) closeMenu.addEventListener('click', () => closeMobileMenu());
+      document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+      window.addEventListener('resize', () => {
+        const isMobile = window.innerWidth <= 1024;
+        if (!isMobile) { if (mobileMenu?.classList.contains('active')) closeMobileMenu(); else if (topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+        else {
+          if (mobileMenu && !mobileMenu.classList.contains('active') && topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; }
+          if (mobileMenu?.classList.contains('active') && topBanner && !topBanner.classList.contains('banner-hidden')) { setBannerHidden(true); wasBannerHiddenByMenu = true; }
+        }
+      });
+
+      const applyDarkMode = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('toyzaDarkMode', isDark);
+        if (darkToggle) { const icon = darkToggle.querySelector('i'); if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon'; }
+        if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+      };
+      const savedDark = localStorage.getItem('toyzaDarkMode') === 'true';
+      applyDarkMode(savedDark);
+      const toggleDark = () => applyDarkMode(!document.body.classList.contains('dark-mode'));
+      darkToggle?.addEventListener('click', toggleDark);
+      mobileDark?.addEventListener('click', toggleDark);
+
+      const applyRTL = (isRTL) => {
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        localStorage.setItem('toyzaRTLMode', isRTL);
+        const newLabel = isRTL ? 'LTR' : 'RTL';
+        if (rtlToggle) rtlToggle.innerText = newLabel;
+        if (mobileRtl) mobileRtl.innerText = newLabel;
+      };
+      const savedRTL = localStorage.getItem('toyzaRTLMode') === 'true';
+      applyRTL(savedRTL);
+      const toggleRTL = () => { const newRTL = document.documentElement.getAttribute('dir') !== 'rtl'; applyRTL(newRTL); };
+      rtlToggle?.addEventListener('click', toggleRTL);
+      mobileRtl?.addEventListener('click', toggleRTL);
+
+      if (mobileCatToggle && mobileCatContent) {
+        mobileCatToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isActive = mobileCatContent.classList.contains('active');
+          document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+          if (!isActive) mobileCatContent.classList.add('active');
+          const arrowIcon = mobileCatToggle.querySelector('span:last-child i');
+          if (arrowIcon) arrowIcon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+      }
+
+      searchBtn?.addEventListener('click', () => alert('🔎 Discover playful learning at Toyza!'));
+
+      const handleNewsletter = (emailEl) => {
+        const email = emailEl?.value.trim();
+        if (email && email.includes('@') && email.includes('.')) { alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); emailEl.value = ''; }
+        else alert('Please enter a valid email address.');
+      };
+      newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(newsletterEmail); });
+      newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleNewsletter(newsletterEmail); } });
+      nlSubmit?.addEventListener('click', () => handleNewsletter(nlEmail));
+      nlEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleNewsletter(nlEmail); });
+
+      const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
+      if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
+      if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
+
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function () {
+          this.innerHTML = '<i class="fas fa-check"></i>';
+          this.style.background = '#4a6a3b';
+          setTimeout(() => { this.innerHTML = '<i class="fas fa-plus"></i>'; this.style.background = ''; }, 1200);
+        });
+      });
+
+      document.querySelectorAll('.product-wishlist').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const icon = this.querySelector('i');
+          const isFilled = icon.classList.contains('fas');
+          icon.className = isFilled ? 'far fa-heart' : 'fas fa-heart';
+          this.style.color = isFilled ? '' : '#e05a5a';
+        });
+      });
+
+      if (topBanner?.classList.contains('banner-hidden') && !mobileMenu?.classList.contains('active')) setBannerHidden(false);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) closeMobileMenu(); });
+      if (darkToggle && document.body.classList.contains('dark-mode')) { const icon = darkToggle.querySelector('i'); if (icon) icon.className = 'fas fa-sun'; }
+    })();
+  </script>
+</body>
+
+</html>

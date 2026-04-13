@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Toyza · Contact Us | We'd Love to Hear From You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .top-banner { background-color: #2c2c2c; color: #f5f5f5; }
+    body.dark-mode .main-header { background-color: #0f0f0f; border-bottom-color: #2c2c2c; }
+    body.dark-mode .category-link, body.dark-mode .nav-link, body.dark-mode .dropdown-btn { color: #e0e0e0; }
+    body.dark-mode .category-link:hover, body.dark-mode .nav-link:hover, body.dark-mode .dropdown-btn:hover { color: #f3ac00; }
+    body.dark-mode .dropdown-content { background-color: #1e1e1e; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    body.dark-mode .dropdown-content a { color: #e0e0e0; }
+    body.dark-mode .dropdown-content a:hover { background-color: #2d2d2d; color: #f3ac00; }
+    body.dark-mode .icon-btn { color: #e0e0e0; }
+    body.dark-mode .mobile-menu { background-color: #0f0f0f; }
+    body.dark-mode .mobile-nav-link, body.dark-mode .mobile-dropdown-toggle span:first-child { color: #e0e0e0; }
+    body.dark-mode .mobile-dropdown-content a { color: #cccccc; }
+    body.dark-mode .unique-footer { background-color: #0a0a0a; border-top-color: #f3ac00; }
+    body.dark-mode .footer-col a { color: #bbbbbb; }
+    body.dark-mode .footer-col a:hover { color: #f3ac00; }
+    body.dark-mode .newsletter-input input { color: #f0f0f0; }
+    body.dark-mode .footer-col h4::after { background-color: #f3ac00; }
+    body.dark-mode .social-links a { background-color: #2c2c2c; color: #e0e0e0; }
+    body.dark-mode .social-links a:hover { background-color: #f3ac00; color: #121212; }
+    body.dark-mode .contact-card, body.dark-mode .faq-item { background-color: #1e1e1e; border-color: #2c2c2c; }
+    body.dark-mode .contact-form input, body.dark-mode .contact-form textarea, body.dark-mode .contact-form select { background-color: #2c2c2c; border-color: #3a3a3a; color: #f0f0f0; }
+    body.dark-mode .contact-hero { background-blend-mode: overlay; }
+    
+    /* FIX: Dark mode Login button (white text) + footer headings white - SAME AS ABOUT PAGE */
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f !important;
+    }
+    body.dark-mode .footer-col h4 {
+      color: #ffffff !important;
+    }
+    body.dark-mode .footer-brand p {
+      color: #cccccc !important;
+    }
+    body.dark-mode .footer-bottom span, 
+    body.dark-mode .footer-bottom a {
+      color: #bbbbbb !important;
+    }
+    body.dark-mode .footer-bottom a:hover {
+      color: #f3ac00 !important;
+    }
+    /* Logo colors remain same in dark mode (gold + green) - force stable */
+    body.dark-mode .logo a {
+      color: #f3ac00 !important;
+    }
+    body.dark-mode .logo span {
+      color: #7da064 !important;
+    }
+    /* fix icon buttons hover */
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    /* mobile auth buttons in dark mode */
+    body.dark-mode .mobile-auth-btn {
+      color: #ffffff;
+      border-color: #444;
+    }
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #2c3e2f;
+    }
+    /* Contact cards dark mode refinement */
+    body.dark-mode .contact-info-card, body.dark-mode .contact-form-card {
+      background-color: #1a1a1a;
+      border-color: #2c2c2c;
+    }
+    body.dark-mode .contact-info-card h3, body.dark-mode .contact-form-card h3 {
+      color: #f0f0f0;
+    }
+    body.dark-mode .contact-info-item .info-text p, 
+    body.dark-mode .contact-info-item .info-text a {
+      color: #b0b0b0;
+    }
+    body.dark-mode .business-hours {
+      border-top-color: #2c2c2c;
+    }
+    body.dark-mode .hours-row {
+      color: #b0b0b0;
+    }
+    body.dark-mode .form-group label {
+      color: #cbd5e6;
+    }
+    body.dark-mode .form-group input, 
+    body.dark-mode .form-group select, 
+    body.dark-mode .form-group textarea {
+      background: #2c2c2c;
+      border-color: #3a3a3a;
+      color: #f0f0f0;
+    }
+
+    /* RTL Support */
+    [dir="rtl"] .desktop-nav ul { flex-direction: row-reverse; }
+    [dir="rtl"] .right-icons { flex-direction: row-reverse; }
+    [dir="rtl"] .dropdown-content { left: auto; right: 0; }
+    [dir="rtl"] .mobile-menu { right: auto; left: -100%; }
+    [dir="rtl"] .mobile-menu.active { left: 0; right: auto; }
+    [dir="rtl"] .close-menu { right: auto; left: 1.5rem; }
+    [dir="rtl"] .mobile-dropdown-content { padding-left: 0; padding-right: 1rem; }
+    [dir="rtl"] .footer-container { text-align: right; }
+    [dir="rtl"] .social-links { justify-content: flex-end; }
+    [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
+    [dir="rtl"] .contact-info-item { flex-direction: row-reverse; text-align: right; }
+    [dir="rtl"] .contact-info-item i { margin-left: 1rem; margin-right: 0; }
+    [dir="rtl"] .contact-hero-content { text-align: right; }
+    [dir="rtl"] .footer-bottom a { margin-left: 0; margin-right: 1.5rem; }
+
+    /* Top Banner */
+    .top-banner {
+      background-color: #fff8e7;
+      color: #5a4a2a;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow: hidden;
+      max-height: 60px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-banner.banner-hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: 0;
+      border: none;
+    }
+    body.dark-mode .top-banner { background-color: #2a2a1a; color: #f3ac00; }
+
+    /* Main Header */
+    .main-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeef2;
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }
+    .logo span { font-weight: 400; color: #4a6a3b; }
+    body.dark-mode .logo span { color: #7da064; }
+
+    /* Desktop Navigation */
+    .desktop-nav { flex: 1; display: flex; justify-content: center; }
+    .nav-links { display: flex; list-style: none; gap: 1.8rem; align-items: center; flex-wrap: wrap; }
+    .nav-item { position: relative; }
+    .nav-link, .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c3e2f;
+      padding: 0.5rem 0;
+      display: inline-block;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .dropdown-btn { display: flex; align-items: center; gap: 6px; }
+    .dropdown-btn i { font-size: 0.75rem; transition: transform 0.2s; }
+    .nav-item:hover .dropdown-btn i { transform: rotate(180deg); }
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+    .nav-item:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(4px); }
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #2c3e2f;
+      transition: background 0.15s;
+    }
+    .dropdown-content a:hover { background-color: #fef5e0; color: #f3ac00; }
+
+    /* Right Icons Group */
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .icon-btn:hover { background-color: rgba(0, 0, 0, 0.05); transform: scale(1.02); }
+    body.dark-mode .icon-btn:hover { background-color: rgba(255, 255, 255, 0.1); }
+    
+    /* Login/Signup button style (text button) */
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 0.2rem;
+    }
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .auth-link.login {
+      color: #2c3e2f;
+    }
+    .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243,172,0,0.2);
+    }
+    .auth-link.signup:hover {
+      background-color: #e09d00;
+      transform: translateY(-1px);
+    }
+    .auth-link.login:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+    body.dark-mode .auth-link.login { color: #ffffff !important; }
+    body.dark-mode .auth-link.signup { background-color: #f3ac00; color: #2c3e2f !important; }
+    body.dark-mode .auth-link.login:hover { background-color: rgba(255,255,255,0.1); }
+    
+    .cart-icon { position: relative; }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+      min-width: 18px;
+      text-align: center;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span { width: 100%; height: 2px; background-color: #2c3e2f; border-radius: 2px; transition: all 0.2s; }
+    body.dark-mode .hamburger span { background-color: #e0e0e0; }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    }
+    .mobile-menu.active { right: 0; }
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+    .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+    .mobile-nav-item { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: 0.6rem 0;
+    }
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.6rem 0;
+    }
+    .mobile-dropdown-toggle span:first-child { font-size: 1.1rem; font-weight: 500; color: #2c3e2f; }
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+    }
+    [dir="rtl"] .mobile-dropdown-content { padding-left: 0; padding-right: 1rem; }
+    .mobile-dropdown-content.active { max-height: 300px; }
+    .mobile-dropdown-content a {
+      display: block;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
+    body.dark-mode .mobile-auth-btn { border-color: #444; color: #e0e0e0; }
+    body.dark-mode .mobile-auth-btn.signup-mobile { background: #f3ac00; color: #121212; }
+
+    /* Professional Footer */
+    .unique-footer {
+      background-color: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: 4rem;
+      transition: all 0.2s;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+    .footer-brand p { margin: 1.2rem 0 1.5rem; color: #5a6e5a; line-height: 1.5; font-size: 0.9rem; }
+    .social-links { display: flex; gap: 1.2rem; }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .social-links a:hover { background-color: #f3ac00; color: white; transform: translateY(-2px); }
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #f3ac00;
+      border-radius: 2px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.7rem; }
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover { color: #f3ac00; }
+    .newsletter p { color: #5a6e5a; margin-bottom: 1.2rem; font-size: 0.9rem; }
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input:focus-within { border-bottom-color: #f3ac00; }
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: 0.4rem 0;
+      width: 100%;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .newsletter-input input::placeholder { color: #aaa; }
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      transition: transform 0.2s;
+    }
+    .newsletter-input button:hover { transform: translateX(4px); }
+    [dir="rtl"] .newsletter-input button:hover { transform: translateX(-4px); }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom a {
+      color: #7a8a7a;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    .footer-bottom a:hover { color: #f3ac00; }
+    [dir="rtl"] .footer-bottom a { margin-left: 0; margin-right: 1.5rem; }
+
+    /* Responsive: On screens <= 1024px, hide desktop nav, show hamburger, hide extra icons except hamburger */
+    @media (max-width: 1024px) {
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+      .right-icons .auth-buttons {
+        display: none;
+      }
+      .right-icons .hamburger {
+        display: flex;
+      }
+      .right-icons {
+        gap: 0;
+      }
+    }
+    @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      [dir="rtl"] .footer-col h4::after { left: 50%; right: auto; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom a { margin: 0 0.8rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .main-header { padding: 0.7rem 1rem; }
+      .logo a { font-size: 1.5rem; }
+      .top-banner { font-size: 0.75rem; padding: 6px 12px; }
+    }
+
+    /* ========== HERO BANNER WITH FIXED BACKGROUND IMAGE - CENTERED CONTENT ========== */
+    .contact-hero {
+      background-image: url('images/img (41).jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      position: relative;
+      margin: 0;
+      padding: 0 2rem;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body.dark-mode .contact-hero {
+      background-image: url('images/img (41).jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .hero-overlay {
+      max-width: 780px;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(4px);
+      padding: 2.5rem 2.2rem;
+      border-radius: 48px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.25);
+    }
+    body.dark-mode .hero-overlay {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .contact-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .contact-hero .highlight {
+      color: #f3ac00;
+    }
+    .contact-hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.96);
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    /* Contact Info Cards */
+    .contact-info-card {
+      background: #fefaf5;
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid #f0e4d8;
+    }
+    .contact-info-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #2c3e2f;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .contact-info-item i {
+      width: 45px;
+      height: 45px;
+      background: #f3ac00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c3e2f;
+      font-size: 1.2rem;
+    }
+    .contact-info-item .info-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .contact-info-item .info-text p, .contact-info-item .info-text a {
+      color: #6b7c6b;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .contact-info-item .info-text a:hover { color: #f3ac00; }
+    .business-hours {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0d6cc;
+    }
+    .business-hours h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #6b7c6b;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: #fefaf5;
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid #f0e4d8;
+    }
+    .contact-form-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #2c3e2f;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      color: #2c3e2f;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 28px;
+      border: 1px solid #e2dcd2;
+      background: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #f3ac00;
+      box-shadow: 0 0 0 3px rgba(243,172,0,0.2);
+    }
+    .form-group textarea {
+      border-radius: 24px;
+      resize: vertical;
+    }
+    .submit-btn {
+      width: 100%;
+      background: #f3ac00;
+      border: none;
+      padding: 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2c3e2f;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover {
+      background: #e09d00;
+      transform: translateY(-2px);
+    }
+
+    /* FAQ Section - 3 Questions Only, One by One */
+    .faq-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .faq-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2c3e2f;
+      margin-bottom: 0.5rem;
+    }
+    body.dark-mode .faq-header h2 { color: #f0f0f0; }
+    .faq-header p {
+      color: #6b7c6b;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: #fefaf5;
+      border-radius: 24px;
+      border: 1px solid #f0e4d8;
+      transition: all 0.2s;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .faq-item:hover {
+      border-color: #f3ac00;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2c3e2f;
+    }
+    body.dark-mode .faq-question { color: #f0f0f0; }
+    .faq-question i {
+      color: #f3ac00;
+      transition: transform 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 1.5rem;
+      font-size: 0.85rem;
+      color: #6b7c6b;
+      line-height: 1.6;
+    }
+    body.dark-mode .faq-answer { color: #b0b0b0; }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-bottom: 1.2rem;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-hero h1 { font-size: 2rem; }
+      .faq-section { padding: 2rem 1rem 4rem; }
+      .hero-overlay { padding: 1.5rem; margin: 0 1rem; }
+      .contact-hero { padding: 0 1rem; }
+      .hero-overlay { padding: 1.8rem 1.2rem; }
+    }
+    /* ACTIVE LINK STYLE */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: #f3ac00;
+  font-weight: 700;
+}
+
+/* Underline effect */
+.nav-link.active::after,
+.mobile-nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #f3ac00;
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+/* Optional: dropdown active */
+.dropdown-btn.active {
+  color: #f3ac00;
+  font-weight: 700;
+}
+/* Tablet (iPad sizes: 768–1024) → 2x2 layout */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile → single column */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+
+<header class="main-header">
+  <div class="header-container">
+      <div class="logo"><a href="index.html">Toyza</a></div>
+    <div class="desktop-nav">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content">
+            <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+         <li><a href="service.html" class="nav-link">Service</a></li>
+        <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+        <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
+        <li><a href="gifts.html" class="nav-link">Gifting</a></li>
+        <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
+<a href="contact.html" class="nav-link active">Contact</a>      </ul>
+    </div>
+    <div class="right-icons">
+      <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+      <div class="auth-buttons">
+        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+      </div>
+      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenuBtn">✕</button>
+  <ul class="mobile-nav-links">
+    <li class="mobile-nav-item" id="mobileCatItem">
+      <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
+      <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+        <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+      </div>
+    </li>
+    <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+    <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+    <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+    <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+     <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
+    <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+<li class="mobile-nav-item">
+  <a href="contact.html" class="mobile-nav-link active">Contact</a>
+</li>    <li class="mobile-nav-item">
+      <div class="mobile-auth">
+        <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+      </div>
+    </li>
+    <li class="mobile-nav-item">
+      <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
+        <button class="icon-btn" id="mobileDarkToggle" style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙 Dark</button>
+        <button class="icon-btn" id="mobileRtlToggle" style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<main>
+  <!-- Contact Hero with Fixed Background Image -->
+  <div class="contact-hero">
+    <div class="hero-overlay">
+      <h1>Let's <span class="highlight">Connect</span> ✨</h1>
+      <p>Have questions about our toys, need help with an order, or just want to say hello? We'd love to hear from you! Our team is here to make your Toyza experience magical.</p>
+    </div>
+  </div>
+
+  <!-- Contact Grid -->
+  <div class="contact-section">
+    <div class="contact-grid">
+      <!-- Left: Contact Info -->
+      <div class="contact-info-card">
+        <h3>Get in Touch</h3>
+        <div class="contact-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="info-text">
+            <h4>Visit Us</h4>
+            <p>123 Playful Lane, Toy Town,<br>Bangalore - 560001, India</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div class="info-text">
+            <h4>Call Us</h4>
+            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            <p>Mon-Sat, 10AM - 7PM</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <div class="info-text">
+            <h4>Email Us</h4>
+            <p><a href="mailto:hello@toyza.com">hello@toyza.com</a></p>
+            <p><a href="mailto:support@toyza.com">support@toyza.com</a></p>
+          </div>
+        </div>
+        <div class="business-hours">
+          <h4>Business Hours</h4>
+          <div class="hours-row"><span>Monday - Friday</span><span>9:00 AM - 8:00 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>10:00 AM - 6:00 PM</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed (Online support available)</span></div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="contact-form-card">
+        <h3>Send us a Message</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="firstName" placeholder="Leo" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lastName" placeholder="Toymaker" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="contactEmail" placeholder="hello@toyza.com" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="contactSubject">
+              <option>Order Inquiry</option>
+              <option>Product Question</option>
+              <option>Returns & Exchange</option>
+              <option>Wholesale Inquiry</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" id="contactMessage" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section - 3 Questions Only -->
+  <div class="faq-section">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to common questions</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>📦 How long does shipping take?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">Standard shipping takes 3-5 business days across India. Express shipping (1-2 days) is available at checkout. Free shipping on all orders above ₹1499!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>🌿 Are your toys eco-friendly and safe?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">Absolutely! All Toyza toys are crafted from sustainable wood, finished with non-toxic, child-safe paints, and packaged in recyclable materials. Every product is rigorously tested for safety.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>🔄 What is your return policy?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">We offer a 30-day hassle-free return policy on all unused products in original packaging. Simply contact our support team, and we'll guide you through the process. No questions asked!</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+ <footer class="unique-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+         <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="index.html" style="text-decoration: none;">
+            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
+          </a>
+        </div>
+        <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
+              class="fab fa-pinterest"></i></a></div>
+     
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+</footer>
+
+<script>
+  (function() {
+    const darkToggle = document.getElementById('darkModeToggle');
+    const mobileDark = document.getElementById('mobileDarkToggle');
+    const rtlToggle = document.getElementById('rtlToggle');
+    const mobileRtl = document.getElementById('mobileRtlToggle');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenuBtn');
+    const searchBtn = document.getElementById('searchBtn');
+    const newsletterBtn = document.getElementById('footerNewsletterBtn');
+    const newsletterEmail = document.getElementById('footerNewsletterEmail');
+    const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle');
+    const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+    const topBanner = document.getElementById('topBanner');
+    
+    const loginDesktop = document.getElementById('loginBtnDesktop');
+    const mobileLogin = document.getElementById('mobileLoginBtn');
+
+    let wasBannerHiddenByMenu = false;
+    function shouldApplyBannerBehavior() { return window.innerWidth <= 1024; }
+    function setBannerHidden(hide) {
+      if (!topBanner) return;
+      if (hide) { if (!topBanner.classList.contains('banner-hidden')) topBanner.classList.add('banner-hidden'); }
+      else { if (topBanner.classList.contains('banner-hidden')) topBanner.classList.remove('banner-hidden'); }
+    }
+    function handleMenuVisibility(menuActive) {
+      if (!shouldApplyBannerBehavior()) { if (topBanner?.classList.contains('banner-hidden')) setBannerHidden(false); return; }
+      if (menuActive) { setBannerHidden(true); wasBannerHiddenByMenu = true; }
+      else { if (wasBannerHiddenByMenu) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+    }
+    function openMobileMenu() { mobileMenu.classList.add('active'); handleMenuVisibility(true); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileMenu.classList.remove('active'); handleMenuVisibility(false); document.body.style.overflow = ''; }
+    
+    if (hamburger) hamburger.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.contains('active') ? closeMobileMenu() : openMobileMenu(); });
+    if (closeMenu) closeMenu.addEventListener('click', () => closeMobileMenu());
+    document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+    window.addEventListener('resize', () => {
+      const isMobile = window.innerWidth <= 1024;
+      if (!isMobile) { if (mobileMenu?.classList.contains('active')) closeMobileMenu(); else if (topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; } }
+      else { if (mobileMenu && !mobileMenu.classList.contains('active') && topBanner?.classList.contains('banner-hidden')) { setBannerHidden(false); wasBannerHiddenByMenu = false; }
+      if (mobileMenu?.classList.contains('active') && topBanner && !topBanner.classList.contains('banner-hidden')) { setBannerHidden(true); wasBannerHiddenByMenu = true; } }
+    });
+    
+    // Dark mode
+    const applyDarkMode = (isDark) => {
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('toyzaDarkMode', isDark);
+      if (darkToggle) { const icon = darkToggle.querySelector('i'); if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon'; }
+      if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    };
+    const savedDark = localStorage.getItem('toyzaDarkMode') === 'true';
+    applyDarkMode(savedDark);
+    const toggleDark = () => applyDarkMode(!document.body.classList.contains('dark-mode'));
+    darkToggle?.addEventListener('click', toggleDark);
+    mobileDark?.addEventListener('click', toggleDark);
+    
+    // RTL
+    const applyRTL = (isRTL) => {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('toyzaRTLMode', isRTL);
+      const newDesktopLabel = isRTL ? 'LTR' : 'RTL';
+      if (rtlToggle) rtlToggle.innerText = newDesktopLabel;
+      if (mobileRtl) mobileRtl.innerText = newDesktopLabel;
+    };
+    const savedRTL = localStorage.getItem('toyzaRTLMode') === 'true';
+    applyRTL(savedRTL);
+    const toggleRTL = () => {
+      const currentDir = document.documentElement.getAttribute('dir');
+      const newRTL = currentDir !== 'rtl';
+      applyRTL(newRTL);
+    };
+    rtlToggle?.addEventListener('click', toggleRTL);
+    mobileRtl?.addEventListener('click', toggleRTL);
+    
+    // Mobile dropdown
+    if (mobileCatToggle && mobileCatContent) {
+      mobileCatToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = mobileCatContent.classList.contains('active');
+        document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+        if (!isActive) mobileCatContent.classList.add('active');
+        const arrowIcon = mobileCatToggle.querySelector('span:last-child i');
+        if (arrowIcon) arrowIcon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    }
+    
+    searchBtn?.addEventListener('click', () => alert('🔎 Discover playful learning at Toyza!'));
+    const handleNewsletter = () => {
+      const email = newsletterEmail?.value.trim();
+      if (email && email.includes('@') && email.includes('.')) { alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); newsletterEmail.value = ''; }
+      else alert('Please enter a valid email address.');
+    };
+    newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(); });
+    newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleNewsletter(); } });
+    
+    const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
+    if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
+    if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const firstName = document.getElementById('firstName')?.value.trim() || '';
+        const lastName = document.getElementById('lastName')?.value.trim() || '';
+        const email = document.getElementById('contactEmail')?.value.trim() || '';
+        const message = document.getElementById('contactMessage')?.value.trim() || '';
+        
+        if (!firstName || !lastName || !email || !message) {
+          alert('✨ Please fill in all required fields.');
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          alert('🔐 Please enter a valid email address.');
+          return;
+        }
+        alert(`🎉 Thanks ${firstName}! Your message has been sent. Our Toyza team will get back to you within 24 hours. 🧸`);
+        contactForm.reset();
+      });
+    }
+    
+    // FAQ Accordion - Only one open at a time
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
+        item.classList.toggle('active');
+      });
+    });
+    
+    if (topBanner && !shouldApplyBannerBehavior()) setBannerHidden(false);
+    else if (topBanner && shouldApplyBannerBehavior() && !mobileMenu?.classList.contains('active')) setBannerHidden(false);
+    if (topBanner?.classList.contains('banner-hidden') && !mobileMenu?.classList.contains('active')) setBannerHidden(false);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) closeMobileMenu(); });
+    if (darkToggle && document.body.classList.contains('dark-mode')) darkToggle.querySelector('i').className = 'fas fa-sun';
+  })();
+    document.getElementById("loginBtnDesktop").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
+</script>
+</body>
+</html>

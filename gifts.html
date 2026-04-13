@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Toyza · Gifting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            transition: background-color 0.25s ease, color 0.25s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── DARK MODE ── */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .main-header {
+            background-color: #0f0f0f;
+            border-bottom-color: #2c2c2c;
+        }
+
+        body.dark-mode .nav-link,
+        body.dark-mode .dropdown-btn {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .nav-link:hover,
+        body.dark-mode .dropdown-btn:hover {
+            color: #f3ac00;
+        }
+
+        body.dark-mode .dropdown-content {
+            background-color: #1e1e1e;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .dropdown-content a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .dropdown-content a:hover {
+            background-color: #2d2d2d;
+            color: #f3ac00;
+        }
+
+        body.dark-mode .icon-btn {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .mobile-menu {
+            background-color: #0f0f0f;
+        }
+
+        body.dark-mode .mobile-nav-link,
+        body.dark-mode .mobile-dropdown-toggle span:first-child {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .mobile-dropdown-content a {
+            color: #cccccc;
+        }
+
+        body.dark-mode .unique-footer {
+            background-color: #0a0a0a;
+            border-top-color: #f3ac00;
+        }
+
+        body.dark-mode .footer-col a {
+            color: #bbbbbb;
+        }
+
+        body.dark-mode .footer-col a:hover {
+            color: #f3ac00;
+        }
+
+        body.dark-mode .footer-col h4::after {
+            background-color: #f3ac00;
+        }
+
+        body.dark-mode .social-links a {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .social-links a:hover {
+            background-color: #f3ac00;
+            color: #121212;
+        }
+
+        body.dark-mode .newsletter-input input {
+            color: #f0f0f0;
+        }
+
+        /* dark mode gifting sections */
+        body.dark-mode .gift-collections {
+            background-color: #181818;
+        }
+
+        body.dark-mode .collection-card {
+            background: #1e1e1e;
+            border-color: #2c2c2c;
+        }
+
+        body.dark-mode .card-title {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .card-desc {
+            color: #999;
+        }
+
+        body.dark-mode .card-price {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .how-it-works {
+            background-color: #121212;
+        }
+
+        body.dark-mode .step-title {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .step-num {
+            background: #181818;
+        }
+
+        body.dark-mode .how-banner {
+            background: #1a2b1d;
+            border-color: #2c4a2f;
+        }
+
+        body.dark-mode .banner-text strong {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .testimonials {
+            background: #181818;
+        }
+
+        body.dark-mode .testi-card {
+            background: #1e1e1e;
+            border-color: #2c2c2c;
+        }
+
+        body.dark-mode .testi-text {
+            color: #ddd;
+        }
+
+        body.dark-mode .testi-name {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .testi-author {
+            border-top-color: #2c2c2c;
+        }
+
+        body.dark-mode .section-title {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .how-it-works .section-title,
+        body.dark-mode .gift-collections .section-title,
+        body.dark-mode .testimonials .section-title {
+            color: #f0f0f0;
+        }
+
+        /* ── RTL ── */
+        [dir="rtl"] .desktop-nav ul {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .right-icons {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .dropdown-content {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .mobile-menu {
+            right: auto;
+            left: -100%;
+        }
+
+        [dir="rtl"] .mobile-menu.active {
+            left: 0;
+            right: auto;
+        }
+
+        [dir="rtl"] .close-menu {
+            right: auto;
+            left: 1.5rem;
+        }
+
+        [dir="rtl"] .mobile-dropdown-content {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+
+        [dir="rtl"] .footer-container {
+            text-align: right;
+        }
+
+        [dir="rtl"] .social-links {
+            justify-content: flex-end;
+        }
+
+        [dir="rtl"] .footer-col h4::after {
+            left: auto;
+            right: 0;
+        }
+
+        /* ══ ORIGINAL NAVBAR ══ */
+        .main-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeef2;
+            padding: 0.9rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.2s;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #f3ac00;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: #4a6a3b;
+        }
+
+        body.dark-mode .logo span {
+            color: #7da064;
+        }
+
+        .desktop-nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link,
+        .dropdown-btn {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #2c3e2f;
+            padding: 0.5rem 0;
+            display: inline-block;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .nav-link.active-page {
+            color: #f3ac00;
+            font-weight: 600;
+        }
+
+        .dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropdown-btn i {
+            font-size: 0.75rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover .dropdown-btn i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 220px;
+            border-radius: 16px;
+            padding: 0.6rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.2s;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eef2f6;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(4px);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: #2c3e2f;
+            transition: background 0.15s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fef5e0;
+            color: #f3ac00;
+        }
+
+        .right-icons {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #2c3e2f;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            transform: scale(1.02);
+        }
+
+        body.dark-mode .icon-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 0.2rem;
+        }
+
+        .auth-link {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #2c3e2f;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .auth-link.signup {
+            background-color: #f3ac00;
+            color: #2c3e2f;
+            box-shadow: 0 2px 6px rgba(243, 172, 0, 0.2);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: #2c3e2f;
+            border-radius: 2px;
+        }
+
+        body.dark-mode .hamburger span {
+            background-color: #e0e0e0;
+        }
+
+        /* ══ ORIGINAL MOBILE MENU ══ */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 380px;
+            height: 100vh;
+            background-color: #ffffff;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            color: #2c3e2f;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .mobile-nav-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .mobile-nav-link {
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2c3e2f;
+            display: block;
+            padding: 0.6rem 0;
+        }
+
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.6rem 0;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content.active {
+            max-height: 300px;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 0.6rem 0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            color: #5a5a5a;
+        }
+
+        .mobile-auth {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-auth-btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.7rem;
+            border-radius: 40px;
+            font-weight: 600;
+            background: transparent;
+            border: 1px solid #e0d6cc;
+            cursor: pointer;
+        }
+
+        .mobile-auth-btn.signup-mobile {
+            background: #f3ac00;
+            border: none;
+            color: #2c3e2f;
+        }
+
+        /* ══ GIFTING PAGE — SHARED ══ */
+        .section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #c98a00;
+            margin-bottom: 0.9rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            color: #2c3e2f;
+            line-height: 1.18;
+        }
+
+        .section-title span {
+            color: #f3ac00;
+        }
+
+        .section-body {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #6b7c6b;
+            max-width: 52ch;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #f3ac00;
+            color: #2c3e2f;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 2.2rem;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(243, 172, 0, 0.28);
+        }
+
+        .btn-primary:hover {
+            background: #c98a00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(243, 172, 0, 0.35);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #2c3e2f;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.82rem 2.1rem;
+            border-radius: 60px;
+            border: 2px solid #2c3e2f;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2c3e2f;
+            color: #fff;
+        }
+
+        /* ── S1: HERO ── */
+        .gift-hero {
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        .gift-hero-left {
+            background: #2c3e2f;
+            display: flex;
+            align-items: center;
+            padding: 6rem 5vw 6rem 7vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-hero-left::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(243, 172, 0, 0.14) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .gift-hero-left::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -60px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(243, 172, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .gift-hero-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gift-hero-text .section-label {
+            color: #f3ac00;
+            opacity: 0.85;
+        }
+
+        .gift-hero-text .section-title {
+            color: #fff;
+            font-size: clamp(2.4rem, 4.5vw, 4rem);
+        }
+
+        .gift-hero-text .section-body {
+            color: rgba(255, 255, 255, 0.72);
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(243, 172, 0, 0.18);
+            color: #f3ac00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.4rem;
+            border: 1px solid rgba(243, 172, 0, 0.3);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-btns .btn-outline {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-btns .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .gift-hero-right {
+            position: relative;
+            overflow: hidden;
+            background: #fff4cc;
+        }
+
+        .gift-hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            background: #fff;
+            border-radius: 20px;
+            padding: 1.1rem 1.6rem;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+            max-width: 240px;
+        }
+
+        .hero-badge strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #f3ac00;
+            line-height: 1;
+        }
+
+        .hero-badge span {
+            font-size: 0.82rem;
+            color: #6b7c6b;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        /* ── S2: COLLECTIONS ── */
+        .gift-collections {
+            padding: 6rem 5vw;
+            background: #fff;
+        }
+
+        .collections-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .collections-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3.5rem;
+            gap: 2rem;
+        }
+
+        .collections-head-text {
+            max-width: 520px;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+        }
+
+        .collection-card {
+            border-radius: 24px;
+            overflow: hidden;
+            background: #faf7f2;
+            border: 1px solid #e0d9cc;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(44, 62, 47, 0.12);
+        }
+
+        .card-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .collection-card:hover .card-img {
+            transform: scale(1.04);
+        }
+
+        .card-body {
+            padding: 1.4rem 1.6rem 1.7rem;
+        }
+
+        .card-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #c98a00;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e2f;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: #6b7c6b;
+            line-height: 1.65;
+            margin-bottom: 1.1rem;
+        }
+
+        .card-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2c3e2f;
+        }
+
+        .card-price span {
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: #6b7c6b;
+            margin-left: 0.4rem;
+        }
+
+        /* ── S3: WHY ── */
+        .why-gifts {
+            padding: 6rem 5vw;
+            background: #2c3e2f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-gifts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255, 255, 255, 0.025) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255, 255, 255, 0.025) 60px);
+            pointer-events: none;
+        }
+
+        .why-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-img-stack {
+            position: relative;
+            height: 500px;
+        }
+
+        .why-img-main {
+            width: 72%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 28px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .why-img-accent {
+            width: 52%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 5px solid #2c3e2f;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+        }
+
+        .why-text .section-title {
+            color: #fff;
+        }
+
+        .why-text .section-body {
+            color: rgba(255, 255, 255, 0.65);
+            margin: 1.4rem 0 2.5rem;
+        }
+
+        .why-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .pillar {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            transition: background 0.2s;
+        }
+
+        .pillar:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .pillar-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #f3ac00;
+            margin-bottom: 0.4rem;
+        }
+
+        .pillar p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.58);
+            line-height: 1.6;
+        }
+
+        /* ── S4: HOW ── */
+        .how-it-works {
+            padding: 6rem 5vw;
+            background: #faf7f2;
+        }
+
+        .how-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .how-head {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .how-head .section-body {
+            margin: 1rem auto 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 3.2rem;
+            left: calc(12.5% + 2rem);
+            right: calc(12.5% + 2rem);
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #f3ac00 0, #f3ac00 10px, transparent 10px, transparent 20px);
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-num {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #faf7f2;
+            border: 2px solid #f3ac00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.4rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f3ac00;
+            box-shadow: 0 4px 16px rgba(243, 172, 0, 0.18);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #2c3e2f;
+            margin-bottom: 0.6rem;
+        }
+
+        .step-desc {
+            font-size: 0.87rem;
+            color: #6b7c6b;
+            line-height: 1.65;
+        }
+
+        .how-banner {
+            margin-top: 4rem;
+            background: #e8efe4;
+            border-radius: 28px;
+            padding: 2.5rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            border: 1px solid rgba(74, 106, 59, 0.18);
+        }
+
+        .banner-text strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #2c3e2f;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .banner-text p {
+            font-size: 0.9rem;
+            color: #6b7c6b;
+        }
+
+        /* ── S5: TESTIMONIALS + CTA ── */
+        .testimonials {
+            padding: 6rem 5vw;
+            background: #fff;
+        }
+
+        .testi-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .testi-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .testi-head .section-body {
+            margin: 1rem auto 0;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 5rem;
+        }
+
+        .testi-card {
+            background: #faf7f2;
+            border-radius: 24px;
+            padding: 2rem 2rem 1.8rem;
+            border: 1px solid #e0d9cc;
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+
+        .testi-card:hover {
+            box-shadow: 0 12px 36px rgba(44, 62, 47, 0.09);
+        }
+
+        .testi-quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            line-height: 1;
+            color: #f3ac00;
+            opacity: 0.35;
+            position: absolute;
+            top: 0.8rem;
+            left: 1.8rem;
+        }
+
+        .testi-text {
+            font-size: 0.94rem;
+            line-height: 1.72;
+            color: #1a1e1a;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            border-top: 1px solid #e0d9cc;
+            padding-top: 1.2rem;
+        }
+
+        .testi-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff4cc;
+        }
+
+        .testi-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #2c3e2f;
+        }
+
+        .testi-role {
+            font-size: 0.78rem;
+            color: #6b7c6b;
+            margin-top: 0.1rem;
+        }
+
+        .testi-stars {
+            margin-left: auto;
+            display: flex;
+            gap: 3px;
+        }
+
+        .star {
+            width: 12px;
+            height: 12px;
+            background: #f3ac00;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .gift-cta {
+            background: linear-gradient(135deg, #2c3e2f 0%, #1a2b1d 50%, #2c3e2f 100%);
+            border-radius: 36px;
+            padding: 5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-cta::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(243, 172, 0, 0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .gift-cta .section-title {
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gift-cta .section-body {
+            color: rgba(255, 255, 255, 0.65);
+            margin: 1.4rem auto 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-actions .btn-outline {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .cta-actions .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ══ ORIGINAL FOOTER ══ */
+        .unique-footer {
+            background-color: #faf8f5;
+            color: #2c3e2f;
+            padding: 3rem 2rem 2rem;
+            border-top: 4px solid #f3ac00;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+            gap: 2.5rem;
+        }
+
+        .footer-brand p {
+            margin: 1.2rem 0 1.5rem;
+            color: #5a6e5a;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: #2c3e2f;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-links a:hover {
+            background-color: #f3ac00;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-col h4 {
+            color: #2c3e2f;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 32px;
+            height: 2px;
+            background-color: #f3ac00;
+            border-radius: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-col a {
+            color: #5a6e5a;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: #f3ac00;
+        }
+
+        .newsletter-input {
+            display: flex;
+            border-bottom: 2px solid #e0d6cc;
+            padding-bottom: 0.5rem;
+        }
+
+        .newsletter-input:focus-within {
+            border-bottom-color: #f3ac00;
+        }
+
+        .newsletter-input input {
+            background: transparent;
+            border: none;
+            color: #2c3e2f;
+            padding: 0.4rem 0;
+            width: 100%;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .newsletter-input button {
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #f3ac00;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 2rem auto 0;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0d6cc;
+            display: flex;
+            justify-content: space-between;
+            color: #7a8a7a;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom a {
+            color: #7a8a7a;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        .footer-bottom a:hover {
+            color: #f3ac00;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .right-icons .auth-buttons {
+                display: none;
+            }
+
+            .gift-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .gift-hero-left {
+                padding: 4rem 6vw;
+            }
+
+            .gift-hero-right {
+                height: 55vw;
+                min-height: 300px;
+            }
+
+            .why-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .why-img-stack {
+                height: 320px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .collections-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .how-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gift-cta {
+                padding: 3.5rem 2rem;
+                border-radius: 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Tablet (iPad sizes: 768–1024) → 2x2 layout */
+        @media (max-width: 1024px) and (min-width: 601px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Mobile → single column */
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ ORIGINAL NAVBAR ══ -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo"><a href="#">Toyza<span>.</span></a></div>
+            <div class="desktop-nav">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="service.html" class="nav-link">Service</a></li>
+                    <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+                    <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
+                    <li><a href="newarrivals.html" class="nav-link active-page">Gifting</a></li>
+                    <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="right-icons">
+                <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+                <div class="auth-buttons">
+                    <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+                </div>
+                <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+                <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
+                    style="font-weight:600;font-size:0.85rem;width:auto;padding:0 12px;border-radius:40px;gap:4px;">RTL</button>
+                <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ══ ORIGINAL MOBILE MENU ══ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenuBtn">✕</button>
+        <ul class="mobile-nav-links">
+            <li class="mobile-nav-item" id="mobileCatItem">
+                <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+                    <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+            <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+            <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+            <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link"
+                    style="color:#f3ac00;font-weight:600;">Gifting</a></li>
+            <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+            <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            <li class="mobile-nav-item">
+                <div class="mobile-auth">
+                    <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <div style="display:flex;gap:1rem;padding:0.8rem 0;">
+                    <button class="icon-btn" id="mobileDarkToggle"
+                        style="flex:1;justify-content:center;gap:6px;background:rgba(243,172,0,0.1);border-radius:40px;">🌙
+                        Dark</button>
+                    <button class="icon-btn" id="mobileRtlToggle"
+                        style="flex:1;justify-content:center;gap:6px;border-radius:40px;font-weight:500;">RTL</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- ══════════════════ SECTION 1 — HERO ══════════════════ -->
+    <section class="gift-hero">
+        <div class="gift-hero-left">
+            <div class="gift-hero-text">
+                <span class="hero-tag">Free Gift Wrapping on Every Order</span>
+                <p class="section-label">Toyza Gifting</p>
+                <h1 class="section-title">Give the Gift of<br><span>Joyful Play</span></h1>
+                <p class="section-body">Thoughtfully curated toys that delight, inspire, and grow with every child.
+                    Whether it is a birthday, a milestone, or simply because — Toyza makes gifting memorable.</p>
+                <div class="hero-btns">
+                    <a href="#collections" class="btn-primary">Explore Gift Sets</a>
+                    <a href="#how" class="btn-outline">How It Works</a>
+                </div>
+            </div>
+        </div>
+        <div class="gift-hero-right">
+            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=900&q=80&auto=format&fit=crop"
+                alt="Child with gifts" loading="eager">
+            <div class="hero-badge">
+                <strong>4,200+</strong>
+                <span>Families gifted with joy this year</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ SECTION 2 — GIFT COLLECTIONS ══════════════════ -->
+    <section class="gift-collections" id="collections">
+        <div class="collections-wrap">
+            <div class="collections-head">
+                <div class="collections-head-text">
+                    <p class="section-label">Curated Sets</p>
+                    <h2 class="section-title">Gift Collections<br><span>for Every Child</span></h2>
+                </div>
+                <a href="#" class="btn-outline">View All Collections</a>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (47).jpg" alt="Newborn Wonder Set" loading="lazy">
+                    <div class="card-body">
+                        <p class="card-tag">Ages 0 – 12m</p>
+                        <h3 class="card-title">Newborn Wonder Set</h3>
+                        <p class="card-desc">Soft sensory toys and gentle rattles hand-picked for curious newborns
+                            starting to explore the world.</p>
+                        <p class="card-price">From ₹1,299 <span>Free wrapping</span></p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (49).jpg" alt="Build and Discover Box" loading="lazy">
+                    <div class="card-body">
+                        <p class="card-tag">Ages 1 – 3y</p>
+                        <h3 class="card-title">Build and Discover Box</h3>
+                        <p class="card-desc">Colourful stacking blocks, shape sorters, and tactile puzzles that support
+                            fine motor growth.</p>
+                        <p class="card-price">From ₹1,799 <span>Best Seller</span></p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (48).jpg">
+                    <div class="card-body">
+                        <p class="card-tag">Ages 3 – 6y</p>
+                        <h3 class="card-title">Little Artist Studio</h3>
+                        <p class="card-desc">Safe, non-toxic art supplies and guided activity cards for little hands
+                            making big masterpieces.</p>
+                        <p class="card-price">From ₹2,149 <span>Free wrapping</span></p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (50).jpg" alt="Junior STEM Explorer" loading="lazy">
+                    <div class="card-body">
+                        <p class="card-tag">Ages 6 – 9y</p>
+                        <h3 class="card-title">Junior STEM Explorer</h3>
+                        <p class="card-desc">Hands-on science kits, circuits, and building sets designed to spark
+                            lifelong curiosity.</p>
+                        <p class="card-price">From ₹2,699 <span>Gift ready</span></p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (51).jpg" alt="World of Imagination" loading="lazy">
+                    <div class="card-body">
+                        <p class="card-tag">Ages 4 – 8y</p>
+                        <h3 class="card-title">World of Imagination</h3>
+                        <p class="card-desc">Storytelling cards, puppet sets, and imaginative play kits that bring
+                            stories to life.</p>
+                        <p class="card-price">From ₹1,999 <span>Limited stock</span></p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img class="card-img" src="images\img (52).jpg" alt="Birthday Surprise Box" loading="lazy">
+                    <div class="card-body">
+                        <p class="card-tag">All Ages</p>
+                        <h3 class="card-title">Birthday Surprise Box</h3>
+                        <p class="card-desc">A curated mystery collection wrapped in our signature kraft paper — perfect
+                            for the child who has everything.</p>
+                        <p class="card-price">From ₹3,499 <span>Most loved</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ SECTION 3 — WHY TOYZA ══════════════════ -->
+    <section class="why-gifts">
+        <div class="why-inner">
+            <div class="why-img-stack">
+                <img class="why-img-main" src="images\img (53).jpg" alt="Child with gift" loading="lazy">
+                <img class="why-img-accent" src="images\img (54).jpg" alt="Wrapped gift" loading="lazy">
+            </div>
+            <div class="why-text">
+                <p class="section-label" style="color:#f3ac00;opacity:0.85;">Why Choose Us</p>
+                <h2 class="section-title">More Than a Toy.<br><span>A Lasting Memory.</span></h2>
+                <p class="section-body">Every Toyza gift is carefully chosen by child development experts and packaged
+                    with love. We believe every present should do more than entertain — it should open a door to wonder.
+                </p>
+                <div class="why-pillars">
+                    <div class="pillar">
+                        <p class="pillar-title">Expert Curation</p>
+                        <p>Every item reviewed by certified play therapists and child psychologists.</p>
+                    </div>
+                    <div class="pillar">
+                        <p class="pillar-title">Eco-Conscious</p>
+                        <p>Natural materials, plastic-free packaging, and planet-kind choices throughout.</p>
+                    </div>
+                    <div class="pillar">
+                        <p class="pillar-title">Age Precision</p>
+                        <p>Toys matched to developmental stages so every gift truly fits its recipient.</p>
+                    </div>
+                    <div class="pillar">
+                        <p class="pillar-title">Personalised Notes</p>
+                        <p>Add a handwritten message with every order at no extra charge.</p>
+                    </div>
+                </div>
+                <a href="#" class="btn-primary">Learn About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ SECTION 4 — HOW IT WORKS ══════════════════ -->
+    <section class="how-it-works" id="how">
+        <div class="how-inner">
+            <div class="how-head">
+                <p class="section-label">Simple Steps</p>
+                <h2 class="section-title">Gifting Made <span>Effortless</span></h2>
+                <p class="section-body">From picking the perfect set to doorstep delivery, we handle every detail so you
+                    can focus on the joy.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3 class="step-title">Choose a Collection</h3>
+                    <p class="step-desc">Browse by age group, occasion, or interest. Filter for eco-friendly, STEM,
+                        creative, or sensory play.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3 class="step-title">Personalise It</h3>
+                    <p class="step-desc">Add the child's name, a heartfelt message, and choose your preferred wrapping
+                        style — kraft or festive.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3 class="step-title">We Pack with Care</h3>
+                    <p class="step-desc">Our team wraps each gift by hand using eco-friendly paper, twine, and a sprig
+                        of dried botanicals.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3 class="step-title">Delivered with Joy</h3>
+                    <p class="step-desc">Track your gift in real time. Same-day delivery available in select cities;
+                        express shipping nationwide.</p>
+                </div>
+            </div>
+            <div class="how-banner">
+                <div class="banner-text">
+                    <strong>Planning a party or bulk gifting for school?</strong>
+                    <p>We offer special rates for orders of 10 or more sets — with personalised tags for every child.
+                    </p>
+                </div>
+                <a href="#" class="btn-primary">Get a Bulk Quote</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════ SECTION 5 — TESTIMONIALS + CTA ══════════════════ -->
+    <section class="testimonials">
+        <div class="testi-inner">
+            <div class="testi-head">
+                <p class="section-label">Parent Stories</p>
+                <h2 class="section-title">Gifts That <span>Stayed with Them</span></h2>
+                <p class="section-body">Real words from parents, grandparents, and friends who chose Toyza to celebrate
+                    the children they love.</p>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-quote-mark">"</div>
+                    <p class="testi-text">My daughter still plays with her Toyza Little Artist Studio every single day.
+                        The quality is unlike anything I have found elsewhere, and the eco-wrapping made the unboxing
+                        feel truly special.</p>
+                    <div class="testi-author">
+                        <img class="testi-avatar"
+                            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80&auto=format&fit=crop&crop=face"
+                            alt="Priya S." loading="lazy">
+                        <div>
+                            <p class="testi-name">Priya S.</p>
+                            <p class="testi-role">Mother of two, Bengaluru</p>
+                        </div>
+                        <div class="testi-stars">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-quote-mark">"</div>
+                    <p class="testi-text">Ordered the STEM Explorer for my nephew's birthday and it arrived the next
+                        morning, beautifully wrapped with a handwritten card. He has not stopped building since. Toyza
+                        truly delivers on its promise.</p>
+                    <div class="testi-author">
+                        <img class="testi-avatar"
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop&crop=face"
+                            alt="Rahul M." loading="lazy">
+                        <div>
+                            <p class="testi-name">Rahul M.</p>
+                            <p class="testi-role">Uncle, Hyderabad</p>
+                        </div>
+                        <div class="testi-stars">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-quote-mark">"</div>
+                    <p class="testi-text">We used Toyza for our entire class of 28 kids at the year-end party. The bulk
+                        gifting team was incredibly helpful and every single box arrived on time, personalised for each
+                        child. Remarkable service.</p>
+                    <div class="testi-author">
+                        <img class="testi-avatar"
+                            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop&crop=face"
+                            alt="Ananya T." loading="lazy">
+                        <div>
+                            <p class="testi-name">Ananya T.</p>
+                            <p class="testi-role">Primary School Teacher, Chennai</p>
+                        </div>
+                        <div class="testi-stars">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gift-cta">
+                <p class="section-label" style="color:rgba(243,172,0,0.8);">Start Gifting Today</p>
+                <h2 class="section-title">Every Child Deserves a<br><span>Magical Unwrapping Moment</span></h2>
+                <p class="section-body">Browse hundreds of age-perfect, eco-conscious gifts. Free personalisation. Free
+                    wrapping. Pure joy delivered to your door.</p>
+                <div class="cta-actions">
+                    <a href="#collections" class="btn-primary">Shop Gift Sets</a>
+                    <a href="#" class="btn-outline">Build a Custom Box</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ══ ORIGINAL FOOTER ══ -->
+    <footer class="unique-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div><span style="font-size:1.8rem;font-weight:800;">Toyza<span style="color:#f3ac00;">.</span></span>
+                </div>
+                <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Join the Club</h4>
+                <p>Get 10% off + early access.</p>
+                <div class="newsletter-input">
+                    <input type="email" placeholder="Your email" id="footerNewsletterEmail">
+                    <button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Toyza. All rights reserved.</span>
+            <span><a href="#">Privacy</a><a href="#">Terms</a></span>
+        </div>
+    </footer>
+
+
+    <!-- ══ ORIGINAL JS — EXACT ══ -->
+    <script>
+        (function () {
+            const darkToggle = document.getElementById('darkModeToggle'), mobileDark = document.getElementById('mobileDarkToggle'), rtlToggle = document.getElementById('rtlToggle'), mobileRtl = document.getElementById('mobileRtlToggle');
+            const hamburger = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu'), closeMenu = document.getElementById('closeMenuBtn');
+            const searchBtn = document.getElementById('searchBtn'), newsletterBtn = document.getElementById('footerNewsletterBtn'), newsletterEmail = document.getElementById('footerNewsletterEmail');
+            const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle'), mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+            const loginDesktop = document.getElementById('loginBtnDesktop'), mobileLogin = document.getElementById('mobileLoginBtn');
+
+            function openMobileMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+            function closeMobileMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
+            hamburger?.addEventListener('click', openMobileMenu);
+            closeMenu?.addEventListener('click', closeMobileMenu);
+
+            const applyDarkMode = (isDark) => {
+                document.body.classList.toggle('dark-mode', isDark);
+                localStorage.setItem('toyzaDarkMode', isDark);
+                if (darkToggle) darkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+            };
+            applyDarkMode(localStorage.getItem('toyzaDarkMode') === 'true');
+            darkToggle?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+            mobileDark?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+
+            const applyRTL = (isRTL) => {
+                document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+                localStorage.setItem('toyzaRTLMode', isRTL);
+                if (rtlToggle) rtlToggle.innerText = isRTL ? 'LTR' : 'RTL';
+                if (mobileRtl) mobileRtl.innerText = isRTL ? 'LTR' : 'RTL';
+            };
+            applyRTL(localStorage.getItem('toyzaRTLMode') === 'true');
+            rtlToggle?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+            mobileRtl?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+
+            if (mobileCatToggle && mobileCatContent) mobileCatToggle.addEventListener('click', () => {
+                mobileCatContent.classList.toggle('active');
+                const icon = mobileCatToggle.querySelector('span:last-child i');
+                if (icon) icon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+
+            searchBtn?.addEventListener('click', () => alert('🔎 Search — discover playful learning at Toyza!'));
+            const handleNewsletter = () => {
+                const email = newsletterEmail?.value.trim();
+                if (email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`);
+                else alert('Please enter a valid email.');
+            };
+            newsletterBtn?.addEventListener('click', handleNewsletter);
+
+            const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
+            if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
+            if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
+
+            document.addEventListener('click', (e) => {
+                if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu();
+            });
+        })();
+    </script>
+</body>
+
+</html> 

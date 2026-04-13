@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Toyza · Educational Play Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    body.dark-mode {
+      background-color: #000000 !important;
+      color: #f0f0f0 !important;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #111111 !important;
+      color: #f5f5f5 !important;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    body.dark-mode .main-header {
+      background-color: #000000 !important;
+      border-bottom-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .category-link,
+    body.dark-mode .nav-link,
+    body.dark-mode .dropdown-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .category-link:hover,
+    body.dark-mode .nav-link:hover,
+    body.dark-mode .dropdown-btn:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .dropdown-content {
+      background-color: #111111 !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid #2a2a2a;
+    }
+
+    body.dark-mode .dropdown-content a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+      background-color: #1e1e1e;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .icon-btn {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-menu {
+      background-color: #000000 !important;
+      border-left: 1px solid #2a2a2a;
+    }
+
+    body.dark-mode .mobile-nav-link,
+    body.dark-mode .mobile-dropdown-toggle span:first-child {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .mobile-dropdown-content a {
+      color: #bbbbbb;
+    }
+
+    body.dark-mode .unique-footer {
+      background-color: #050505 !important;
+      border-top-color: #f3ac00 !important;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #bbbbbb;
+    }
+
+    body.dark-mode .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .newsletter-input input {
+      color: #f0f0f0;
+      background: transparent;
+    }
+
+    body.dark-mode .footer-col h4::after {
+      background-color: #f3ac00;
+    }
+
+    body.dark-mode .social-links a {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .social-links a:hover {
+      background-color: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #f3ac00;
+      color: #000000 !important;
+    }
+
+    body.dark-mode .footer-col h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .footer-brand p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .footer-bottom span,
+    body.dark-mode .footer-bottom a {
+      color: #888888 !important;
+    }
+
+    body.dark-mode .footer-bottom a:hover {
+      color: #f3ac00 !important;
+    }
+
+    body.dark-mode .logo a {
+      color: #f3ac00 !important;
+    }
+
+    body.dark-mode .logo span {
+      color: #888888 !important;
+    }
+
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark-mode .mobile-auth-btn {
+      color: #ffffff;
+      border-color: #444;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      color: #000000;
+    }
+
+    /* DARK MODE HERO - PRESERVE BACKGROUND IMAGE */
+    body.dark-mode .eps-hero {
+      background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%), url('images/img (45).jpg');
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+    }
+
+    body.dark-mode .eps-hero-title {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .eps-hero-sub {
+      color: #f0f0f0 !important;
+    }
+
+    body.dark-mode .eps-stat-num {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .eps-stat-lbl {
+      color: #ccc;
+    }
+
+    body.dark-mode .eps-stat-divider {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark-mode .zone-card {
+      background: #0a0a0a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .zone-card:hover {
+      border-color: #f3ac00 !important;
+      background: #111111 !important;
+    }
+
+    body.dark-mode .zone-card h3 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .zone-card p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .eps-section-label {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .eps-section-title {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .eps-section-sub {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .age-section {
+      background: #050505 !important;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .age-band {
+      background: #0a0a0a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .age-band:hover {
+      border-color: #f3ac00 !important;
+      background: #111111 !important;
+    }
+
+    body.dark-mode .age-band .age-label {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .age-band .toy-count {
+      color: #666;
+    }
+
+    body.dark-mode .step-card {
+      background: #0a0a0a !important;
+    }
+
+    body.dark-mode .step-card h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .step-card p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .how-section {
+      background: #000000 !important;
+    }
+
+    body.dark-mode .feat-card {
+      background: #0a0a0a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .feat-card:hover {
+      border-color: #f3ac00 !important;
+    }
+
+    body.dark-mode .feat-card h3 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .feat-card p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .feat-icon-wrap {
+      background: #1a1a1a !important;
+    }
+
+    body.dark-mode .kit-card {
+      background: #0a0a0a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .kit-card:hover {
+      border-color: #f3ac00 !important;
+    }
+
+    body.dark-mode .kit-thumb {
+      background: #1a1a1a !important;
+    }
+
+    body.dark-mode .kit-card h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .kit-card p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .kit-age {
+      background: #2a2a1a !important;
+      color: #f3ac00 !important;
+    }
+
+    body.dark-mode .kit-price {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .kit-btn {
+      background: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .testi-section {
+      background: #050505 !important;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .testimonial-card {
+      background: #0a0a0a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    body.dark-mode .testimonial-card blockquote {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .testimonial-author strong {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .testimonial-author span {
+      color: #888;
+    }
+
+    body.dark-mode .cta-banner {
+      background: #0a0a0a !important;
+    }
+
+    body.dark-mode .cta-banner h2 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .cta-banner p {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .cta-outline {
+      border-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .cta-outline:hover {
+      background: #f3ac00;
+      border-color: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .btn-ghost {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    body.dark-mode .btn-ghost:hover {
+      background: #f3ac00;
+      border-color: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .zc-stem .zone-icon {
+      background: #1a2a1a;
+    }
+
+    body.dark-mode .zc-arts .zone-icon {
+      background: #2a2a1a;
+    }
+
+    body.dark-mode .zc-reading .zone-icon {
+      background: #2a1a1a;
+    }
+
+    body.dark-mode .zc-math .zone-icon {
+      background: #1a1a2a;
+    }
+
+    body.dark-mode .zc-music .zone-icon {
+      background: #2a1a2a;
+    }
+
+    body.dark-mode .zc-nature .zone-icon {
+      background: #1a2a1a;
+    }
+
+    body.dark-mode .zc-stem .zone-tag {
+      background: #1a2a1a;
+      color: #7da064;
+    }
+
+    body.dark-mode .zc-arts .zone-tag {
+      background: #2a2a1a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .zc-reading .zone-tag {
+      background: #2a1a1a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .zc-math .zone-tag {
+      background: #1a1a2a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .zc-music .zone-tag {
+      background: #2a1a2a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .zc-nature .zone-tag {
+      background: #1a2a1a;
+      color: #f3ac00;
+    }
+
+    body.dark-mode .kt1 {
+      background: linear-gradient(145deg, #1a2a1a, #2a3a2a) !important;
+    }
+
+    body.dark-mode .kt2 {
+      background: linear-gradient(145deg, #2a2a1a, #3a3a1a) !important;
+    }
+
+    body.dark-mode .kt3 {
+      background: linear-gradient(145deg, #1a1a2a, #2a2a3a) !important;
+    }
+
+    body.dark-mode .kt4 {
+      background: linear-gradient(145deg, #2a1a1a, #3a2a2a) !important;
+    }
+
+    [dir="rtl"] .desktop-nav ul {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .right-icons {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .dropdown-content {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .mobile-menu {
+      right: auto;
+      left: -100%;
+    }
+
+    [dir="rtl"] .mobile-menu.active {
+      left: 0;
+      right: auto;
+    }
+
+    [dir="rtl"] .close-menu {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    [dir="rtl"] .footer-container {
+      text-align: right;
+    }
+
+    [dir="rtl"] .social-links {
+      justify-content: flex-end;
+    }
+
+    [dir="rtl"] .footer-col h4::after {
+      left: auto;
+      right: 0;
+    }
+
+    .main-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeef2;
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }
+
+    .logo span {
+      font-weight: 400;
+      color: #4a6a3b;
+    }
+
+    .desktop-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link,
+    .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c3e2f;
+      padding: 0.5rem 0;
+      display: inline-block;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-btn i {
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+
+    .nav-item:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+
+    .nav-item:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(4px);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #2c3e2f;
+      transition: background 0.15s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fef5e0;
+      color: #f3ac00;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: scale(1.02);
+    }
+
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 0.2rem;
+    }
+
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .auth-link.login {
+      color: #2c3e2f;
+    }
+
+    .auth-link.signup {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, 0.2);
+    }
+
+    .auth-link.signup:hover {
+      background-color: #e09d00;
+      transform: translateY(-1px);
+    }
+
+    .auth-link.login:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background-color: #2c3e2f;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mobile-nav-item {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.6rem 0;
+    }
+
+    .mobile-dropdown-toggle span:first-child {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+    }
+
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    .mobile-dropdown-content.active {
+      max-height: 300px;
+    }
+
+    .mobile-dropdown-content a {
+      display: block;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
+
+    .unique-footer {
+      background-color: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: 4rem;
+      transition: all 0.2s;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand p {
+      margin: 1.2rem 0 1.5rem;
+      color: #5a6e5a;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-links a:hover {
+      background-color: #f3ac00;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #f3ac00;
+      border-radius: 2px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    .newsletter p {
+      color: #5a6e5a;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-input:focus-within {
+      border-bottom-color: #f3ac00;
+    }
+
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: 0.4rem 0;
+      width: 100%;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .newsletter-input input::placeholder {
+      color: #aaa;
+    }
+
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      transition: transform 0.2s;
+    }
+
+    .newsletter-input button:hover {
+      transform: translateX(4px);
+    }
+
+    [dir="rtl"] .newsletter-input button:hover {
+      transform: translateX(-4px);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom a {
+      color: #7a8a7a;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom a:hover {
+      color: #f3ac00;
+    }
+
+    [dir="rtl"] .footer-bottom a {
+      margin-left: 0;
+      margin-right: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+      .right-icons .auth-buttons {
+        display: none;
+      }
+      .right-icons .hamburger {
+        display: flex;
+      }
+      .right-icons {
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      [dir="rtl"] .footer-col h4::after {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+      .social-links {
+        justify-content: center;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-bottom a {
+        margin: 0 0.8rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .main-header {
+        padding: 0.7rem 1rem;
+      }
+      .logo a {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* HERO SECTION WITH BACKGROUND IMAGE */
+    .eps-hero {
+      background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 100%), url('images/img (45).jpg');
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .eps-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      margin-bottom: 1.4rem;
+    }
+
+    .eps-hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.12;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .eps-hero-title span {
+      color: #f3ac00;
+    }
+
+    .eps-hero-sub {
+      font-size: 1.05rem;
+      color: #fef9e8;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .eps-hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-gold {
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-gold:hover {
+      background: #e09d00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(243, 172, 0, 0.3);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.83rem 2rem;
+      border-radius: 40px;
+      border: 2px solid #ffffff;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-ghost:hover {
+      background: #ffffff;
+      color: #2c3e2f;
+    }
+
+    .eps-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      padding-top: 2.5rem;
+    }
+
+    .eps-stat {
+      text-align: center;
+      padding: 0 2.5rem;
+    }
+
+    .eps-stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f3ac00;
+      line-height: 1;
+    }
+
+    .eps-stat-lbl {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .eps-stat-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .eps-section {
+      padding: 5rem 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .eps-section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f3ac00;
+      margin-bottom: 0.6rem;
+    }
+
+    .eps-section-title {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: #2c3e2f;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .eps-section-sub {
+      font-size: 1rem;
+      color: #5a6e5a;
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 2.8rem;
+    }
+
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .zone-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 2rem 1.8rem;
+      border: 1.5px solid #f0e4d8;
+      transition: all 0.25s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .zone-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      transition: width 0.2s;
+    }
+
+    .zone-card:hover::before {
+      width: 8px;
+    }
+
+    .zone-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border-color: #f3ac00;
+    }
+
+    .zc-stem::before { background: #4a6a3b; }
+    .zc-arts::before { background: #f3ac00; }
+    .zc-reading::before { background: #e05c2e; }
+    .zc-math::before { background: #2980b9; }
+    .zc-music::before { background: #8e44ad; }
+    .zc-nature::before { background: #27ae60; }
+
+    .zone-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .zc-stem .zone-icon { background: #eaf3de; }
+    .zc-arts .zone-icon { background: #fff8e7; }
+    .zc-reading .zone-icon { background: #fae8e0; }
+    .zc-math .zone-icon { background: #e6f1fb; }
+    .zc-music .zone-icon { background: #f3ecfa; }
+    .zc-nature .zone-icon { background: #e8f8ed; }
+
+    .zone-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      margin-bottom: 0.45rem;
+    }
+
+    .zone-card p {
+      font-size: 0.87rem;
+      color: #7a8a7a;
+      line-height: 1.6;
+      margin-bottom: 1.1rem;
+    }
+
+    .zone-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 11px;
+      border-radius: 20px;
+    }
+
+    .zc-stem .zone-tag { background: #eaf3de; color: #3b6d11; }
+    .zc-arts .zone-tag { background: #fff3cd; color: #854f0b; }
+    .zc-reading .zone-tag { background: #fae8e0; color: #993c1d; }
+    .zc-math .zone-tag { background: #e6f1fb; color: #185fa5; }
+    .zc-music .zone-tag { background: #f3ecfa; color: #6c3483; }
+    .zc-nature .zone-tag { background: #e8f8ed; color: #1e8449; }
+
+    .age-section {
+      background: #faf8f5;
+      padding: 4.5rem 2rem;
+      border-top: 1px solid #f0e4d8;
+      border-bottom: 1px solid #f0e4d8;
+    }
+
+    .age-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .age-bands {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .age-band {
+      flex: 1;
+      min-width: 140px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem 1.2rem;
+      border: 1.5px solid #f0e4d8;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .age-band:hover {
+      border-color: #f3ac00;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(243, 172, 0, 0.12);
+    }
+
+    .age-band .age-emoji {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .age-band .age-range {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #f3ac00;
+      margin-bottom: 3px;
+    }
+
+    .age-band .age-label {
+      font-size: 0.82rem;
+      color: #5a6e5a;
+      font-weight: 500;
+    }
+
+    .age-band .toy-count {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 6px;
+    }
+
+    .kits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+    }
+
+    .kit-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid #f0e4d8;
+      overflow: hidden;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .kit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      border-color: #f3ac00;
+    }
+
+    .kit-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .kt1 { background: linear-gradient(135deg, #eaf3de, #d4edbc); }
+    .kt2 { background: linear-gradient(135deg, #fff8e7, #fde8a0); }
+    .kt3 { background: linear-gradient(135deg, #e6f1fb, #c2ddf6); }
+    .kt4 { background: linear-gradient(135deg, #fae8e0, #f5c4b3); }
+
+    .kit-info {
+      padding: 1.2rem;
+    }
+
+    .kit-age {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #fff8e7;
+      color: #854f0b;
+      padding: 2px 9px;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .kit-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .kit-card p {
+      font-size: 0.82rem;
+      color: #7a8a7a;
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+    }
+
+    .kit-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .kit-price {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #f3ac00;
+    }
+
+    .kit-btn {
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .kit-btn:hover {
+      background: #e09d00;
+      transform: scale(1.03);
+    }
+
+    .how-section {
+      background: #fff;
+      padding: 5rem 2rem;
+    }
+
+    .how-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.8rem;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2.2rem 1.6rem;
+      background: #faf8f5;
+      border-radius: 22px;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      box-shadow: 0 4px 12px rgba(243, 172, 0, 0.3);
+    }
+
+    .step-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      margin-bottom: 0.45rem;
+    }
+
+    .step-card p {
+      font-size: 0.86rem;
+      color: #7a8a7a;
+      line-height: 1.6;
+    }
+
+    .step-icon {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feat-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1.5px solid #f0e4d8;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+
+    .feat-card:hover {
+      border-color: #f3ac00;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .feat-icon-wrap {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #fff8e7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .feat-card h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #2c3e2f;
+      margin-bottom: 0.35rem;
+    }
+
+    .feat-card p {
+      font-size: 0.86rem;
+      color: #7a8a7a;
+      line-height: 1.6;
+    }
+
+    .testi-section {
+      background: #faf8f5;
+      padding: 5rem 2rem;
+      border-top: 1px solid #f0e4d8;
+    }
+
+    .testi-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.8rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1.5px solid #f0e4d8;
+      transition: all 0.2s;
+    }
+
+    .testimonial-card:hover {
+      border-color: #f3ac00;
+      box-shadow: 0 10px 24px rgba(243, 172, 0, 0.08);
+    }
+
+    .testi-stars {
+      color: #f3ac00;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 0.92rem;
+      color: #5a6e5a;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ta1 { background: #eaf3de; color: #3b6d11; }
+    .ta2 { background: #fff3cd; color: #854f0b; }
+    .ta3 { background: #e6f1fb; color: #185fa5; }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: #2c3e2f;
+      font-weight: 700;
+    }
+
+    .testimonial-author span {
+      color: #aaa;
+      font-size: 0.78rem;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #fff8e7 0%, #fef5e0 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #2c3e2f;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-banner p {
+      color: #5a6e5a;
+      font-size: 1rem;
+      margin-bottom: 2.2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-outline {
+      background: transparent;
+      color: #2c3e2f;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.83rem 2rem;
+      border-radius: 40px;
+      border: 2px solid #2c3e2f;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .cta-outline:hover {
+      background: #2c3e2f;
+      color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .zone-grid { grid-template-columns: repeat(2, 1fr); }
+      .kits-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-grid { grid-template-columns: repeat(2, 1fr); }
+      .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .eps-hero { padding: 3.5rem 1.2rem 3rem; }
+      .eps-section { padding: 3rem 1.2rem; }
+      .age-section, .how-section, .testi-section, .cta-banner { padding: 3rem 1.2rem; }
+      .zone-grid, .kits-grid, .steps-grid, .feat-grid, .testi-grid { grid-template-columns: 1fr; }
+      .eps-stat { padding: 0.5rem 1.5rem; }
+      .eps-stat-divider { display: none; }
+      .eps-stats { gap: 1rem; }
+      .age-band { min-width: 120px; }
+    }
+    .kit-thumb {
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #f0e4d8;
+}
+
+.kit-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+}
+.age-emoji i {
+  font-size: 28px;
+  color: #ffa805; /* change to your theme */
+}
+.zone-icon i {
+  font-size: 34px; /* increase size */
+}
+/* ACTIVE LINK STYLE */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: #f3ac00;
+  font-weight: 700;
+}
+
+/* Underline effect */
+.nav-link.active::after,
+.mobile-nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #f3ac00;
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+/* Optional: dropdown active */
+.dropdown-btn.active {
+  color: #f3ac00;
+  font-weight: 700;
+}
+/* Tablet (iPad sizes: 768–1024) → 2x2 layout */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile → single column */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo"><a href="#">Toyza<span>.</span></a></div>
+    <div class="desktop-nav">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content">
+            <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="about.html" class="nav-link active">Service</a></li>        <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+        <li><a href="playStudio.html" class="nav-link ">playStudio</a></li>
+        <li><a href="gifts.html" class="nav-link">Gifting</a></li>
+        <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div class="right-icons">
+      <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
+      <div class="auth-buttons">
+        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+      </div>
+      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenuBtn">✕</button>
+  <ul class="mobile-nav-links">
+    <li class="mobile-nav-item" id="mobileCatItem">
+      <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
+      <div class="mobile-dropdown-content" id="mobileCategoriesDropdown">
+        <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+      </div>
+    </li>
+    <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+<li class="mobile-nav-item">
+  <a href="about.html" class="mobile-nav-link active">Service</a>
+</li>    <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+    <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+    <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
+    <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+    <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    <li class="mobile-nav-item">
+      <div class="mobile-auth">
+        <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
+      </div>
+    </li>
+    <li class="mobile-nav-item">
+      <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
+        <button class="icon-btn" id="mobileDarkToggle" style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙 Dark</button>
+        <button class="icon-btn" id="mobileRtlToggle" style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<main>
+  <section class="eps-hero">
+    <div class="eps-pill">✦ Educational Play Studio</div>
+    <h1 class="eps-hero-title">Learn Through<br><span>Play & Exploration</span></h1>
+    <p class="eps-hero-sub">Purposefully designed toys and activities that build critical thinking, creativity, and a lifelong love of learning — one joyful moment at a time.</p>
+    <div class="eps-hero-btns">
+      <button class="btn-gold">Explore the Studio</button>
+      <button class="btn-ghost">View Learning Kits</button>
+    </div>
+    <div class="eps-stats">
+      <div class="eps-stat"><div class="eps-stat-num">150+</div><div class="eps-stat-lbl">Learning Kits</div></div>
+      <div class="eps-stat-divider"></div>
+      <div class="eps-stat"><div class="eps-stat-num">6</div><div class="eps-stat-lbl">Learning Zones</div></div>
+      <div class="eps-stat-divider"></div>
+      <div class="eps-stat"><div class="eps-stat-num">4.9★</div><div class="eps-stat-lbl">Parent Rating</div></div>
+      <div class="eps-stat-divider"></div>
+      <div class="eps-stat"><div class="eps-stat-num">50K+</div><div class="eps-stat-lbl">Happy Learners</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eps-section">
+      <div class="eps-section-label">Explore Zones</div>
+      <div class="eps-section-title">Our 6 Learning Zones</div>
+      <div class="eps-section-sub">Each zone is curated by child development experts to match the way kids naturally explore and absorb knowledge.</div>
+      <div class="zone-grid">
+        <div class="zone-card zc-stem"><div class="zone-icon"><i class="fa-solid fa-microscope"></i>
+</div><h3>STEM Discovery</h3><p>Hands-on science experiments, engineering sets, and coding kits that build problem-solving skills from an early age.</p><span class="zone-tag">Ages 4–12</span></div>
+        <div class="zone-card zc-arts"><div class="zone-icon"><i class="fa-solid fa-palette"></i>
+</div><h3>Creative Arts</h3><p>Open-ended art materials, clay kits, and craft sets that nurture self-expression and fine motor development.</p><span class="zone-tag">Ages 2–10</span></div>
+        <div class="zone-card zc-reading"><div class="zone-icon"><i class="fa-solid fa-book-open"></i>
+</div><h3>Literacy & Stories</h3><p>Alphabet puzzles, storybuilding games, and reading kits that make language a joyful adventure.</p><span class="zone-tag">Ages 2–8</span></div>
+        <div class="zone-card zc-math"><div class="zone-icon"><i class="fa-solid fa-calculator"></i>
+</div><h3>Numbers & Logic</h3><p>Counting boards, pattern games, and strategy puzzles that build mathematical thinking through play.</p><span class="zone-tag">Ages 3–10</span></div>
+        <div class="zone-card zc-music"><div class="zone-icon"><i class="fa-solid fa-music"></i>
+</div><h3>Music & Rhythm</h3><p>Starter instruments, beat boxes, and musical exploration kits that awaken auditory creativity.</p><span class="zone-tag">Ages 1–8</span></div>
+        <div class="zone-card zc-nature"><div class="zone-icon"><i class="fa-solid fa-leaf"></i></div><h3>Nature & Outdoors</h3><p>Bug kits, plant growing sets, and outdoor explorer tools that build curiosity about the natural world.</p><span class="zone-tag">Ages 3–12</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="age-section">
+    <div class="age-inner">
+      <div class="eps-section-label">Find the Right Fit</div>
+      <div class="eps-section-title">Shop by Age</div>
+      <div class="eps-section-sub" style="margin-bottom:0;">Every toy is developmentally matched so kids are always challenged at just the right level.</div>
+      <div class="age-bands">
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-baby"></i>
+</span><div class="age-range">0–1</div><div class="age-label">Newborn & Infant</div><div class="toy-count">22 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-person-walking"></i>
+</span><div class="age-range">1–3</div><div class="age-label">Toddler Explorers</div><div class="toy-count">38 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-school"></i>
+</span><div class="age-range">3–5</div><div class="age-label">Early Learners</div><div class="toy-count">44 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-puzzle-piece"></i>
+</span><div class="age-range">5–8</div><div class="age-label">Junior Thinkers</div><div class="toy-count">31 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-microscope"></i></span><div class="age-range">8–12</div><div class="age-label">Advanced Builders</div><div class="toy-count">19 kits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eps-section">
+      <div class="eps-section-label">Top Picks</div>
+      <div class="eps-section-title">Featured Learning Kits</div>
+      <div class="eps-section-sub">Handpicked by our educators — bestsellers that kids keep coming back to.</div>
+      <div class="kits-grid">
+        <div class="kit-card"><div class="kit-thumb">
+  <img src="images\img (39).jpg" alt="Mini Garden Science Kit">
+</div><div class="kit-info"><span class="kit-age">Ages 4–8</span><h4>Mini Garden Science Kit</h4><p>Grow, observe & record — a complete plant life-cycle experiment set.</p><div class="kit-footer"><span class="kit-price">₹849</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb">
+  <img src="images\img (37).jpg" alt="Mini Garden Science Kit">
+</div><div class="kit-info"><span class="kit-age">Ages 5–10</span><h4>Junior Engineer Builder Set</h4><p>200 wooden pieces that inspire bridges, towers and endless creations.</p><div class="kit-footer"><span class="kit-price">₹1,299</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb">
+  <img src="images\img (38).jpg" alt="Mini Garden Science Kit">
+</div><div class="kit-info"><span class="kit-age">Ages 3–6</span><h4>Alphabet Adventure Puzzle</h4><p>Magnetic letters, story cards and a phonics board in one.</p><div class="kit-footer"><span class="kit-price">₹649</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb">
+  <img src="images\img (43).jpg" alt="Mini Garden Science Kit">
+</div><div class="kit-info"><span class="kit-age">Ages 2–7</span><h4>Rainbow Watercolour Studio</h4><p>Non-toxic, eco-friendly paints with canvas boards and guided art cards.</p><div class="kit-footer"><span class="kit-price">₹749</span><button class="kit-btn">Add to Cart</button></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section">
+    <div class="how-inner">
+      <div class="eps-section-label">The Process</div>
+      <div class="eps-section-title">Your Child's Play Journey</div>
+      <div class="eps-section-sub" style="margin-bottom:0;">Four simple steps from discovery to delivered delight.</div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-icon"></span><div class="step-num">1</div><h4>Discover</h4><p>Browse our expertly curated zones and pick the learning area that excites your child most.</p></div>
+        <div class="step-card"><span class="step-icon"></span><div class="step-num">2</div><h4>Match by Age</h4><p>Filter by your child's age group to ensure the kit is developmentally appropriate.</p></div>
+        <div class="step-card"><span class="step-icon"></span><div class="step-num">3</div><h4>Unbox Together</h4><p>Eco-friendly packaging with parent activity guides inside every kit.</p></div>
+        <div class="step-card"><span class="step-icon"></span><div class="step-num">4</div><h4>Play & Grow</h4><p>Track milestones and share progress — then level up to the next kit when ready.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eps-section">
+      <div class="eps-section-label">Why Toyza Studio</div>
+      <div class="eps-section-title">Thoughtfully Made for Little Minds</div>
+      <div class="eps-section-sub">Every decision — materials, design, curriculum — is made with your child's development in mind.</div>
+      <div class="feat-grid">
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-leaf"></i>
+</div><div><h3>Eco-Conscious Materials</h3><p>All kits use sustainably sourced wood, recycled packaging, and non-toxic, child-safe paints and dyes.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-brain"></i>
+</div><div><h3>Expert-Curated Curriculum</h3><p>Designed with child psychologists and Montessori educators to align with developmental milestones.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-arrows-rotate"></i>
+</div><div><h3>Open-Ended Play</h3><p>No single right answer — our kits encourage exploration, divergent thinking, and creative problem solving.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-people-group"></i>
+</div><div><h3>Parent Activity Guides</h3><p>Every kit ships with a parent card offering extension activities, conversation starters and learning goals.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-trophy"></i>
+</div><div><h3>Award-Winning Designs</h3><p>Recognised by the Indian Toy Federation and global parenting platforms for safety and innovation.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-truck"></i></div><div><h3>Free Pan-India Shipping</h3><p>All orders ship free. Delivered in 3–5 business days with easy 30-day hassle-free returns.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testi-section">
+    <div class="testi-inner">
+      <div class="eps-section-label">Parent Stories</div>
+      <div class="eps-section-title">Loved by Families Across India</div>
+      <div class="eps-section-sub" style="margin-bottom:0;">Real words from real parents who've watched their children grow through play.</div>
+      <div class="testi-grid">
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"The STEM Discovery kit was a game-changer. My 6-year-old now asks to do 'experiments' every evening instead of screen time. Beautifully made and so thoughtfully designed."</blockquote><div class="testi-author"><div class="testi-avatar ta1">PR</div><div class="testimonial-author"><strong>Priya Ramachandran</strong><span>Parent of Aryan, 6 · Bengaluru</span></div></div></div>
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"My daughter was struggling with reading. The Literacy kit made letters feel like a game. Within 3 weeks she was reading her first words — I genuinely cried happy tears."</blockquote><div class="testi-author"><div class="testi-avatar ta2">SK</div><div class="testimonial-author"><strong>Sunita Khanna</strong><span>Parent of Meera, 4 · Mumbai</span></div></div></div>
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"As a Montessori teacher I'm very particular about materials. Toyza's kits genuinely impress me — the wood quality, the open-ended design, the activity guides are all top-tier."</blockquote><div class="testi-author"><div class="testi-avatar ta3">AN</div><div class="testimonial-author"><strong>Ananya Nair</strong><span>Montessori Educator · Kochi</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Ready to Start Your Child's<br>Learning Adventure?</h2>
+    <p>Join 50,000+ families who have made Toyza part of their child's growth story. First order gets 10% off.</p>
+    <div class="cta-btns">
+      <button class="btn-gold">Shop Learning Kits</button>
+      <button class="cta-outline">Take the Quiz — Find the Right Kit</button>
+    </div>
+  </section>
+</main>
+
+<footer class="unique-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="index.html" style="text-decoration: none;">
+            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
+          </a>
+        </div>
+      <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds. Thoughtfully designed for modern families.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+</footer>
+
+<script>
+  (function () {
+    const darkToggle = document.getElementById('darkModeToggle');
+    const mobileDark = document.getElementById('mobileDarkToggle');
+    const rtlToggle = document.getElementById('rtlToggle');
+    const mobileRtl = document.getElementById('mobileRtlToggle');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenuBtn');
+    const searchBtn = document.getElementById('searchBtn');
+    const newsletterBtn = document.getElementById('footerNewsletterBtn');
+    const newsletterEmail = document.getElementById('footerNewsletterEmail');
+    const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle');
+    const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+    const loginDesktop = document.getElementById('loginBtnDesktop');
+    const mobileLogin = document.getElementById('mobileLoginBtn');
+
+    function openMobileMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
+    if (hamburger) hamburger.addEventListener('click', openMobileMenu);
+    if (closeMenu) closeMenu.addEventListener('click', closeMobileMenu);
+    document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+
+    const applyDarkMode = (isDark) => {
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('toyzaDarkMode', isDark);
+      if (darkToggle) { const icon = darkToggle.querySelector('i'); if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon'; }
+      if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    };
+    const savedDark = localStorage.getItem('toyzaDarkMode') === 'true';
+    applyDarkMode(savedDark);
+    darkToggle?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+    mobileDark?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+
+    const applyRTL = (isRTL) => {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('toyzaRTLMode', isRTL);
+      const newLabel = isRTL ? 'LTR' : 'RTL';
+      if (rtlToggle) rtlToggle.innerText = newLabel;
+      if (mobileRtl) mobileRtl.innerText = newLabel;
+    };
+    const savedRTL = localStorage.getItem('toyzaRTLMode') === 'true';
+    applyRTL(savedRTL);
+    const toggleRTL = () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+    rtlToggle?.addEventListener('click', toggleRTL);
+    mobileRtl?.addEventListener('click', toggleRTL);
+
+    if (mobileCatToggle && mobileCatContent) {
+      mobileCatToggle.addEventListener('click', (e) => { e.stopPropagation(); mobileCatContent.classList.toggle('active'); });
+    }
+    searchBtn?.addEventListener('click', () => alert('🔎 Discover Toyza Play Studio!'));
+    const handleNewsletter = () => {
+      const email = newsletterEmail?.value.trim();
+      if (email && email.includes('@') && email.includes('.')) { alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); newsletterEmail.value = ''; }
+      else alert('Please enter a valid email address.');
+    };
+    newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(); });
+    newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleNewsletter(); });
+    if (loginDesktop) loginDesktop.addEventListener('click', () => { window.location.href = "login.html"; });
+    if (mobileLogin) mobileLogin.addEventListener('click', () => { window.location.href = "login.html"; });
+  })();
+</script>
+</body>
+</html>

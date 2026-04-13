@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · Page Not Found | Toyza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #2c3e2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  padding: 2rem;
+}
+
+/* 404 Number */
+.error-code {
+  font-size: 7rem;
+  font-weight: 800;
+  color: #f3ac00;
+  line-height: 1;
+}
+
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+/* Description */
+p {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #6b7a6b;
+}
+
+body.dark-mode p {
+  color: #bbbbbb;
+}
+
+/* Button */
+.btn-home {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  background: #f3ac00;
+  color: #2c3e2f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  box-shadow: 0 6px 14px rgba(243,172,0,0.3);
+}
+
+.btn-home:hover {
+  background: #e09d00;
+  transform: translateY(-2px);
+}
+
+/* Fun Toy Icon */
+.toy {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Toggle */
+.toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background: rgba(243,172,0,0.15);
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-weight: 600;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+  
+  <div class="error-code">404</div>
+  
+  <h1>Oops! Page not found</h1>
+  
+  <p>
+    Looks like this page wandered off into the toy box.<br>
+    Let’s get you back to fun learning!
+  </p>
+
+  <a href="/" class="btn-home">Go Home</a>
+</div>
+
+
+
+</body>
+</html>
