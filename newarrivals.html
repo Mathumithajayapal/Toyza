@@ -29,199 +29,268 @@
       transition: background-color 0.25s ease, color 0.25s ease;
     }
 
-    /* Dark Mode */
+    /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY, NO GREEN BACKGROUNDS ===== */
     body.dark-mode {
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: #000000;
+      color: #e0e0e0;
     }
 
     body.dark-mode .top-banner {
-      background-color: #2c2c2c;
-      color: #f5f5f5;
+      background-color: #1a1a1a;
+      color: #cccccc;
     }
 
     body.dark-mode .main-header {
-      background-color: #0f0f0f;
-      border-bottom-color: #2c2c2c;
+      background-color: #0a0a0a;
+      border-bottom-color: #2a2a2a;
     }
 
     body.dark-mode .category-link,
     body.dark-mode .nav-link,
     body.dark-mode .dropdown-btn {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .category-link:hover,
     body.dark-mode .nav-link:hover,
     body.dark-mode .dropdown-btn:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .dropdown-content {
-      background-color: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background-color: #1a1a1a;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     body.dark-mode .dropdown-content a {
-      color: #e0e0e0;
+      color: #cccccc;
     }
 
     body.dark-mode .dropdown-content a:hover {
-      background-color: #2d2d2d;
-      color: #f3ac00;
+      background-color: #2c2c2c;
+      color: #ffffff;
     }
 
     body.dark-mode .icon-btn {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .mobile-menu {
-      background-color: #0f0f0f;
+      background-color: #0a0a0a;
     }
 
     body.dark-mode .mobile-nav-link,
     body.dark-mode .mobile-dropdown-toggle span:first-child {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .mobile-dropdown-content a {
-      color: #cccccc;
-    }
-
-    body.dark-mode .unique-footer {
-      background-color: #0a0a0a;
-      border-top-color: #f3ac00;
-    }
-
-    body.dark-mode .footer-col a {
       color: #bbbbbb;
     }
 
+    body.dark-mode .unique-footer {
+      background-color: #050505;
+      border-top-color: #2a2a2a;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #aaaaaa;
+    }
+
     body.dark-mode .footer-col a:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .newsletter-input input {
-      color: #f0f0f0;
-    }
-
-    body.dark-mode .footer-col h4::after {
-      background-color: #f3ac00;
-    }
-
-    body.dark-mode .social-links a {
-      background-color: #2c2c2c;
       color: #e0e0e0;
     }
 
-    body.dark-mode .social-links a:hover {
-      background-color: #f3ac00;
-      color: #121212;
+    body.dark-mode .footer-col h4::after {
+      background-color: #666666;
     }
 
-    body.dark-mode .hero-banner {
-      background-color: #1e2a1a;
-    }
-
-    body.dark-mode .hero-banner h1,
-    body.dark-mode .hero-banner p {
-      color: #fef3d6;
-    }
-
-    body.dark-mode .product-card {
-      background-color: #1c1c1c;
-      border-color: #2e2e2e;
-    }
-
-    body.dark-mode .product-title {
-      color: #f3ac00;
-    }
-
-    body.dark-mode .product-price {
-      color: #d4d4d4;
-    }
-
-    body.dark-mode .shop-now-btn {
-      background-color: #f3ac00;
-      color: #121212;
-    }
-
-    body.dark-mode .shop-now-btn:hover {
-      background-color: #e09d00;
-    }
-
-    body.dark-mode .section-badge {
-      background-color: #2c2c2c;
-      color: #f3ac00;
-    }
-
-    body.dark-mode .why-toyza-section {
-      background-color: #1a1a1a;
-      border-color: #2e2e2e;
-    }
-
-    body.dark-mode .feature-box {
-      background-color: #262626;
-    }
-
-    body.dark-mode .feature-box h3 {
-      color: #f3ac00;
-    }
-
-    body.dark-mode .feature-box p {
+    body.dark-mode .social-links a {
+      background-color: #1f1f1f;
       color: #cccccc;
     }
 
-    /* FIX: Dark mode Login button (white text) + footer headings white - SAME AS OTHER PAGES */
+    body.dark-mode .social-links a:hover {
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    /* Hero banner dark mode - remove green gradient */
+    body.dark-mode .hero-banner {
+      background: #0a0a0a;
+    }
+
+    body.dark-mode .hero-content h1 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .hero-content p {
+      color: #aaaaaa;
+    }
+
+    /* Product card dark mode */
+    body.dark-mode .product-card {
+      background-color: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .product-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .product-desc {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .product-price {
+      color: #cccccc;
+    }
+
+    body.dark-mode .shop-now-btn {
+      border-color: #444;
+      color: #dddddd;
+    }
+
+    body.dark-mode .shop-now-btn:hover {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      border-color: #2a2a2a;
+    }
+
+    /* Section badge dark mode */
+    body.dark-mode .section-badge {
+      background-color: #1a1a1a;
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .hero-badge {
+      background-color: #2a2a2a;
+      color: #cccccc;
+    }
+
+    /* Why Toyza section dark mode */
+    body.dark-mode .why-toyza-section {
+      background-color: #080808;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .why-header h2 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .why-badge {
+      background-color: #1a1a1a;
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .feature-box {
+      background-color: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .feature-box h3 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .feature-box p {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .feature-icon i {
+      color: #aaaaaa;
+    }
+
+    /* Hero button dark mode */
+    body.dark-mode .hero-btn {
+      background-color: #2a2a2a;
+      color: #ffffff;
+    }
+
+    body.dark-mode .hero-btn:hover {
+      background-color: #3a3a3a;
+    }
+
+    /* Dark mode Login button */
     body.dark-mode .auth-link.login {
       color: #ffffff !important;
     }
 
     body.dark-mode .auth-link.signup {
-      background-color: #f3ac00;
-      color: #2c3e2f !important;
+      background-color: #3a3a3a;
+      color: #ffffff !important;
     }
 
+    /* Footer dark mode */
     body.dark-mode .footer-col h4 {
       color: #ffffff !important;
     }
 
     body.dark-mode .footer-brand p {
-      color: #cccccc !important;
+      color: #aaaaaa !important;
     }
 
     body.dark-mode .footer-bottom span,
     body.dark-mode .footer-bottom a {
-      color: #bbbbbb !important;
+      color: #888888 !important;
     }
 
     body.dark-mode .footer-bottom a:hover {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
-    /* Logo colors remain same in dark mode */
+    /* Logo dark mode */
     body.dark-mode .logo a {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
     body.dark-mode .logo span {
-      color: #7da064 !important;
+      color: #aaaaaa !important;
     }
 
-    /* fix icon buttons hover */
     body.dark-mode .icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
-    /* mobile auth buttons in dark mode */
     body.dark-mode .mobile-auth-btn {
       color: #ffffff;
       border-color: #444;
     }
 
     body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #3a3a3a;
+      color: #ffffff;
+    }
+
+    /* Active link style */
+    .nav-link.active,
+    .mobile-nav-link.active {
+      color: #f3ac00;
+      font-weight: 700;
+    }
+
+    body.dark-mode .nav-link.active,
+    body.dark-mode .mobile-nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after,
+    .mobile-nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
       background: #f3ac00;
-      color: #2c3e2f;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+
+    body.dark-mode .nav-link.active::after,
+    body.dark-mode .mobile-nav-link.active::after {
+      background: #ffffff;
     }
 
     /* RTL Support */
@@ -309,11 +378,6 @@
       border: none;
     }
 
-    body.dark-mode .top-banner {
-      background-color: #2a2a1a;
-      color: #f3ac00;
-    }
-
     /* Main Header */
     .main-header {
       background-color: #ffffff;
@@ -345,10 +409,6 @@
     .logo span {
       font-weight: 400;
       color: #4a6a3b;
-    }
-
-    body.dark-mode .logo span {
-      color: #7da064;
     }
 
     /* Desktop Navigation */
@@ -464,10 +524,6 @@
       transform: scale(1.02);
     }
 
-    body.dark-mode .icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
     /* Auth buttons */
     .auth-buttons {
       display: flex;
@@ -509,15 +565,6 @@
       background-color: rgba(0, 0, 0, 0.05);
     }
 
-    body.dark-mode .auth-link.login {
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .auth-link.signup {
-      background-color: #f3ac00;
-      color: #2c3e2f !important;
-    }
-
     .cart-icon {
       position: relative;
     }
@@ -554,10 +601,6 @@
       background-color: #2c3e2f;
       border-radius: 2px;
       transition: all 0.2s;
-    }
-
-    body.dark-mode .hamburger span {
-      background-color: #e0e0e0;
     }
 
     /* Mobile Menu */
@@ -677,16 +720,6 @@
       color: #2c3e2f;
     }
 
-    body.dark-mode .mobile-auth-btn {
-      border-color: #444;
-      color: #e0e0e0;
-    }
-
-    body.dark-mode .mobile-auth-btn.signup-mobile {
-      background: #f3ac00;
-      color: #121212;
-    }
-
     /* Hero Banner with Image */
     .hero-banner {
       width: 100%;
@@ -775,28 +808,6 @@
       margin: 0 auto;
     }
 
-    body.dark-mode .hero-banner {
-      background: linear-gradient(135deg, #1e2a1a, #142010);
-    }
-
-    body.dark-mode .hero-content h1 {
-      color: #fef0cf;
-    }
-
-    body.dark-mode .hero-content p {
-      color: #cfdbc7;
-    }
-
-    body.dark-mode .hero-btn {
-      background-color: #f3ac00;
-      color: #121212;
-    }
-
-    body.dark-mode .hero-btn:hover {
-      background-color: #e09d00;
-      color: #121212;
-    }
-
     /* New Arrivals Section */
     .arrivals-section {
       max-width: 1400px;
@@ -826,15 +837,6 @@
       font-size: 2.2rem;
       font-weight: 700;
       color: #2c3e2f;
-    }
-
-    body.dark-mode .section-header h2 {
-      color: #f0f0f0;
-    }
-
-    body.dark-mode .section-badge {
-      background-color: #2c2c2c;
-      color: #f3ac00;
     }
 
     .product-grid {
@@ -931,15 +933,7 @@
       color: #2c3e2f;
     }
 
-    body.dark-mode .product-title {
-      color: #f3ac00;
-    }
-
-    body.dark-mode .product-desc {
-      color: #bbbbbb;
-    }
-
-    /* Why Toyza Section - NEW SECTION ADDED */
+    /* Why Toyza Section */
     .why-toyza-section {
       max-width: 1400px;
       margin: 3rem auto 4rem;
@@ -1011,24 +1005,6 @@
       font-size: 0.9rem;
       color: #6f7e6f;
       line-height: 1.5;
-    }
-
-    body.dark-mode .why-toyza-section {
-      background-color: #1a1a1a;
-      border-color: #2e2e2e;
-    }
-
-    body.dark-mode .feature-box {
-      background-color: #262626;
-      border-color: #3a3a3a;
-    }
-
-    body.dark-mode .feature-box h3 {
-      color: #f3ac00;
-    }
-
-    body.dark-mode .feature-box p {
-      color: #bbbbbb;
     }
 
     /* Footer */
@@ -1244,35 +1220,6 @@
       }
     }
 
-    /* ACTIVE LINK STYLE */
-    .nav-link.active,
-    .mobile-nav-link.active {
-      color: #f3ac00;
-      font-weight: 700;
-    }
-
-    /* Underline effect */
-    .nav-link.active::after,
-    .mobile-nav-link.active::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: #f3ac00;
-      margin-top: 3px;
-      border-radius: 2px;
-    }
-
-    /* Optional: dropdown active */
-    .dropdown-btn.active {
-      color: #f3ac00;
-      font-weight: 700;
-    }
-
-    body.dark-mode .why-header h2 {
-      color: #ffffff;
-    }
-
     /* Tablet (iPad sizes: 768–1024) → 2x2 layout */
     @media (max-width: 1024px) and (min-width: 601px) {
       .footer-container {
@@ -1302,11 +1249,25 @@
         text-align: center;
       }
     }
+    .auth-link.login {
+  background-color: #f3ac00;
+  color: #2c3e2f;
+  padding: 0.45rem 1rem;
+  border-radius: 40px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect like CTA */
+.auth-link.login:hover {
+  background-color: #e09c00;
+  transform: translateY(-1px);
+}
   </style>
 </head>
 
 <body>
-
 
   <header class="main-header">
     <div class="header-container">
@@ -1321,19 +1282,19 @@
           </li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="service.html" class="nav-link">Service</a></li>
-
           <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
           <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
           <li><a href="gifts.html" class="nav-link">Gifting</a></li>
-          <a href="contact.html" class="nav-link active">New Arrivals</a>
+          <li><a href="newarrivals.html" class="nav-link active">New Arrivals</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
       <div class="right-icons">
         <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
         <div class="auth-buttons">
-          <button class="auth-link login" id="loginBtnDesktop">Log in</button>
-        </div>
+<button class="auth-link login" id="loginBtnDesktop">
+  Log in 
+</button>         </div>
         <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
         <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
           style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
@@ -1357,9 +1318,7 @@
       <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
       <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
       <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
-      <li class="mobile-nav-item">
-        <a href="about.html" class="mobile-nav-link active">New Arrivals</a>
-      </li>
+      <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link active">New Arrivals</a></li>
       <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link"> Contact</a></li>
       <li class="mobile-nav-item">
         <div class="mobile-auth">
@@ -1492,9 +1451,8 @@
         { name: "Soft Safari Plush Trio", category: "Plush", desc: "Three huggable animal friends, organic cotton", price: "$44.50", img: "images/img (41).jpg" },
         { name: "Creative Art Easel", category: "Arts & Crafts", desc: "Double-sided easel with storage shelf", price: "$79.95", img: "images/img (42).jpg" },
         { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (43).jpg" },
-        { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (44).jpg" },
-        { name: "Number Train Adventure", category: "Learning", desc: "Count & match wooden train set", price: "$39.00", img: "images/img (45).jpg" }
-
+        { name: "Balance Bike", category: "Outdoor", desc: "Eco-friendly wooden balance bike for toddlers", price: "$89.00", img: "images/img (44).jpg" },
+        { name: "Sensory Play Mat", category: "Sensory", desc: "Textured play mat for early development", price: "$54.95", img: "images/img (45).jpg" }
       ];
 
       const productGrid = document.getElementById('productGrid');
@@ -1522,7 +1480,7 @@
       const heroBtn = document.getElementById('heroShopBtn');
       if (heroBtn) heroBtn.addEventListener('click', () => { alert('Explore our latest playful arrivals!'); });
 
-      // Dark mode, RTL, mobile menu, banner logic
+      // Dark mode, RTL, mobile menu
       const darkToggle = document.getElementById('darkModeToggle');
       const mobileDark = document.getElementById('mobileDarkToggle');
       const rtlToggle = document.getElementById('rtlToggle');
@@ -1530,7 +1488,6 @@
       const hamburger = document.getElementById('hamburgerBtn');
       const mobileMenu = document.getElementById('mobileMenu');
       const closeMenu = document.getElementById('closeMenuBtn');
-      const topBanner = document.getElementById('topBanner');
       const searchBtn = document.getElementById('searchBtn');
       const newsletterBtn = document.getElementById('footerNewsletterBtn');
       const newsletterEmail = document.getElementById('footerNewsletterEmail');
@@ -1560,8 +1517,8 @@
       rtlToggle?.addEventListener('click', toggleRTL);
       mobileRtl?.addEventListener('click', toggleRTL);
 
-      function openMobileMenu() { mobileMenu.classList.add('active'); if (window.innerWidth <= 1024 && topBanner) topBanner.classList.add('banner-hidden'); document.body.style.overflow = 'hidden'; }
-      function closeMobileMenu() { mobileMenu.classList.remove('active'); if (window.innerWidth <= 1024 && topBanner) topBanner.classList.remove('banner-hidden'); document.body.style.overflow = ''; }
+      function openMobileMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
       hamburger?.addEventListener('click', openMobileMenu);
       closeMenu?.addEventListener('click', closeMobileMenu);
       document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });

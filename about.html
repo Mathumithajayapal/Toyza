@@ -7,11 +7,8 @@
   <title>Toyza · About Us | Where Play Comes Alive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
@@ -27,129 +24,148 @@
       transition: background-color 0.25s ease, color 0.25s ease;
     }
 
-    /* Dark Mode - Refined for white text on buttons, headings, and proper logo */
+    /* ========== DARK MODE - ONLY BLACK & DARK GREY ========== */
     body.dark-mode {
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: #000000;
+      color: #e0e0e0;
     }
 
     body.dark-mode .top-banner {
-      background-color: #2c2c2c;
-      color: #f5f5f5;
+      background-color: #1a1a1a;
+      color: #cccccc;
     }
 
     body.dark-mode .main-header {
-      background-color: #0f0f0f;
-      border-bottom-color: #2c2c2c;
+      background-color: #0a0a0a;
+      border-bottom-color: #2a2a2a;
     }
 
     body.dark-mode .category-link,
     body.dark-mode .nav-link,
     body.dark-mode .dropdown-btn {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .category-link:hover,
     body.dark-mode .nav-link:hover,
     body.dark-mode .dropdown-btn:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .dropdown-content {
-      background-color: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background-color: #1a1a1a;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     body.dark-mode .dropdown-content a {
-      color: #e0e0e0;
+      color: #cccccc;
     }
 
     body.dark-mode .dropdown-content a:hover {
-      background-color: #2d2d2d;
-      color: #f3ac00;
+      background-color: #2c2c2c;
+      color: #ffffff;
     }
 
     body.dark-mode .icon-btn {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .mobile-menu {
-      background-color: #0f0f0f;
+      background-color: #0a0a0a;
     }
 
     body.dark-mode .mobile-nav-link,
     body.dark-mode .mobile-dropdown-toggle span:first-child {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .mobile-dropdown-content a {
-      color: #cccccc;
-    }
-
-    body.dark-mode .unique-footer {
-      background-color: #0a0a0a;
-      border-top-color: #f3ac00;
-    }
-
-    body.dark-mode .footer-col a {
       color: #bbbbbb;
     }
 
+    body.dark-mode .unique-footer {
+      background-color: #050505;
+      border-top-color: #2a2a2a;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #aaaaaa;
+    }
+
     body.dark-mode .footer-col a:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .newsletter-input input {
-      color: #f0f0f0;
-    }
-
-    body.dark-mode .footer-col h4::after {
-      background-color: #f3ac00;
-    }
-
-    body.dark-mode .social-links a {
-      background-color: #2c2c2c;
       color: #e0e0e0;
     }
 
+    body.dark-mode .footer-col h4::after {
+      background-color: #666666;
+    }
+
+    body.dark-mode .social-links a {
+      background-color: #1f1f1f;
+      color: #cccccc;
+    }
+
     body.dark-mode .social-links a:hover {
-      background-color: #f3ac00;
-      color: #121212;
+      background-color: #333333;
+      color: #ffffff;
     }
 
     body.dark-mode .hero-section {
       background-blend-mode: overlay;
     }
 
+    /* Card backgrounds in dark mode */
     body.dark-mode .micro-card,
     body.dark-mode .value-item,
     body.dark-mode .mosaic-item,
     body.dark-mode .quote-card {
-      background-color: #1e1e1e;
-      border-color: #2c2c2c;
+      background-color: #111111;
+      border-color: #2a2a2a;
+    }
+
+    /* Fix text visibility inside cards */
+    body.dark-mode .micro-card p,
+    body.dark-mode .micro-card strong,
+    body.dark-mode .value-item p,
+    body.dark-mode .value-item h3,
+    body.dark-mode .mosaic-item p,
+    body.dark-mode .quote-card p,
+    body.dark-mode .quote-text {
+      color: #cccccc !important;
     }
 
     body.dark-mode .values-showcase {
-      background-color: #14181f;
+      background-color: #080808;
     }
 
     body.dark-mode .cta-about {
-      background: #1a1e26;
+      background: #0f0f0f;
+      border-color: #2a2a2a;
+    }
+
+    /* Fix CTA text visibility */
+    body.dark-mode .cta-title,
+    body.dark-mode .cta-desc {
+      color: #e0e0e0 !important;
     }
 
     body.dark-mode .hero-card {
-      background: rgba(30, 34, 42, 0.95);
+      background: rgba(20, 20, 20, 0.95);
       border: none;
     }
 
-    /* FIX: Dark mode Login button (white text) + footer headings white */
+    /* Dark mode buttons and links - pure greyscale */
     body.dark-mode .auth-link.login {
       color: #ffffff !important;
     }
 
     body.dark-mode .auth-link.signup {
-      background-color: #f3ac00;
-      color: #2c3e2f !important;
+      background-color: #3a3a3a;
+      color: #ffffff !important;
     }
 
     body.dark-mode .footer-col h4 {
@@ -157,41 +173,217 @@
     }
 
     body.dark-mode .footer-brand p {
-      color: #cccccc !important;
+      color: #aaaaaa !important;
     }
 
     body.dark-mode .footer-bottom span,
     body.dark-mode .footer-bottom a {
-      color: #bbbbbb !important;
+      color: #888888 !important;
     }
 
     body.dark-mode .footer-bottom a:hover {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
-    /* Logo colors remain same in dark mode (gold + green) - force stable */
+    /* Logo becomes white in dark mode */
     body.dark-mode .logo a {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
     body.dark-mode .logo span {
-      color: #7da064 !important;
+      color: #aaaaaa !important;
     }
 
-    /* fix icon buttons hover */
     body.dark-mode .icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
-    /* mobile auth buttons in dark mode */
     body.dark-mode .mobile-auth-btn {
       color: #ffffff;
       border-color: #444;
     }
 
     body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #3a3a3a;
+      color: #ffffff;
+    }
+
+    /* Hero overlay darker */
+    body.dark-mode .hero-overlay {
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    /* All accent colors removed - now greyscale/white */
+    body.dark-mode .hero-tag {
+      background-color: #2a2a2a !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .hero-accent {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .hero-btn {
+      background: #2a2a2a !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .hero-btn:hover {
+      background: #3a3a3a !important;
+    }
+
+    body.dark-mode .stat-item .stat-number {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .hero-badge-bottom {
+      background: #2a2a2a !important;
+      color: #ffffff !important;
+    }
+
+    /* Story section text fixes */
+    body.dark-mode .story-playful h2 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .story-playful h2 span {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .story-playful > div > p {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .bounce-icon {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .quote-icon {
+      color: #cccccc !important;
+    }
+
+    /* Value items text */
+    body.dark-mode .value-item i {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .micro-card i {
+      color: #cccccc !important;
+    }
+
+    /* Team section text fixes */
+    body.dark-mode .team-title {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .team-sub {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .team-info h3 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .team-info span {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .team-info p {
+      color: #bbbbbb !important;
+    }
+
+    body.dark-mode .team-avatar {
+      background: #2a2a2a !important;
+    }
+
+    body.dark-mode .team-avatar i {
+      color: #dddddd;
+    }
+
+    /* Vision mission text fixes */
+    body.dark-mode .vm-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .vm-card h2 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .vm-card p {
+      color: #bbbbbb !important;
+    }
+
+    body.dark-mode .vision {
+      border-top-color: #555555 !important;
+    }
+
+    body.dark-mode .mission {
+      border-top-color: #555555 !important;
+    }
+
+    /* Gallery text fixes */
+    body.dark-mode .gallery-title {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .gallery-sub {
+      color: #aaaaaa !important;
+    }
+
+    /* CTA button */
+    body.dark-mode .cta-btn {
+      background: #2a2a2a !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .cta-btn:hover {
+      background: #3a3a3a !important;
+    }
+
+    body.dark-mode .newsletter-input button {
+      color: #cccccc !important;
+    }
+
+    body.dark-mode .newsletter-input:focus-within {
+      border-bottom-color: #666666;
+    }
+
+    /* Fix for any remaining text elements */
+    body.dark-mode p:not(.hero-desc):not(.quote-text):not(.team-info p):not(.vm-card p):not(.value-item p):not(.micro-card p) {
+      color: #cccccc;
+    }
+
+    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
+      color: #e0e0e0;
+    }
+
+    /* Active link style - white in dark mode */
+    .nav-link.active,
+    .mobile-nav-link.active {
+      color: #f3ac00;
+      font-weight: 700;
+    }
+
+    body.dark-mode .nav-link.active,
+    body.dark-mode .mobile-nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after,
+    .mobile-nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
       background: #f3ac00;
-      color: #2c3e2f;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+
+    body.dark-mode .nav-link.active::after,
+    body.dark-mode .mobile-nav-link.active::after {
+      background: #ffffff;
     }
 
     /* RTL Support */
@@ -250,8 +442,6 @@
       left: 10px;
     }
 
-
-
     /* Main Header */
     .main-header {
       background-color: #ffffff;
@@ -283,10 +473,6 @@
     .logo span {
       font-weight: 400;
       color: #4a6a3b;
-    }
-
-    body.dark-mode .logo span {
-      color: #7da064;
     }
 
     .desktop-nav {
@@ -400,10 +586,6 @@
       transform: scale(1.02);
     }
 
-    body.dark-mode .icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
     .auth-buttons {
       display: flex;
       align-items: center;
@@ -470,10 +652,6 @@
       height: 2px;
       background-color: #2c3e2f;
       border-radius: 2px;
-    }
-
-    body.dark-mode .hamburger span {
-      background-color: #e0e0e0;
     }
 
     /* Mobile Menu */
@@ -579,15 +757,6 @@
       background: #f3ac00;
       border: none;
       color: #2c3e2f;
-    }
-
-    /* Dark mode mobile login text fix */
-    body.dark-mode .mobile-auth-btn {
-      color: #ffffff;
-    }
-
-    body.dark-mode .close-menu {
-      color: #e0e0e0;
     }
 
     /* Footer */
@@ -734,60 +903,26 @@
     }
 
     @media (max-width: 1024px) {
-      .desktop-nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .right-icons .icon-btn:not(.hamburger) {
-        display: none;
-      }
-
-      .right-icons .auth-buttons {
-        display: none;
-      }
-
-      .right-icons .hamburger {
-        display: flex;
-      }
-
-      .right-icons {
-        gap: 0;
-      }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .right-icons .icon-btn:not(.hamburger) { display: none; }
+      .right-icons .auth-buttons { display: none; }
+      .right-icons .hamburger { display: flex; }
+      .right-icons { gap: 0; }
     }
 
     @media (max-width: 900px) {
-      .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
     @media (max-width: 768px) {
-      .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
-    /* ========== HERO BANNER - FULL WIDTH, NO GAPS ========== */
+    /* Hero Section */
     .hero-section {
       margin: 0;
       border-radius: 0;
@@ -801,21 +936,11 @@
       height: 90vh;
     }
 
-    body.dark-mode .hero-section {
-      background-image: url('images/img (37).jpg');
-      background-size: cover;
-      background-position: center 40%;
-    }
-
     .hero-overlay {
       background: rgba(0, 0, 0, 0.6);
       padding: 4rem 2rem;
       width: 100%;
       height: 100%;
-    }
-
-    body.dark-mode .hero-overlay {
-      background: rgba(0, 0, 0, 0.75);
     }
 
     .hero-container {
@@ -882,11 +1007,6 @@
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
     }
 
-    .hero-btn:hover {
-      background: #e09d00;
-      transform: translateY(-2px);
-    }
-
     .hero-stats {
       display: flex;
       gap: 2rem;
@@ -919,15 +1039,6 @@
       box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
       transition: all 0.3s;
       border: none;
-    }
-
-    body.dark-mode .hero-card {
-      background: rgba(30, 34, 42, 0.95);
-      border: none;
-    }
-
-    .hero-card:hover {
-      transform: scale(1.02);
     }
 
     .hero-card img {
@@ -982,15 +1093,8 @@
     }
 
     @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     .story-grid-cards {
@@ -1056,10 +1160,6 @@
       border: 1px solid #f0e4d8;
     }
 
-    .value-item:hover {
-      transform: translateY(-5px);
-    }
-
     .value-item i {
       font-size: 2.5rem;
       color: #f3ac00;
@@ -1112,10 +1212,6 @@
       border: 1px solid #f0e4d8;
     }
 
-    .mosaic-item:hover {
-      transform: translateY(-5px);
-    }
-
     .mosaic-item img {
       width: 100%;
       height: 150px;
@@ -1129,9 +1225,9 @@
     }
 
     /* Team Section */
-    .team-section {
-      max-width: 1200px;
-      margin: 4rem auto;
+    .team-creative {
+      max-width: 1300px;
+      margin: 5rem auto;
       padding: 0 2rem;
       text-align: center;
     }
@@ -1146,41 +1242,86 @@
       color: #6b7c6b;
     }
 
-    .team-grid {
+    .team-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
     }
 
-    .team-member {
-      text-align: center;
+    .team-card {
+      background: linear-gradient(145deg, #fff8e7, #ffffff);
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid #f0e4d8;
+      transition: all 0.3s ease;
     }
 
-    .team-avatar {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #f3ac00, #e09d00);
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .team-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
     }
 
-    .team-avatar i {
-      font-size: 2.5rem;
-      color: white;
+    .team-info {
+      padding: 1.5rem;
     }
 
-    .team-member h4 {
-      font-size: 1.1rem;
+    .team-info h3 {
+      font-size: 1.3rem;
       margin-bottom: 0.3rem;
     }
 
-    .team-member p {
+    .team-info span {
+      display: block;
+      font-size: 0.9rem;
       color: #f3ac00;
-      font-size: 0.85rem;
-      font-weight: 500;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+
+    .team-info p {
+      font-size: 0.9rem;
+      color: #6b7c6b;
+      line-height: 1.5;
+    }
+
+    /* Vision Mission Section */
+    .vision-mission {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .vm-card {
+      padding: 2.5rem 2rem;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #fff8e7, #ffffff);
+      border: 1px solid #f0e4d8;
+      transition: all 0.3s ease;
+    }
+
+    .vm-card h2 {
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+    }
+
+    .vm-card p {
+      font-size: 0.95rem;
+      color: #6b7c6b;
+      line-height: 1.6;
+    }
+
+    .vision {
+      border-top: 5px solid #f3ac00;
+    }
+
+    .mission {
+      border-top: 5px solid #4CAF50;
     }
 
     /* CTA Section */
@@ -1215,265 +1356,70 @@
       transition: all 0.2s;
     }
 
-    .cta-btn:hover {
-      background: #e09d00;
-      transform: translateY(-3px);
-    }
-
     @media (max-width: 700px) {
-      .mosaic-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .story-playful {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-overlay {
-        padding: 2rem;
-      }
-
-      .hero-left h1 {
-        font-size: 2rem;
-      }
-
-      .hero-stats {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .hero-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-left {
-        text-align: center;
-      }
-
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-section {
-        margin: 0;
-        border-radius: 0;
-      }
+      .mosaic-grid { grid-template-columns: 1fr 1fr; }
+      .story-playful { grid-template-columns: 1fr; }
+      .hero-overlay { padding: 2rem; }
+      .hero-left h1 { font-size: 2rem; }
+      .hero-stats { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+      .hero-container { flex-direction: column; text-align: center; }
+      .hero-left { text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
     }
 
     @media (max-width: 500px) {
-      .mosaic-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .values-flex {
-        flex-direction: column;
-      }
+      .mosaic-grid { grid-template-columns: 1fr; }
+      .team-cards { grid-template-columns: 1fr; }
+      .values-flex { flex-direction: column; }
     }
 
-    /* Bigger Team Section */
-    .team-creative {
-      max-width: 1300px;
-      margin: 5rem auto;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .team-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    /* Bigger Card */
-    .team-card {
-      background: linear-gradient(145deg, #fff8e7, #ffffff);
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid #f0e4d8;
-      transition: all 0.3s ease;
-    }
-
-    .team-card:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-    }
-
-    /* IMAGE FIX (Important) */
-    .team-card img {
-      width: 100%;
-      height: 260px;
-      /* bigger image */
-      object-fit: cover;
-      /* prevents stretch */
-      display: block;
-    }
-
-    /* Info */
-    .team-info {
-      padding: 1.5rem;
-    }
-
-    .team-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .team-info span {
-      display: block;
-      font-size: 0.9rem;
-      color: #f3ac00;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-    }
-
-    .team-info p {
-      font-size: 0.9rem;
-      color: #6b7c6b;
-      line-height: 1.5;
-    }
-
-    /* Dark mode */
-    body.dark-mode .team-card {
-      background: #1e1e1e;
-      border-color: #2c2c2c;
-    }
-
-    /* Vision Mission Section */
-    .vision-mission {
-      max-width: 1100px;
-      margin: 5rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    /* Card */
-    .vm-card {
-      padding: 2.5rem 2rem;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #fff8e7, #ffffff);
-      border: 1px solid #f0e4d8;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vm-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Icon */
-    .vm-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Titles */
-    .vm-card h2 {
-      margin-bottom: 0.8rem;
-      font-size: 1.6rem;
-    }
-
-    /* Text */
-    .vm-card p {
-      font-size: 0.95rem;
-      color: #6b7c6b;
-      line-height: 1.6;
-    }
-
-    /* Different accent colors */
-    .vision {
-      border-top: 5px solid #f3ac00;
-    }
-
-    .mission {
-      border-top: 5px solid #4CAF50;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .vision-mission {
-        grid-template-columns: 1fr;
-      }
+      .vision-mission { grid-template-columns: 1fr; }
     }
 
-    /* Dark mode */
-    body.dark-mode .vm-card {
-      background: #1e1e1e;
-      border-color: #2c2c2c;
+    @media (max-width: 600px) {
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
+    /* FIX: Team card background + full text visibility */
+body.dark-mode .team-card {
+  background: #111111 !important;
+  border-color: #2a2a2a !important;
+}
 
-    body.dark-mode .vm-card p {
-      color: #aaa;
-    }
-    /* ACTIVE LINK STYLE */
-.nav-link.active,
-.mobile-nav-link.active {
-  color: #f3ac00;
+/* Ensure ALL text inside team card is visible */
+body.dark-mode .team-card h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .team-card span {
+  color: #bbbbbb !important;
+}
+
+body.dark-mode .team-card p {
+  color: #cccccc !important;
+}
+.auth-link.login {
+  background-color: #f3ac00;
+  color: #2c3e2f;
+  padding: 0.45rem 1rem;
+  border-radius: 40px;
   font-weight: 700;
+  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-/* Underline effect */
-.nav-link.active::after,
-.mobile-nav-link.active::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #f3ac00;
-  margin-top: 3px;
-  border-radius: 2px;
-}
-
-/* Optional: dropdown active */
-.dropdown-btn.active {
-  color: #f3ac00;
-  font-weight: 700;
-}
-/* Tablet (iPad sizes: 768–1024) → 2x2 layout */
-@media (max-width: 1024px) and (min-width: 601px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
-/* Mobile → single column */
-@media (max-width: 600px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-col h4::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Hover effect like CTA */
+.auth-link.login:hover {
+  background-color: #e09c00;
+  transform: translateY(-1px);
 }
   </style>
 </head>
 
 <body>
-
 
   <header class="main-header">
     <div class="header-container">
@@ -1486,8 +1432,8 @@
               <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
             </div>
           </li>
-<li><a href="about.html" class="nav-link active">About</a></li>          <li><a href="service.html" class="nav-link">Service</a></li>
-
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="service.html" class="nav-link">Service</a></li>
           <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
           <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
           <li><a href="gifts.html" class="nav-link">Gifting</a></li>
@@ -1498,11 +1444,11 @@
       <div class="right-icons">
         <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
         <div class="auth-buttons">
-          <button class="auth-link login" id="loginBtnDesktop">Log in</button>
-        </div>
+<button class="auth-link login" id="loginBtnDesktop">
+  Log in <i class="fas fa-arrow-right"></i>
+</button>        </div>
         <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
-        <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
-          style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
+        <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px;">RTL</button>
         <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -1518,14 +1464,13 @@
           <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
         </div>
       </li>
-<li class="mobile-nav-item">
-  <a href="about.html" class="mobile-nav-link active">About</a>
-</li>      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About</a></li>
+      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
       <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
       <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
       <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
       <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
-      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link"> Contact</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
       <li class="mobile-nav-item">
         <div class="mobile-auth">
           <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
@@ -1533,48 +1478,31 @@
       </li>
       <li class="mobile-nav-item">
         <div style="display: flex; gap: 1rem; padding: 0.8rem 0;">
-          <button class="icon-btn" id="mobileDarkToggle"
-            style="flex:1; justify-content: center; gap:6px; background: rgba(243,172,0,0.1); border-radius: 40px;">🌙
-            Dark</button>
-          <button class="icon-btn" id="mobileRtlToggle"
-            style="flex:1; justify-content: center; gap:6px; border-radius: 40px; font-weight: 500;">RTL</button>
+          <button class="icon-btn" id="mobileDarkToggle" style="flex:1; justify-content: center; gap:6px; border-radius: 40px;">🌙 Dark</button>
+          <button class="icon-btn" id="mobileRtlToggle" style="flex:1; justify-content: center; gap:6px; border-radius: 40px;">RTL</button>
         </div>
       </li>
     </ul>
   </div>
 
-
   <main>
-    <!-- HERO BANNER - FULL WIDTH, NO WHITE GAPS, NO BORDER ON CARD -->
+    <!-- HERO BANNER -->
     <div class="hero-section">
       <div class="hero-overlay">
         <div class="hero-container">
           <div class="hero-left">
             <span class="hero-tag"><i class="fas fa-star"></i> 5 Years of Joy</span>
-            <h1>Where <span class="hero-accent">tiny hands</span><br>build <span class="hero-accent">big dreams</span> ✨
-            </h1>
-            <p class="hero-desc">Toyza is more than toys — it's a playground of imagination, safety, and sustainable
-              happiness for 50,000+ families worldwide.</p>
+            <h1>Where <span class="hero-accent">tiny hands</span><br>build <span class="hero-accent">big dreams</span> ✨</h1>
+            <p class="hero-desc">Toyza is more than toys — it's a playground of imagination, safety, and sustainable happiness for 50,000+ families worldwide.</p>
             <a href="#" class="hero-btn">Explore the magic <i class="fas fa-arrow-right"></i></a>
             <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-number">50K+</div>
-                <div class="stat-label">Happy Families</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Toys Curated</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Eco-Friendly</div>
-              </div>
+              <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Happy Families</div></div>
+              <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Toys Curated</div></div>
+              <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Eco-Friendly</div></div>
             </div>
           </div>
           <div class="hero-right">
-            <div class="hero-card">
-              <img src="images/img (55).jpg" alt="Toyza joyful play">
-            </div>
+            <div class="hero-card"><img src="images/img (55).jpg" alt="Toyza joyful play"></div>
             <div class="hero-badge-bottom"><i class="fas fa-heart"></i> 5 Years of Smiles</div>
           </div>
         </div>
@@ -1586,15 +1514,10 @@
       <div>
         <div class="bounce-icon"><i class="fas fa-rocking-chair"></i></div>
         <h2>Our <span>playful</span> journey</h2>
-        <p style="margin-top:1rem; line-height:1.6;">Founded by parents who believed in toxin-free wonder, Toyza has
-          grown into a movement where every toy tells a story of curiosity, kindness, and creativity.</p>
+        <p style="margin-top:1rem; line-height:1.6;">Founded by parents who believed in toxin-free wonder, Toyza has grown into a movement where every toy tells a story of curiosity, kindness, and creativity.</p>
         <div class="story-grid-cards">
-          <div class="micro-card"><i class="fas fa-seedling"></i>
-            <p><strong>Eco-first</strong><br>Biodegradable materials</p>
-          </div>
-          <div class="micro-card"><i class="fas fa-hand-peace"></i>
-            <p><strong>Safe + tested</strong><br>Global standards</p>
-          </div>
+          <div class="micro-card"><i class="fas fa-seedling"></i><p><strong>Eco-first</strong><br>Biodegradable materials</p></div>
+          <div class="micro-card"><i class="fas fa-hand-peace"></i><p><strong>Safe + tested</strong><br>Global standards</p></div>
         </div>
       </div>
       <div class="quote-card">
@@ -1607,191 +1530,125 @@
     <!-- Value showcase -->
     <div class="values-showcase">
       <div class="values-flex">
-        <div class="value-item"><i class="fas fa-recycle"></i>
-          <h3>Planet first</h3>
-          <p>Wood, recycled packaging, carbon-neutral shipping.</p>
-        </div>
-        <div class="value-item"><i class="fas fa-brain"></i>
-          <h3>Brain-building</h3>
-          <p>STEM & Montessori inspired designs.</p>
-        </div>
-        <div class="value-item"><i class="fas fa-hand-holding-heart"></i>
-          <h3>Safe & gentle</h3>
-          <p>Non-toxic, BPA-free, certified safe.</p>
-        </div>
-        <div class="value-item"><i class="fas fa-smile-beam"></i>
-          <h3>Joy guaranteed</h3>
-          <p>Happiness or your money back.</p>
-        </div>
+        <div class="value-item"><i class="fas fa-recycle"></i><h3>Planet first</h3><p>Wood, recycled packaging, carbon-neutral shipping.</p></div>
+        <div class="value-item"><i class="fas fa-brain"></i><h3>Brain-building</h3><p>STEM & Montessori inspired designs.</p></div>
+        <div class="value-item"><i class="fas fa-hand-holding-heart"></i><h3>Safe & gentle</h3><p>Non-toxic, BPA-free, certified safe.</p></div>
+        <div class="value-item"><i class="fas fa-smile-beam"></i><h3>Joy guaranteed</h3><p>Happiness or your money back.</p></div>
       </div>
     </div>
+
+    <!-- Team Section -->
     <div class="team-creative">
       <h2 class="team-title">Meet the Dream Team</h2>
       <p class="team-sub">The playful minds behind Toyza magic</p>
-
       <div class="team-cards">
-
-        <div class="team-card">
-          <img src="images\person (9).jpg" alt="Maya Sharma">
-          <div class="team-info">
-            <h3>Maya Sharma</h3>
-            <span>Chief Play Officer</span>
-            <p>Loves turning ideas into joyful experiences for kids.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="images\person (7).jpg" alt="Arjun">
-          <div class="team-info">
-            <h3>Arjun K.</h3>
-            <span>Product Wizard</span>
-            <p>Designs toys that boost creativity and brain power.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="images\person (10).jpg" alt="Priya">
-          <div class="team-info">
-            <h3>Priya M.</h3>
-            <span>Sustainability Hero</span>
-            <p>Ensures every product is eco-friendly and safe.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="images\person (7).jpg" alt="Rohan">
-          <div class="team-info">
-            <h3>Rohan N.</h3>
-            <span>Customer Joy</span>
-            <p>Spreads happiness through every customer interaction.</p>
-          </div>
-        </div>
-
+        <div class="team-card"><img src="images\person (9).jpg" alt="Maya Sharma"><div class="team-info"><h3>Maya Sharma</h3><span>Chief Play Officer</span><p>Loves turning ideas into joyful experiences for kids.</p></div></div>
+        <div class="team-card"><img src="images\person (7).jpg" alt="Arjun"><div class="team-info"><h3>Arjun K.</h3><span>Product Wizard</span><p>Designs toys that boost creativity and brain power.</p></div></div>
+        <div class="team-card"><img src="images\person (10).jpg" alt="Priya"><div class="team-info"><h3>Priya M.</h3><span>Sustainability Hero</span><p>Ensures every product is eco-friendly and safe.</p></div></div>
+        <div class="team-card"><img src="images\person (7).jpg" alt="Rohan"><div class="team-info"><h3>Rohan N.</h3><span>Customer Joy</span><p>Spreads happiness through every customer interaction.</p></div></div>
       </div>
     </div>
+
+    <!-- Vision & Mission -->
     <div class="vision-mission">
-
-      <div class="vm-card vision">
-        <div class="vm-icon"></div>
-        <h2>Our Vision</h2>
-        <p>
-          To inspire a world where every child learns through joyful play,
-          creativity, and imagination using safe and sustainable toys.
-        </p>
-      </div>
-
-      <div class="vm-card mission">
-        <div class="vm-icon"></div>
-        <h2>Our Mission</h2>
-        <p>
-          To design and deliver high-quality educational toys that support
-          child development, encourage creativity, and bring meaningful
-          play experiences to families everywhere.
-        </p>
-      </div>
-
+      <div class="vm-card vision"><h2>Our Vision</h2><p>To inspire a world where every child learns through joyful play, creativity, and imagination using safe and sustainable toys.</p></div>
+      <div class="vm-card mission"><h2>Our Mission</h2><p>To design and deliver high-quality educational toys that support child development, encourage creativity, and bring meaningful play experiences to families everywhere.</p></div>
     </div>
 
-    <!-- gallery mosaic -->
+    <!-- Gallery Mosaic -->
     <div class="gallery-mosaic">
       <h2 class="gallery-title">Toyza moments</h2>
       <p class="gallery-sub">Real play, real smiles</p>
       <div class="mosaic-grid">
-        <div class="mosaic-item"><img src="images/img (58).jpg" alt="Wooden toys">
-          <p>Wooden wonders</p>
-        </div>
-        <div class="mosaic-item"><img src="images/img (59).jpg" alt="Arts and crafts">
-          <p>Art explosion</p>
-        </div>
-        <div class="mosaic-item"><img src="images/img (60).jpg" alt="STEM learning">
-          <p>STEM explorers</p>
-        </div>
-        <div class="mosaic-item"><img src="images/img (61).jpg" alt="Family playing">
-          <p>Family bonding</p>
-        </div>
+        <div class="mosaic-item"><img src="images/img (58).jpg" alt="Wooden toys"><p>Wooden wonders</p></div>
+        <div class="mosaic-item"><img src="images/img (59).jpg" alt="Arts and crafts"><p>Art explosion</p></div>
+        <div class="mosaic-item"><img src="images/img (60).jpg" alt="STEM learning"><p>STEM explorers</p></div>
+        <div class="mosaic-item"><img src="images/img (61).jpg" alt="Family playing"><p>Family bonding</p></div>
       </div>
     </div>
 
-
     <!-- CTA Section -->
     <div class="cta-about">
-      <h3 class="cta-title"> Ready for joyful play?</h3>
+      <h3 class="cta-title">Ready for joyful play?</h3>
       <p class="cta-desc">Join the Toyza family and get 10% off your first order.</p>
       <a href="#" class="cta-btn">Discover toys →</a>
     </div>
   </main>
 
-   <footer class="unique-footer">
+  <footer class="unique-footer">
     <div class="footer-container">
       <div class="footer-brand">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <a href="index.html" style="text-decoration: none;">
-            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
-          </a>
+          <a href="index.html" style="text-decoration: none;"><span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span></a>
         </div>
         <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
-        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
-              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
-              class="fab fa-pinterest"></i></a></div>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-pinterest"></i></a></div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#">Shop All</a></li>
-          <li><a href="#">New Arrivals</a></li>
-          <li><a href="#">Bestsellers</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col newsletter">
-        <h4>Join the Club</h4>
-        <p>Get 10% off + early access.</p>
-        <div class="newsletter-input"><input type="email" placeholder="Your email" id="footerNewsletterEmail"><button
-            id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div>
-      </div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off + early access.</p><div class="newsletter-input"><input type="email" placeholder="Your email" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy</a><a
-          href="#">Terms</a></span></div>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
   </footer>
 
   <script>
-    (function () {
-      const darkToggle = document.getElementById('darkModeToggle'), mobileDark = document.getElementById('mobileDarkToggle'), rtlToggle = document.getElementById('rtlToggle'), mobileRtl = document.getElementById('mobileRtlToggle');
+    (function() {
+      const darkToggle = document.getElementById('darkModeToggle'), mobileDark = document.getElementById('mobileDarkToggle');
+      const rtlToggle = document.getElementById('rtlToggle'), mobileRtl = document.getElementById('mobileRtlToggle');
       const hamburger = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu'), closeMenu = document.getElementById('closeMenuBtn');
-      const topBanner = document.getElementById('topBanner'), searchBtn = document.getElementById('searchBtn'), newsletterBtn = document.getElementById('footerNewsletterBtn'), newsletterEmail = document.getElementById('footerNewsletterEmail');
+      const searchBtn = document.getElementById('searchBtn'), newsletterBtn = document.getElementById('footerNewsletterBtn'), newsletterEmail = document.getElementById('footerNewsletterEmail');
       const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle'), mobileCatContent = document.getElementById('mobileCategoriesDropdown');
       const loginDesktop = document.getElementById('loginBtnDesktop'), mobileLogin = document.getElementById('mobileLoginBtn');
-      function setBannerHidden(hide) { if (topBanner) topBanner.classList.toggle('banner-hidden', hide); }
-      function openMobileMenu() { mobileMenu.classList.add('active'); if (window.innerWidth <= 1024) setBannerHidden(true); document.body.style.overflow = 'hidden'; }
-      function closeMobileMenu() { mobileMenu.classList.remove('active'); setBannerHidden(false); document.body.style.overflow = ''; }
-      hamburger?.addEventListener('click', openMobileMenu); closeMenu?.addEventListener('click', closeMobileMenu);
-      const applyDarkMode = (isDark) => { document.body.classList.toggle('dark-mode', isDark); localStorage.setItem('toyzaDarkMode', isDark); if (darkToggle) darkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon'; if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark'; };
+      
+      function openMobileMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
+      hamburger?.addEventListener('click', openMobileMenu);
+      closeMenu?.addEventListener('click', closeMobileMenu);
+      
+      const applyDarkMode = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('toyzaDarkMode', isDark);
+        if (darkToggle) darkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+      };
       applyDarkMode(localStorage.getItem('toyzaDarkMode') === 'true');
       darkToggle?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
       mobileDark?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
-      const applyRTL = (isRTL) => { document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr'); localStorage.setItem('toyzaRTLMode', isRTL); if (rtlToggle) rtlToggle.innerText = isRTL ? 'LTR' : 'RTL'; if (mobileRtl) mobileRtl.innerText = isRTL ? 'LTR' : 'RTL'; };
+      
+      const applyRTL = (isRTL) => {
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        localStorage.setItem('toyzaRTLMode', isRTL);
+        if (rtlToggle) rtlToggle.innerText = isRTL ? 'LTR' : 'RTL';
+        if (mobileRtl) mobileRtl.innerText = isRTL ? 'LTR' : 'RTL';
+      };
       applyRTL(localStorage.getItem('toyzaRTLMode') === 'true');
       rtlToggle?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
       mobileRtl?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
-      if (mobileCatToggle && mobileCatContent) mobileCatToggle.addEventListener('click', () => { mobileCatContent.classList.toggle('active'); const icon = mobileCatToggle.querySelector('span:last-child i'); if (icon) icon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'; });
+      
+      if (mobileCatToggle && mobileCatContent) {
+        mobileCatToggle.addEventListener('click', () => {
+          mobileCatContent.classList.toggle('active');
+          const icon = mobileCatToggle.querySelector('span:last-child i');
+          if (icon) icon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+      }
+      
       searchBtn?.addEventListener('click', () => alert('🔎 Discover playful learning at Toyza!'));
-      const handleNewsletter = () => { const email = newsletterEmail?.value.trim(); if (email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); else alert('Please enter a valid email.'); };
+      const handleNewsletter = () => {
+        const email = newsletterEmail?.value.trim();
+        if (email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`);
+        else alert('Please enter a valid email.');
+      };
       newsletterBtn?.addEventListener('click', handleNewsletter);
+      
       const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
       if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
       if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
-      document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+      
+      document.addEventListener('click', (e) => {
+        if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu();
+      });
     })();
-    document.getElementById("loginBtnDesktop").addEventListener("click", function () {
-      window.location.href = "login.html";
-    });
   </script>
 </body>
 

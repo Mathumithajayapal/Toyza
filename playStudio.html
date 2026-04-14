@@ -1,862 +1,1916 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Toyza · PlayStudio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    :root{
-      --yellow:#f3ac00;
-      --green:#2c3e2f;
-      --green-light:#4a6a3b;
-      --green-pale:#faf8f5;
-      --green-muted:#5a6e5a;
-      --radius:20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;transition:background .25s,color .25s;min-height:100vh;display:flex;flex-direction:column;}
 
-    /* DARK MODE */
-    body.dark-mode{background:#121212;color:#f0f0f0;}
-    body.dark-mode .main-header{background:#0f0f0f;border-bottom-color:#2c2c2c;}
-    body.dark-mode .category-link,body.dark-mode .nav-link,body.dark-mode .dropdown-btn{color:#e0e0e0;}
-    body.dark-mode .category-link:hover,body.dark-mode .nav-link:hover,body.dark-mode .dropdown-btn:hover{color:#f3ac00;}
-    body.dark-mode .dropdown-content{background:#1e1e1e;box-shadow:0 8px 20px rgba(0,0,0,.3);}
-    body.dark-mode .dropdown-content a{color:#e0e0e0;}
-    body.dark-mode .dropdown-content a:hover{background:#2d2d2d;color:#f3ac00;}
-    body.dark-mode .icon-btn{color:#e0e0e0;}
-    body.dark-mode .mobile-menu{background:#0f0f0f;}
-    body.dark-mode .mobile-nav-link,body.dark-mode .mobile-dropdown-toggle span:first-child{color:#e0e0e0;}
-    body.dark-mode .mobile-dropdown-content a{color:#ccc;}
-    body.dark-mode .unique-footer{background:#0a0a0a;border-top-color:#f3ac00;}
-    body.dark-mode .footer-col a{color:#bbb;}
-    body.dark-mode .footer-col a:hover{color:#f3ac00;}
-    body.dark-mode .footer-col h4::after{background:#f3ac00;}
-    body.dark-mode .social-links a{background:#2c2c2c;color:#e0e0e0;}
-    body.dark-mode .social-links a:hover{background:#f3ac00;color:#121212;}
-    body.dark-mode .newsletter-input input{color:#f0f0f0;}
-    
-    /* DARK MODE HERO - PRESERVES BACKGROUND IMAGE */
+    :root {
+      --yellow: #f3ac00;
+      --green: #2c3e2f;
+      --green-light: #4a6a3b;
+      --green-pale: #faf8f5;
+      --green-muted: #5a6e5a;
+      --radius: 20px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      transition: background .25s, color .25s;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY, NO GREEN BACKGROUNDS ===== */
+    body.dark-mode {
+      background: #000000;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .main-header {
+      background: #0a0a0a;
+      border-bottom-color: #2a2a2a;
+    }
+
+    body.dark-mode .category-link,
+    body.dark-mode .nav-link,
+    body.dark-mode .dropdown-btn {
+      color: #dddddd;
+    }
+
+    body.dark-mode .category-link:hover,
+    body.dark-mode .nav-link:hover,
+    body.dark-mode .dropdown-btn:hover {
+      color: #ffffff;
+    }
+
+    body.dark-mode .dropdown-content {
+      background: #1a1a1a;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
+    }
+
+    body.dark-mode .dropdown-content a {
+      color: #cccccc;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+      background: #2c2c2c;
+      color: #ffffff;
+    }
+
+    body.dark-mode .icon-btn {
+      color: #dddddd;
+    }
+
+    body.dark-mode .mobile-menu {
+      background: #0a0a0a;
+    }
+
+    body.dark-mode .mobile-nav-link,
+    body.dark-mode .mobile-dropdown-toggle span:first-child {
+      color: #dddddd;
+    }
+
+    body.dark-mode .mobile-dropdown-content a {
+      color: #bbbbbb;
+    }
+
+    body.dark-mode .unique-footer {
+      background: #050505;
+      border-top-color: #2a2a2a;
+    }
+
+    body.dark-mode .footer-col a {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    body.dark-mode .footer-col h4::after {
+      background: #666666;
+    }
+
+    body.dark-mode .social-links a {
+      background: #1f1f1f;
+      color: #cccccc;
+    }
+
+    body.dark-mode .social-links a:hover {
+      background: #333333;
+      color: #ffffff;
+    }
+
+    body.dark-mode .newsletter-input input {
+      color: #e0e0e0;
+    }
+
+    /* Hero dark mode - preserve background image */
     body.dark-mode .ps-hero {
-      background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.6) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
     }
-    
-    body.dark-mode .section-alt{background:#1a1a1a;}
-    body.dark-mode .gallery-item{background:#1e1e1e;}
-    body.dark-mode .video-card{background:#1e1e1e;border-color:#2c2c2c;}
-    body.dark-mode .toy-card{background:#1e1e1e;border-color:#2c2c2c;}
-    body.dark-mode .step-card{background:#1e1e1e;}
-    body.dark-mode .benefit-card{background:#1e1e1e;}
-    body.dark-mode .testimonial-card{background:#1e1e1e;border-color:#2c2c2c;}
-    body.dark-mode .gallery-label{background:linear-gradient(transparent,rgba(0,0,0,.85));}
-    body.dark-mode .section-title{color:#f0f0f0;}
-    body.dark-mode .section-sub{color:#aaa;}
-    body.dark-mode .ps-hero-badge{background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);border-color:rgba(243,172,0,0.5);color:#f3ac00;}
-    body.dark-mode .hero-stat-label{color:rgba(255,255,255,0.75);}
-    body.dark-mode .ps-hero p{color:rgba(255,255,255,0.85);}
+
+    body.dark-mode .section-alt {
+      background: #080808;
+    }
+
+    body.dark-mode .gallery-item {
+      background: #111111;
+    }
+
+    body.dark-mode .video-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .toy-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .step-card {
+      background: #111111;
+    }
+
+    body.dark-mode .benefit-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .testimonial-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
+    body.dark-mode .gallery-label {
+      background: linear-gradient(transparent, rgba(0, 0, 0, .85));
+    }
+
+    body.dark-mode .section-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .section-sub {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .ps-hero-badge {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #cccccc;
+    }
+
+    body.dark-mode .hero-stat-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    body.dark-mode .ps-hero p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    body.dark-mode .section-badge {
+      background: rgba(255, 255, 255, 0.08);
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .toy-icon-wrap.yellow,
+    body.dark-mode .toy-icon-wrap.green,
+    body.dark-mode .toy-icon-wrap.blue,
+    body.dark-mode .toy-icon-wrap.pink {
+      background: #1a1a1a;
+    }
+
+    body.dark-mode .toy-tag {
+      background: rgba(255, 255, 255, 0.08);
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .benefit-icon {
+      background: #1a1a1a;
+    }
+
+    body.dark-mode .benefits-visual {
+      background: #0a0a0a;
+    }
+
+    body.dark-mode .bv-item {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .author-avatar.av1,
+    body.dark-mode .author-avatar.av2,
+    body.dark-mode .author-avatar.av3 {
+      background: #1a1a1a;
+      color: #aaaaaa;
+    }
+
+    /* Dark mode login button fix */
+    body.dark-mode .auth-link.login {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .auth-link.signup {
+      background-color: #3a3a3a;
+      color: #ffffff !important;
+    }
+
+    /* Logo dark mode */
+    body.dark-mode .logo a {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .logo span {
+      color: #aaaaaa !important;
+    }
+
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark-mode .mobile-auth-btn {
+      color: #ffffff;
+      border-color: #444;
+    }
+
+    body.dark-mode .mobile-auth-btn.signup-mobile {
+      background: #3a3a3a;
+      color: #ffffff;
+    }
+
+    /* Active link */
+    .nav-link.active {
+      color: #f3ac00 !important;
+      font-weight: 700;
+    }
+
+    body.dark-mode .nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #f3ac00;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+
+    body.dark-mode .nav-link.active::after {
+      background: #ffffff;
+    }
 
     /* RTL */
-    [dir="rtl"] .desktop-nav ul{flex-direction:row-reverse;}
-    [dir="rtl"] .right-icons{flex-direction:row-reverse;}
-    [dir="rtl"] .dropdown-content{left:auto;right:0;}
-    [dir="rtl"] .mobile-menu{right:auto;left:-100%;}
-    [dir="rtl"] .mobile-menu.active{left:0;right:auto;}
-    [dir="rtl"] .close-menu{right:auto;left:1.5rem;}
-    [dir="rtl"] .mobile-dropdown-content{padding-left:0;padding-right:1rem;}
-    [dir="rtl"] .footer-container{text-align:right;}
-    [dir="rtl"] .social-links{justify-content:flex-end;}
-    [dir="rtl"] .footer-col h4::after{left:auto;right:0;}
+    [dir="rtl"] .desktop-nav ul {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .right-icons {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .dropdown-content {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .mobile-menu {
+      right: auto;
+      left: -100%;
+    }
+
+    [dir="rtl"] .mobile-menu.active {
+      left: 0;
+      right: auto;
+    }
+
+    [dir="rtl"] .close-menu {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    [dir="rtl"] .mobile-dropdown-content {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    [dir="rtl"] .footer-container {
+      text-align: right;
+    }
+
+    [dir="rtl"] .social-links {
+      justify-content: flex-end;
+    }
+
+    [dir="rtl"] .footer-col h4::after {
+      left: auto;
+      right: 0;
+    }
 
     /* NAVBAR */
-    .main-header{background:#fff;border-bottom:1px solid #eaeef2;padding:.9rem 2rem;position:sticky;top:0;z-index:1000;transition:all .2s;}
-    .header-container{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
-    .logo a{text-decoration:none;font-size:1.8rem;font-weight:800;letter-spacing:-.5px;color:#f3ac00;}
-    .logo span{font-weight:400;color:#4a6a3b;}
-    body.dark-mode .logo span{color:#7da064;}
-    .desktop-nav{flex:1;display:flex;justify-content:center;}
-    .nav-links{display:flex;list-style:none;gap:1.8rem;align-items:center;flex-wrap:wrap;}
-    .nav-item{position:relative;}
-    .nav-link,.dropdown-btn{text-decoration:none;font-weight:500;font-size:.95rem;color:#2c3e2f;padding:.5rem 0;display:inline-block;transition:color .2s;background:none;border:none;cursor:pointer;font-family:inherit;}
-    .dropdown-btn{display:flex;align-items:center;gap:6px;}
-    .dropdown-btn i{font-size:.75rem;transition:transform .2s;}
-    .nav-item:hover .dropdown-btn i{transform:rotate(180deg);}
-    .dropdown-content{position:absolute;top:100%;left:0;background:#fff;min-width:220px;border-radius:16px;padding:.6rem 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s;box-shadow:0 12px 28px rgba(0,0,0,.1);border:1px solid #eef2f6;z-index:100;}
-    .nav-item:hover .dropdown-content{opacity:1;visibility:visible;transform:translateY(4px);}
-    .dropdown-content a{display:block;padding:.6rem 1.5rem;text-decoration:none;font-size:.9rem;color:#2c3e2f;transition:background .15s;}
-    .dropdown-content a:hover{background:#fef5e0;color:#f3ac00;}
-    .right-icons{display:flex;align-items:center;gap:.8rem;}
-    .icon-btn{background:none;border:none;font-size:1.2rem;cursor:pointer;color:#2c3e2f;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .2s;}
-    .icon-btn:hover{background:rgba(0,0,0,.05);transform:scale(1.02);}
-    body.dark-mode .icon-btn:hover{background:rgba(255,255,255,.1);}
-    .auth-buttons{display:flex;align-items:center;gap:.5rem;margin-left:.2rem;}
-    .auth-link{background:none;border:none;font-size:.9rem;font-weight:600;cursor:pointer;color:#2c3e2f;padding:.4rem .8rem;border-radius:40px;transition:all .2s;font-family:inherit;white-space:nowrap;}
-    .auth-link.signup{background:#f3ac00;color:#2c3e2f;box-shadow:0 2px 6px rgba(243,172,0,.2);}
-    .hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;z-index:1001;}
-    .hamburger span{width:100%;height:2px;background:#2c3e2f;border-radius:2px;}
-    body.dark-mode .hamburger span{background:#e0e0e0;}
+    .main-header {
+      background: #fff;
+      border-bottom: 1px solid #eaeef2;
+      padding: .9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all .2s;
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      color: #f3ac00;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo span {
+      font-weight: 400;
+      color: #4a6a3b;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .desktop-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link,
+    .dropdown-btn {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+      color: #2c3e2f;
+      padding: .5rem 0;
+      display: inline-block;
+      transition: color .2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-btn i {
+      font-size: .75rem;
+      transition: transform .2s;
+    }
+
+    .nav-item:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 220px;
+      border-radius: 16px;
+      padding: .6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all .2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .1);
+      border: 1px solid #eef2f6;
+      z-index: 100;
+    }
+
+    .nav-item:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(4px);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: .6rem 1.5rem;
+      text-decoration: none;
+      font-size: .9rem;
+      color: #2c3e2f;
+      transition: background .15s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .dropdown-content a:hover {
+      background: #fef5e0;
+      color: #f3ac00;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #2c3e2f;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .icon-btn:hover {
+      background: rgba(0, 0, 0, .05);
+      transform: scale(1.02);
+    }
+
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-left: .2rem;
+    }
+
+    .auth-link {
+      background: none;
+      border: none;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #2c3e2f;
+      padding: .4rem .8rem;
+      border-radius: 40px;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+    }
+
+    .auth-link.signup {
+      background: #f3ac00;
+      color: #2c3e2f;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, .2);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background: #2c3e2f;
+      border-radius: 2px;
+    }
 
     /* MOBILE MENU */
-    .mobile-menu{position:fixed;top:0;right:-100%;width:80%;max-width:380px;height:100vh;background:#fff;z-index:999;padding:5rem 2rem 2rem;overflow-y:auto;transition:right .3s;box-shadow:-5px 0 25px rgba(0,0,0,.1);}
-    .mobile-menu.active{right:0;}
-    .close-menu{position:absolute;top:1.2rem;right:1.5rem;font-size:1.8rem;background:none;border:none;cursor:pointer;width:40px;height:40px;color:#2c3e2f;}
-    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:1.2rem;}
-    .mobile-nav-item{border-bottom:1px solid #eee;padding-bottom:.5rem;}
-    .mobile-nav-link{text-decoration:none;font-size:1.1rem;font-weight:500;color:#2c3e2f;display:block;padding:.6rem 0;}
-    .mobile-dropdown-toggle{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:.6rem 0;}
-    .mobile-dropdown-content{max-height:0;overflow:hidden;transition:max-height .3s;padding-left:1rem;}
-    .mobile-dropdown-content.active{max-height:300px;}
-    .mobile-dropdown-content a{display:block;padding:.6rem 0;text-decoration:none;font-size:.95rem;color:#5a5a5a;}
-    .mobile-auth{display:flex;gap:1rem;margin-top:.5rem;margin-bottom:.5rem;}
-    .mobile-auth-btn{flex:1;text-align:center;padding:.7rem;border-radius:40px;font-weight:600;background:transparent;border:1px solid #e0d6cc;cursor:pointer;}
-    .mobile-auth-btn.signup-mobile{background:#f3ac00;border:none;color:#2c3e2f;}
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      background: #fff;
+      z-index: 999;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+      transition: right .3s;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, .1);
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      color: #2c3e2f;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mobile-nav-item {
+      border-bottom: 1px solid #eee;
+      padding-bottom: .5rem;
+    }
+
+    .mobile-nav-link {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      display: block;
+      padding: .6rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mobile-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: .6rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s;
+      padding-left: 1rem;
+    }
+
+    .mobile-dropdown-content.active {
+      max-height: 300px;
+    }
+
+    .mobile-dropdown-content a {
+      display: block;
+      padding: .6rem 0;
+      text-decoration: none;
+      font-size: .95rem;
+      color: #5a5a5a;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mobile-auth {
+      display: flex;
+      gap: 1rem;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+
+    .mobile-auth-btn {
+      flex: 1;
+      text-align: center;
+      padding: .7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid #e0d6cc;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mobile-auth-btn.signup-mobile {
+      background: #f3ac00;
+      border: none;
+      color: #2c3e2f;
+    }
 
     /* ====== PAGE SECTIONS ====== */
+    .ps-hero h1,
+    .section-title,
+    .step-num-circle,
+    .benefits-visual .bv-val,
+    .hero-stat-num,
+    .gallery-label h3,
+    .toy-card h3,
+    .step-card h3,
+    .benefit-text h4,
+    .footer-col h4,
+    .logo a,
+    .ps-hero-badge {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .ps-hero p,
+    .section-sub,
+    .video-title,
+    .toy-card p,
+    .testimonial-text,
+    .benefit-text p,
+    .step-card p,
+    .newsletter-input input,
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+    }
 
     /* HERO WITH BACKGROUND IMAGE */
-    .ps-hero{
-      background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    .ps-hero {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
-      color:#fff;
-      padding:6rem 2rem;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .ps-hero::before{
-      content:'';
-      position:absolute;
-      top:-60px;
-      right:-60px;
-      width:300px;
-      height:300px;
-      background:rgba(243,172,0,.12);
-      border-radius:50%;
-      pointer-events:none;
+
+    .ps-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      background: rgba(243, 172, 0, .12);
+      border-radius: 50%;
+      pointer-events: none;
     }
-    .ps-hero::after{
-      content:'';
-      position:absolute;
-      bottom:-80px;
-      left:-40px;
-      width:250px;
-      height:250px;
-      background:rgba(243,172,0,.08);
-      border-radius:50%;
-      pointer-events:none;
+
+    .ps-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 250px;
+      height: 250px;
+      background: rgba(243, 172, 0, .08);
+      border-radius: 50%;
+      pointer-events: none;
     }
-    .ps-hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:1;}
-    .ps-hero-badge{
-      display:inline-block;
-      background:rgba(0,0,0,0.45);
-      backdrop-filter:blur(4px);
-      border:1px solid rgba(243,172,0,0.6);
-      color:#f3ac00;
-      font-size:.8rem;
-      font-weight:700;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      padding:.4rem 1.2rem;
-      border-radius:40px;
-      margin-bottom:1.5rem;
+
+    .ps-hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
-    .ps-hero h1{font-family:'Fredoka',sans-serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1.2rem;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
-    .ps-hero h1 span{color:#f3ac00;}
-    .ps-hero p{font-size:1.15rem;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 3px rgba(0,0,0,0.3);}
-    .ps-hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-    .btn-primary{background:#f3ac00;color:#2c3e2f;font-weight:700;padding:.85rem 2rem;border-radius:40px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-    .btn-primary:hover{background:#e09e00;transform:translateY(-2px);}
-    .btn-outline{background:transparent;color:#fff;font-weight:600;padding:.85rem 2rem;border-radius:40px;border:2px solid rgba(255,255,255,0.5);text-decoration:none;cursor:pointer;font-family:inherit;font-size:1rem;transition:all .2s;backdrop-filter:blur(2px);}
-    .btn-outline:hover{border-color:#f3ac00;color:#f3ac00;background:rgba(0,0,0,0.3);}
-    .hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:3.5rem;flex-wrap:wrap;}
-    .hero-stat-num{font-family:'Fredoka',sans-serif;font-size:2.2rem;font-weight:700;color:#f3ac00;display:block;text-shadow:0 1px 3px rgba(0,0,0,0.2);}
-    .hero-stat-label{font-size:.85rem;color:rgba(255,255,255,.8);margin-top:.2rem;}
+
+    .ps-hero-badge {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(243, 172, 0, 0.6);
+      color: #f3ac00;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .4rem 1.2rem;
+      border-radius: 40px;
+      margin-bottom: 1.5rem;
+    }
+
+    .ps-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .ps-hero h1 span {
+      color: #f3ac00;
+    }
+
+    .ps-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, .9);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .ps-hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #f3ac00;
+      color: #2c3e2f;
+      font-weight: 700;
+      padding: .85rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all .2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark-mode .btn-primary {
+      background: #2a2a2a;
+      color: #ffffff;
+      box-shadow: none;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background: #3a3a3a;
+    }
+
+    .btn-primary:hover {
+      background: #e09e00;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      padding: .85rem 2rem;
+      border-radius: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all .2s;
+      backdrop-filter: blur(2px);
+    }
+
+    body.dark-mode .btn-outline {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: #f3ac00;
+      color: #f3ac00;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f3ac00;
+      display: block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-stat-label {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .8);
+      margin-top: .2rem;
+      font-family: 'Inter', sans-serif;
+    }
 
     /* SECTION SHARED */
-    .section{padding:5rem 2rem;}
-    .section-alt{background:#f7f5f0;}
-    .section-inner{max-width:1280px;margin:0 auto;}
-    .section-header{text-align:center;margin-bottom:3.5rem;}
-    .section-badge{display:inline-block;background:rgba(243,172,0,.15);color:#c08a00;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:40px;margin-bottom:1rem;}
-    .section-title{font-family:'Fredoka',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:#2c3e2f;line-height:1.2;margin-bottom:.8rem;}
-    body.dark-mode .section-title{color:#f0f0f0;}
-    .section-sub{color:#5a6e5a;font-size:1rem;max-width:560px;margin:0 auto;line-height:1.6;}
-    body.dark-mode .section-sub{color:#999;}
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-alt {
+      background: #f7f5f0;
+    }
+
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(243, 172, 0, .15);
+      color: #c08a00;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #2c3e2f;
+      line-height: 1.2;
+      margin-bottom: .8rem;
+    }
+
+    .section-sub {
+      color: #5a6e5a;
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
     /* GALLERY */
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-    .gallery-item{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;background:#e8f0e8;}
-    .gallery-item.tall{grid-row:span 2;aspect-ratio:unset;}
-    .gallery-item.wide{grid-column:span 2;}
-    .gallery-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s;}
-    .gallery-item:hover .gallery-bg{transform:scale(1.06);}
-    .gallery-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.7));padding:1.5rem 1.2rem .9rem;color:#fff;}
-    .gallery-label h3{font-family:'Fredoka',sans-serif;font-size:1.15rem;font-weight:600;}
-    .gallery-label p{font-size:.8rem;opacity:.85;margin-top:.2rem;}
-    /* placeholder colorful bg per item */
-    .g1{background:linear-gradient(135deg,#a8d5a2,#c5e8c0);}
-    .g2{background:linear-gradient(135deg,#ffd87a,#ffe9a8);}
-    .g3{background:linear-gradient(135deg,#f9a8a8,#fcc8c8);}
-    .g4{background:linear-gradient(135deg,#a8c4f9,#c8d8fc);}
-    .g5{background:linear-gradient(135deg,#d4a8f9,#e8c8fc);}
-    .g6{background:linear-gradient(135deg,#a8e8d4,#c8f4e8);}
-    .gallery-icon{font-size:3.5rem;display:flex;align-items:center;justify-content:center;height:100%;opacity:.5;}
-    .gallery-img{width:100%;height:100%;object-fit:cover;opacity:.6;}
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: #e8f0e8;
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+      aspect-ratio: unset;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform .4s;
+    }
+
+    .gallery-item:hover .gallery-bg {
+      transform: scale(1.06);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .7));
+      padding: 1.5rem 1.2rem .9rem;
+      color: #fff;
+    }
+
+    .gallery-label h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .gallery-label p {
+      font-size: .8rem;
+      opacity: .85;
+      margin-top: .2rem;
+      font-family: 'Inter', sans-serif;
+    }
 
     /* VIDEO SECTION */
-    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-    .video-card{background:#fff;border:1.5px solid #eaeef2;border-radius:20px;overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer;}
-    .video-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
-    .video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;}
-    .video-thumb video{width:100%;height:100%;object-fit:cover;}
-    .video-info{padding:1rem 1.2rem;}
-    .video-category{font-size:.75rem;font-weight:700;color:#f3ac00;letter-spacing:1px;text-transform:uppercase;margin-bottom:.3rem;}
-    .video-title{font-weight:600;font-size:.95rem;color:#2c3e2f;line-height:1.4;margin-bottom:.5rem;}
-    body.dark-mode .video-title{color:#e0e0e0;}
-    .video-meta{display:flex;gap:.8rem;font-size:.8rem;color:#7a8a7a;}
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
 
-    /* TEACHERS TOYS */
-    .toys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
-    .toy-card{background:#fff;border:1.5px solid #eaeef2;border-radius:24px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:transform .25s,box-shadow .25s;}
-    .toy-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
-    .toy-icon-wrap{width:68px;height:68px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2rem;}
-    .toy-icon-wrap.yellow{background:#fef5e0;}
-    .toy-icon-wrap.green{background:#e8f4e0;}
-    .toy-icon-wrap.blue{background:#e0eeff;}
-    .toy-icon-wrap.pink{background:#fde8f0;}
-    .toy-tag{display:inline-block;font-size:.75rem;font-weight:700;color:#c08a00;background:rgba(243,172,0,.15);padding:.25rem .7rem;border-radius:20px;}
-    .toy-card h3{font-family:'Fredoka',sans-serif;font-size:1.25rem;font-weight:600;color:#2c3e2f;line-height:1.3;}
-    body.dark-mode .toy-card h3{color:#e0e0e0;}
-    .toy-card p{font-size:.9rem;color:#5a6e5a;line-height:1.6;}
-    body.dark-mode .toy-card p{color:#999;}
-    .toy-features{display:flex;flex-direction:column;gap:.4rem;margin-top:.4rem;}
-    .toy-feature{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:#2c3e2f;}
-    body.dark-mode .toy-feature{color:#ccc;}
-    .toy-feature i{color:#f3ac00;font-size:.8rem;}
+    .video-card {
+      background: #fff;
+      border: 1.5px solid #eaeef2;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
+    }
+
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .video-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-info {
+      padding: 1rem 1.2rem;
+    }
+
+    .video-category {
+      font-size: .75rem;
+      font-weight: 700;
+      color: #f3ac00;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .video-title {
+      font-weight: 600;
+      font-size: .95rem;
+      color: #2c3e2f;
+      line-height: 1.4;
+      margin-bottom: .5rem;
+    }
+
+    .video-meta {
+      display: flex;
+      gap: .8rem;
+      font-size: .8rem;
+      color: #7a8a7a;
+      font-family: 'Inter', sans-serif;
+    }
 
     /* HOW IT WORKS */
-    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;counter-reset:steps;}
-    .step-card{text-align:center;padding:2.5rem 1.5rem;border-radius:24px;background:#fff;position:relative;}
-    .step-card::before{counter-increment:steps;content:counter(steps,'0');position:absolute;top:1.2rem;right:1.5rem;font-family:'Fredoka',sans-serif;font-size:3rem;font-weight:700;color:rgba(243,172,0,.2);line-height:1;}
-    .step-num-circle{width:60px;height:60px;border-radius:50%;background:#f3ac00;color:#fff;font-family:'Fredoka',sans-serif;font-size:1.4rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;}
-    .step-card h3{font-family:'Fredoka',sans-serif;font-size:1.2rem;font-weight:600;color:#2c3e2f;margin-bottom:.6rem;}
-    body.dark-mode .step-card h3{color:#e0e0e0;}
-    .step-card p{font-size:.9rem;color:#5a6e5a;line-height:1.6;}
-    body.dark-mode .step-card p{color:#999;}
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      counter-reset: steps;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 24px;
+      background: #fff;
+      position: relative;
+    }
+
+    .step-card::before {
+      counter-increment: steps;
+      content: counter(steps, '0');
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(243, 172, 0, .2);
+      line-height: 1;
+    }
+
+    .step-num-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #f3ac00;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    body.dark-mode .step-num-circle {
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e2f;
+      margin-bottom: .6rem;
+    }
+
+    .step-card p {
+      font-size: .9rem;
+      color: #5a6e5a;
+      line-height: 1.6;
+    }
 
     /* BENEFITS */
-    .benefits-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-    .benefits-visual{border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#1e3a1e,#2c5f2e);padding:3rem;text-align:center;color:#fff;}
-    .benefits-visual-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-    .bv-item{background:rgba(255,255,255,.12);border-radius:16px;padding:1.5rem 1rem;text-align:center;}
-    .bv-icon{font-size:2.5rem;margin-bottom:.7rem;display:block;}
-    .bv-val{font-family:'Fredoka',sans-serif;font-size:2rem;font-weight:700;color:#f3ac00;}
-    .bv-label{font-size:.8rem;opacity:.8;margin-top:.2rem;}
-    .benefits-list{display:flex;flex-direction:column;gap:1.5rem;}
-    .benefit-card{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;border-radius:20px;background:#fff;border:1.5px solid #eaeef2;transition:border-color .2s;}
-    .benefit-card:hover{border-color:#f3ac00;}
-    .benefit-icon{width:46px;height:46px;border-radius:14px;background:#fef5e0;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-    .benefit-text h4{font-weight:700;font-size:.95rem;color:#2c3e2f;margin-bottom:.3rem;}
-    body.dark-mode .benefit-text h4{color:#e0e0e0;}
-    .benefit-text p{font-size:.88rem;color:#5a6e5a;line-height:1.5;}
-    body.dark-mode .benefit-text p{color:#999;}
+    .benefits-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .benefits-visual {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #2c3e2f;
+      padding: 3rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    body.dark-mode .benefits-visual {
+      background: #0a0a0a;
+    }
+
+    .benefits-visual-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .bv-item {
+      background: rgba(255, 255, 255, .12);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    body.dark-mode .bv-item {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .bv-icon {
+      font-size: 2.5rem;
+      margin-bottom: .7rem;
+      display: block;
+    }
+
+    .bv-val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f3ac00;
+    }
+
+    .bv-label {
+      font-size: .8rem;
+      opacity: .8;
+      margin-top: .2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      border-radius: 20px;
+      background: #fff;
+      border: 1.5px solid #eaeef2;
+      transition: border-color .2s;
+    }
+
+    .benefit-card:hover {
+      border-color: #f3ac00;
+    }
+
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #fef5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    body.dark-mode .benefit-icon {
+      background: #1a1a1a;
+    }
+
+    .benefit-text h4 {
+      font-weight: 700;
+      font-size: .95rem;
+      color: #2c3e2f;
+      margin-bottom: .3rem;
+    }
+
+    .benefit-text p {
+      font-size: .88rem;
+      color: #5a6e5a;
+      line-height: 1.5;
+    }
 
     /* TESTIMONIALS */
-    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;}
-    .testimonial-card{background:#fff;border:1.5px solid #eaeef2;border-radius:24px;padding:2rem;position:relative;}
-    .testimonial-card::before{content:'\201C';font-family:'Fredoka',sans-serif;font-size:5rem;color:#f3ac00;opacity:.25;position:absolute;top:.5rem;left:1.2rem;line-height:1;}
-    .stars{color:#f3ac00;font-size:.9rem;margin-bottom:1rem;}
-    .testimonial-text{font-size:.95rem;color:#2c3e2f;line-height:1.7;margin-bottom:1.5rem;font-style:italic;}
-    body.dark-mode .testimonial-text{color:#ccc;}
-    .testimonial-author{display:flex;align-items:center;gap:.8rem;}
-    .author-avatar{width:44px;height:44px;border-radius:50%;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
-    .av1{background:#fef5e0;color:#c08a00;}
-    .av2{background:#e8f4e0;color:#3a7a3a;}
-    .av3{background:#e0eeff;color:#1a5aaa;}
-    .author-name{font-weight:700;font-size:.9rem;color:#2c3e2f;}
-    body.dark-mode .author-name{color:#e0e0e0;}
-    .author-role{font-size:.8rem;color:#7a8a7a;}
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border: 1.5px solid #eaeef2;
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Poppins', sans-serif;
+      font-size: 5rem;
+      color: #f3ac00;
+      opacity: .25;
+      position: absolute;
+      top: .5rem;
+      left: 1.2rem;
+      line-height: 1;
+    }
+
+    .stars {
+      color: #f3ac00;
+      font-size: .9rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-size: .95rem;
+      color: #2c3e2f;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .av1 {
+      background: #fef5e0;
+      color: #c08a00;
+    }
+
+    .av2 {
+      background: #e8f4e0;
+      color: #3a7a3a;
+    }
+
+    .av3 {
+      background: #e0eeff;
+      color: #1a5aaa;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: .9rem;
+      color: #2c3e2f;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .author-role {
+      font-size: .8rem;
+      color: #7a8a7a;
+      font-family: 'Inter', sans-serif;
+    }
 
     /* FOOTER */
-    .unique-footer{background:#faf8f5;color:#2c3e2f;padding:3rem 2rem 2rem;border-top:4px solid #f3ac00;margin-top:auto;}
-    .footer-container{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1.5fr;gap:2.5rem;}
-    .footer-brand p{margin:1.2rem 0 1.5rem;color:#5a6e5a;line-height:1.5;font-size:.9rem;}
-    .social-links{display:flex;gap:1.2rem;}
-    .social-links a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#fff;border-radius:50%;color:#2c3e2f;text-decoration:none;font-size:1rem;transition:all .2s;box-shadow:0 2px 6px rgba(0,0,0,.05);}
-    .social-links a:hover{background:#f3ac00;color:#fff;transform:translateY(-2px);}
-    .footer-col h4{color:#2c3e2f;font-size:1rem;font-weight:700;letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;position:relative;display:inline-block;}
-    .footer-col h4::after{content:'';position:absolute;bottom:-6px;left:0;width:32px;height:2px;background:#f3ac00;border-radius:2px;}
-    .footer-col ul{list-style:none;}
-    .footer-col li{margin-bottom:.7rem;}
-    .footer-col a{color:#5a6e5a;text-decoration:none;transition:color .2s;font-size:.9rem;}
-    .footer-col a:hover{color:#f3ac00;}
-    .newsletter-input{display:flex;border-bottom:2px solid #e0d6cc;padding-bottom:.5rem;}
-    .newsletter-input:focus-within{border-bottom-color:#f3ac00;}
-    .newsletter-input input{background:transparent;border:none;color:#2c3e2f;padding:.4rem 0;width:100%;font-size:.9rem;outline:none;}
-    .newsletter-input button{background:none;border:none;font-weight:600;cursor:pointer;font-size:1.1rem;color:#f3ac00;}
-    .footer-bottom{max-width:1280px;margin:2rem auto 0;padding-top:1.8rem;border-top:1px solid #e0d6cc;display:flex;justify-content:space-between;color:#7a8a7a;font-size:.8rem;flex-wrap:wrap;gap:1rem;}
-    .footer-bottom a{color:#7a8a7a;text-decoration:none;margin-left:1.5rem;}
-    .footer-bottom a:hover{color:#f3ac00;}
+    .unique-footer {
+      background: #faf8f5;
+      color: #2c3e2f;
+      padding: 3rem 2rem 2rem;
+      border-top: 4px solid #f3ac00;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand p {
+      margin: 1.2rem 0 1.5rem;
+      color: #5a6e5a;
+      line-height: 1.5;
+      font-size: .9rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all .2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    }
+
+    .social-links a:hover {
+      background: #f3ac00;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: #f3ac00;
+      border-radius: 2px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: .7rem;
+    }
+
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: color .2s;
+      font-size: .9rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-col a:hover {
+      color: #f3ac00;
+    }
+
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: .5rem;
+    }
+
+    .newsletter-input:focus-within {
+      border-bottom-color: #f3ac00;
+    }
+
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      color: #2c3e2f;
+      padding: .4rem 0;
+      width: 100%;
+      font-size: .9rem;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #f3ac00;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: .8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-bottom a {
+      color: #7a8a7a;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-bottom a:hover {
+      color: #f3ac00;
+    }
 
     /* RESPONSIVE */
-    @media(max-width:1024px){
-      .desktop-nav{display:none;}
-      .hamburger{display:flex;}
-      .right-icons .icon-btn:not(.hamburger){display:none;}
-      .right-icons .auth-buttons{display:none;}
-      .right-icons .hamburger{display:flex;}
-      .right-icons{gap:0;}
-      .benefits-layout{grid-template-columns:1fr;}
+    @media(max-width:1024px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+
+      .right-icons .auth-buttons {
+        display: none;
+      }
+
+      .right-icons .hamburger {
+        display: flex;
+      }
+
+      .right-icons {
+        gap: 0;
+      }
+
+      .benefits-layout {
+        grid-template-columns: 1fr;
+      }
     }
-    @media(max-width:900px){
-      .footer-container{grid-template-columns:1fr 1fr;gap:2rem;}
-      .gallery-grid{grid-template-columns:1fr 1fr;}
-      .gallery-item.wide{grid-column:span 1;}
-      .gallery-item.tall{grid-row:span 1;}
+
+    @media(max-width:900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 1;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 1;
+      }
     }
-    @media(max-width:768px){
-      .footer-container{grid-template-columns:1fr;text-align:center;}
-      .footer-col h4::after{left:50%;transform:translateX(-50%);}
-      .social-links{justify-content:center;}
-      .footer-bottom{flex-direction:column;text-align:center;}
-      .gallery-grid{grid-template-columns:1fr;}
-      .ps-hero{padding:4rem 1.5rem;}
-      .section{padding:3.5rem 1.5rem;}
+
+    @media(max-width:768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps-hero {
+        padding: 4rem 1.5rem;
+      }
+
+      .section {
+        padding: 3.5rem 1.5rem;
+      }
     }
-    .gallery-bg{
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  transition:transform .4s;
-}.video-card {
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
+
+    .video-card {
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-thumb {
+      height: 360px;
+      overflow: hidden;
+    }
+
+    .video-info {
+      padding: 16px;
+      flex-grow: 1;
+    }
+        .auth-link.login {
+  background-color: #f3ac00;
+  color: #2c3e2f;
+  padding: 0.45rem 1rem;
+  border-radius: 40px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-.video-thumb {
-  height: 360px;
-  overflow: hidden;
-}
-
-.video-info {
-  padding: 16px;
-  flex-grow: 1;
+/* Hover effect like CTA */
+.auth-link.login:hover {
+  background-color: #e09c00;
+  transform: translateY(-1px);
 }
   </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header class="main-header">
-  <div class="header-container">
-    <div class="logo"><a href="#">Toyza</a></div>
-    <div class="desktop-nav">
-      <ul class="nav-links">
-        <li class="nav-item">
-          <button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
-          <div class="dropdown-content"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div>
-        </li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="service.html" class="nav-link">Service</a></li>
-        <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
-        <li><a href="playStudio.html" class="nav-link active">playStudio</a></li>
-        <li><a href="gifts.html" class="nav-link">Gifting</a></li>
-        <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-    <div class="right-icons">
-      <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
-      <div class="auth-buttons">
-        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo"><a href="#">Toyza</a></div>
+      <div class="desktop-nav">
+        <ul class="nav-links">
+          <li class="nav-item"><button class="dropdown-btn">Home <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="service.html" class="nav-link">Service</a></li>
+          <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+          <li><a href="playStudio.html" class="nav-link active">playStudio</a></li>
+          <li><a href="gifts.html" class="nav-link">Gifting</a></li>
+          <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </div>
-      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
-      <button class="icon-btn" id="rtlToggle" aria-label="RTL/LTR" style="font-weight:600;font-size:.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-menu" id="closeMenuBtn">✕</button>
-  <ul class="mobile-nav-links">
-    <li class="mobile-nav-item" id="mobileCatItem">
-      <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
-      <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="#">Home 1</a><a href="#">Home 2</a></div>
-    </li>
-    <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
-    <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-    <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
-    <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link" style="color:#f3ac00;font-weight:700;">playStudio</a></li>
-    <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
-    <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
-    <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-    <li class="mobile-nav-item">
-      <div class="mobile-auth">
-        <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
-      </div>
-    </li>
-    <li class="mobile-nav-item">
-      <div style="display:flex;gap:1rem;padding:.8rem 0;">
-        <button class="icon-btn" id="mobileDarkToggle" style="flex:1;justify-content:center;gap:6px;background:rgba(243,172,0,.1);border-radius:40px;">🌙 Dark</button>
-        <button class="icon-btn" id="mobileRtlToggle" style="flex:1;justify-content:center;gap:6px;border-radius:40px;font-weight:500;">RTL</button>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<!-- HERO WITH BACKGROUND IMAGE -->
-<section class="ps-hero">
-  <div class="ps-hero-inner">
-    <div class="ps-hero-badge">✦ Welcome to PlayStudio</div>
-    <h1>Where <span>Play</span> Meets<br>Learning & Joy</h1>
-    <p>A creative space designed for children aged 1–12. Explore our curated toy experiences, guided activities, and teacher-approved learning tools.</p>
-    <div class="ps-hero-btns">
-      <a href="#gallery" class="btn-primary">Explore Gallery</a>
-      <a href="#videos" class="btn-outline">Watch Videos</a>
-    </div>
-    <div class="hero-stats">
-      <div><span class="hero-stat-num">500+</span><span class="hero-stat-label">Learning Toys</span></div>
-      <div><span class="hero-stat-num">12K+</span><span class="hero-stat-label">Happy Children</span></div>
-      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Educators Trust Us</span></div>
-      <div><span class="hero-stat-num">50+</span><span class="hero-stat-label">Play Activities</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="section" id="gallery">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-badge">📸 Studio Gallery</div>
-      <h2 class="section-title">Peek Inside the PlayStudio</h2>
-      <p class="section-sub">Real moments of discovery, laughter, and learning captured in our studio spaces.</p>
-    </div>
-    <div class="gallery-grid">
-     <div class="gallery-item tall">
-  <div class="gallery-bg" style="background-image:url('images/img (51).jpg');"></div>
-  <div class="gallery-label">
-    <h3>Creative Building Zone</h3>
-    <p>Ages 3–8 · Block play & design</p>
-  </div>
-</div>
-
-<div class="gallery-item">
-  <div class="gallery-bg" style="background-image:url('images/img (52).jpg');"></div>
-  <div class="gallery-label">
-    <h3>Art & Color Workshop</h3>
-    <p>Ages 4–10 · Finger painting & craft</p>
-  </div>
-</div>
-
-<div class="gallery-item">
-  <div class="gallery-bg" style="background-image:url('images/img (53).jpg');"></div>
-  <div class="gallery-label">
-    <h3>Robo-Lab Explorers</h3>
-    <p>Ages 6–12 · STEM & coding toys</p>
-  </div>
-</div>
-
-<div class="gallery-item wide">
-  <div class="gallery-bg" style="background-image:url('images/img (54).jpg');"></div>
-  <div class="gallery-label">
-    <h3>Nature Discovery Garden</h3>
-    <p>Ages 2–7 · Outdoor sensory play</p>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS (5 cards) -->
-<section class="section section-alt" id="videos">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-badge">Watch & Learn</div>
-      <h2 class="section-title">PlayStudio in Action</h2>
-      <p class="section-sub">Watch children explore, create, and grow through our guided play sessions and activities.</p>
-    </div>
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="video-thumb">
-          <video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-            <source src="images\video (4).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-info">
-          <div class="video-category">STEM Play</div>
-          <div class="video-title">Building Bridges with Blocks — Engineering for Toddlers</div>
-          <div class="video-meta"><span><i class="fas fa-eye"></i> 12.4K</span><span><i class="fas fa-heart"></i> 980</span></div>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumb">
-          <video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-            <source src="images\video (7).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-info">
-          <div class="video-category">Creative Arts</div>
-          <div class="video-title">Rainbow Sensory Painting — Color Mixing Fun for Kids</div>
-          <div class="video-meta"><span><i class="fas fa-eye"></i> 8.7K</span><span><i class="fas fa-heart"></i> 740</span></div>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumb">
-          <video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-            <source src="images\video (5).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-info">
-          <div class="video-category">Coding Toys</div>
-          <div class="video-title">First Steps in Coding — Robot Play for Ages 6+</div>
-          <div class="video-meta"><span><i class="fas fa-eye"></i> 19.2K</span><span><i class="fas fa-heart"></i> 1.5K</span></div>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumb">
-          <video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-            <source src="images\video (3).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-info">
-          <div class="video-category">Role Play</div>
-          <div class="video-title">Pretend Kitchen Stories — Social Skill Building Through Play</div>
-          <div class="video-meta"><span><i class="fas fa-eye"></i> 6.1K</span><span><i class="fas fa-heart"></i> 512</span></div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-<!-- TEACHERS TOYS -->
-<section class="section" id="teachers">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-badge">👩‍🏫 For Educators</div>
-      <h2 class="section-title">Teacher-Approved Learning Toys</h2>
-      <p class="section-sub">Curated and endorsed by early childhood educators for meaningful, curriculum-aligned play.</p>
-    </div>
-    <div class="toys-grid">
-      <div class="toy-card">
-        <div class="toy-icon-wrap yellow"><div class="toy-icon-wrap pink"><i class="fa-solid fa-masks-theater"></i></div></div>
-        <div class="toy-tag">Numeracy · Ages 4–7</div>
-        <h3>Number Puzzle Sets</h3>
-        <p>Tactile number boards and counting tiles that make early maths intuitive and joyful for young learners.</p>
-        <div class="toy-features">
-          <div class="toy-feature"><i class="fas fa-check"></i> Curriculum aligned (EYFS &amp; KS1)</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Durable, non-toxic materials</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Includes teacher activity guide</div>
-        </div>
-      </div>
-      <div class="toy-card">
-        <div class="toy-icon-wrap green"><div class="toy-icon-wrap yellow"><i class="fa-solid fa-calculator"></i></div>
-</div>
-        <div class="toy-tag">Literacy · Ages 3–6</div>
-        <h3>Alphabet Sensory Letters</h3>
-        <p>Textured letter tiles with sound buttons help children connect phonics to physical touch and memory.</p>
-        <div class="toy-features">
-          <div class="toy-feature"><i class="fas fa-check"></i> Phonics-based learning approach</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> 26-letter bilingual set</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Classroom storage tray included</div>
-        </div>
-      </div>
-      <div class="toy-card">
-        <div class="toy-icon-wrap blue"><div class="toy-icon-wrap green"><i class="fa-solid fa-font"></i></div>
-</div>
-        <div class="toy-tag">Science · Ages 6–10</div>
-        <h3>Mini Lab Experiment Kit</h3>
-        <p>Safe, guided experiments covering chemistry, physics, and biology concepts designed for classroom use.</p>
-        <div class="toy-features">
-          <div class="toy-feature"><i class="fas fa-check"></i> 30+ safe experiments included</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Lesson plan booklet for teachers</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Recyclable component packaging</div>
-        </div>
-      </div>
-      <div class="toy-card">
-        <div class="toy-icon-wrap pink"><div class="toy-icon-wrap blue"><i class="fa-solid fa-flask"></i></div>
-</div>
-        <div class="toy-tag">Social Skills · Ages 4–8</div>
-        <h3>Emotion Puppets &amp; Story Cards</h3>
-        <p>Character puppets and scenario cards that help children identify emotions and develop empathy.</p>
-        <div class="toy-features">
-          <div class="toy-feature"><i class="fas fa-check"></i> SEL (Social-Emotional Learning)</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> 12 character puppets + 50 cards</div>
-          <div class="toy-feature"><i class="fas fa-check"></i> Multilingual resource sheets</div>
-        </div>
+      <div class="right-icons"><button class="icon-btn" aria-label="Search" id="searchBtn"><i
+            class="fas fa-search"></i></button>
+      <button class="auth-link login" id="loginBtnDesktop">
+  Log in 
+</button> <button
+          class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button><button
+          class="icon-btn" id="rtlToggle" aria-label="RTL/LTR"
+          style="font-weight:600;font-size:.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button><button
+          class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-badge">✨ How It Works</div>
-      <h2 class="section-title">Getting Started with PlayStudio</h2>
-      <p class="section-sub">Four simple steps to bring the magic of Toyza PlayStudio to your child or classroom.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num-circle">1</div>
-        <h3>Choose an Age Group</h3>
-        <p>Browse our collections filtered by age range — from baby sensory to tween STEM kits, every toy is matched to developmental stages.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num-circle">2</div>
-        <h3>Pick a Play Theme</h3>
-        <p>Select from creativity, science, literacy, social skills, or outdoor play. Each theme comes with activity ideas and goals.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num-circle">3</div>
-        <h3>Order &amp; Unbox Together</h3>
-        <p>Toys arrive in joyful, sustainable packaging. The unboxing experience itself is designed to build excitement and anticipation.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num-circle">4</div>
-        <h3>Play, Learn &amp; Share</h3>
-        <p>Follow our guided play cards or scan the QR code for video tutorials. Share your moments with #ToyzaPlayStudio!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS (Why PlayStudio) -->
-<section class="section">
-  <div class="section-inner">
-    <div class="benefits-layout">
-      <div class="benefits-visual">
-        <div style="margin-bottom:2rem;">
-          <div style="font-family:'Fredoka',sans-serif;font-size:1.6rem;font-weight:700;color:#f3ac00;">Why PlayStudio?</div>
-          <p style="opacity:.75;font-size:.9rem;margin-top:.5rem;">Trusted by families and educators across India</p>
+  </header>
+  <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">✕</button>
+    <ul class="mobile-nav-links">
+      <li class="mobile-nav-item" id="mobileCatItem">
+        <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
+        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="#">Home 1</a><a href="#">Home 2</a>
         </div>
-       <div class="benefits-visual-inner">
-  <div class="bv-item">
-    <span class="bv-icon"><i class="fa-solid fa-leaf"></i></span>
-    <div class="bv-val">98%</div>
-    <div class="bv-label">Eco-friendly materials</div>
+      </li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+      <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+      <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link"
+          style="color:#f3ac00;font-weight:700;">playStudio</a></li>
+      <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
+      <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li class="mobile-nav-item">
+        <div class="mobile-auth"><button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button></div>
+      </li>
+      <li class="mobile-nav-item">
+        <div style="display:flex;gap:1rem;padding:.8rem 0;"><button class="icon-btn" id="mobileDarkToggle"
+            style="flex:1;justify-content:center;gap:6px;background:rgba(243,172,0,.1);border-radius:40px;">🌙
+            Dark</button><button class="icon-btn" id="mobileRtlToggle"
+            style="flex:1;justify-content:center;gap:6px;border-radius:40px;font-weight:500;">RTL</button></div>
+      </li>
+    </ul>
   </div>
 
-  <div class="bv-item">
-    <span class="bv-icon"><i class="fa-solid fa-school"></i></span>
-    <div class="bv-val">200+</div>
-    <div class="bv-label">Schools use Toyza</div>
-  </div>
-
-  <div class="bv-item">
-    <span class="bv-icon"><i class="fa-solid fa-star"></i></span>
-    <div class="bv-val">4.9</div>
-    <div class="bv-label">Average rating</div>
-  </div>
-
-  <div class="bv-item">
-    <span class="bv-icon"><i class="fa-solid fa-truck-fast"></i></span>
-    <div class="bv-val">48h</div>
-    <div class="bv-label">Delivery across India</div>
-  </div>
-</div>
+  <section class="ps-hero">
+    <div class="ps-hero-inner">
+      <div class="ps-hero-badge">✦ Welcome to PlayStudio</div>
+      <h1>Where <span>Play</span> Meets<br>Learning & Joy</h1>
+      <p>A creative space designed for children aged 1–12. Explore our curated toy experiences, guided activities, and
+        teacher-approved learning tools.</p>
+      <div class="ps-hero-btns"><a href="#gallery" class="btn-primary">Explore Gallery</a><a href="#videos"
+          class="btn-outline">Watch Videos</a></div>
+      <div class="hero-stats">
+        <div><span class="hero-stat-num">500+</span><span class="hero-stat-label">Learning Toys</span></div>
+        <div><span class="hero-stat-num">12K+</span><span class="hero-stat-label">Happy Children</span></div>
+        <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Educators Trust Us</span></div>
+        <div><span class="hero-stat-num">50+</span><span class="hero-stat-label">Play Activities</span></div>
       </div>
-      <div class="benefits-list">
-        <div class="benefit-card">
-          <div class="benefit-icon">🌿</div>
-          <div class="benefit-text">
-            <h4>Eco-Conscious Materials</h4>
-            <p>All PlayStudio toys are made from sustainable, non-toxic materials — safe for children and kind to the planet.</p>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">📸 Studio Gallery</div>
+        <h2 class="section-title">Peek Inside the PlayStudio</h2>
+        <p class="section-sub">Real moments of discovery, laughter, and learning captured in our studio spaces.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <div class="gallery-bg" style="background-image:url('images/img (51).jpg');"></div>
+          <div class="gallery-label">
+            <h3>Creative Building Zone</h3>
+            <p>Ages 3–8 · Block play & design</p>
           </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">📚</div>
-          <div class="benefit-text">
-            <h4>Curriculum-Aligned Play</h4>
-            <p>Every product maps to early childhood development frameworks so play always has a meaningful learning outcome.</p>
+        <div class="gallery-item">
+          <div class="gallery-bg" style="background-image:url('images/img (52).jpg');"></div>
+          <div class="gallery-label">
+            <h3>Art & Color Workshop</h3>
+            <p>Ages 4–10 · Finger painting & craft</p>
           </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">👩‍🏫</div>
-          <div class="benefit-text">
-            <h4>Educator-Endorsed</h4>
-            <p>Reviewed and approved by a board of 50+ early childhood specialists, Montessori educators, and child psychologists.</p>
+        <div class="gallery-item">
+          <div class="gallery-bg" style="background-image:url('images/img (53).jpg');"></div>
+          <div class="gallery-label">
+            <h3>Robo-Lab Explorers</h3>
+            <p>Ages 6–12 · STEM & coding toys</p>
           </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🔄</div>
-          <div class="benefit-text">
-            <h4>30-Day Play Guarantee</h4>
-            <p>Not loving it? Return it, no questions asked. We stand behind every toy we curate for your child's joy.</p>
+        <div class="gallery-item wide">
+          <div class="gallery-bg" style="background-image:url('images/img (54).jpg');"></div>
+          <div class="gallery-label">
+            <h3>Nature Discovery Garden</h3>
+            <p>Ages 2–7 · Outdoor sensory play</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TESTIMONIALS -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-badge">💬 Voices of Joy</div>
-      <h2 class="section-title">What Parents &amp; Teachers Say</h2>
-      <p class="section-sub">Real stories from the families and educators who have made PlayStudio part of their daily routine.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testimonial-text">My daughter spends hours with the Mini Lab Kit — she's learned more about science at age 7 than I expected. Toyza makes it easy and safe!</p>
-        <div class="testimonial-author">
-          <div class="author-avatar av1">PR</div>
-          <div>
-            <div class="author-name">Priya Rajan</div>
-            <div class="author-role">Parent · Chennai</div>
+  <section class="section section-alt" id="videos">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">Watch & Learn</div>
+        <h2 class="section-title">PlayStudio in Action</h2>
+        <p class="section-sub">Watch children explore, create, and grow through our guided play sessions and activities.
+        </p>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb"><video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+              <source src="images/video (4).mp4" type="video/mp4">
+            </video></div>
+          <div class="video-info">
+            <div class="video-category">STEM Play</div>
+            <div class="video-title">Building Bridges with Blocks — Engineering for Toddlers</div>
+            <div class="video-meta"><span><i class="fas fa-eye"></i> 12.4K</span><span><i class="fas fa-heart"></i>
+                980</span></div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb"><video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+              <source src="images/video (7).mp4" type="video/mp4">
+            </video></div>
+          <div class="video-info">
+            <div class="video-category">Creative Arts</div>
+            <div class="video-title">Rainbow Sensory Painting — Color Mixing Fun for Kids</div>
+            <div class="video-meta"><span><i class="fas fa-eye"></i> 8.7K</span><span><i class="fas fa-heart"></i>
+                740</span></div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb"><video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+              <source src="images/video (5).mp4" type="video/mp4">
+            </video></div>
+          <div class="video-info">
+            <div class="video-category">Coding Toys</div>
+            <div class="video-title">First Steps in Coding — Robot Play for Ages 6+</div>
+            <div class="video-meta"><span><i class="fas fa-eye"></i> 19.2K</span><span><i class="fas fa-heart"></i>
+                1.5K</span></div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb"><video controls style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+              <source src="images/video (3).mp4" type="video/mp4">
+            </video></div>
+          <div class="video-info">
+            <div class="video-category">Role Play</div>
+            <div class="video-title">Pretend Kitchen Stories — Social Skill Building Through Play</div>
+            <div class="video-meta"><span><i class="fas fa-eye"></i> 6.1K</span><span><i class="fas fa-heart"></i>
+                512</span></div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testimonial-text">I use the Emotion Puppets in my classroom every morning. The children's ability to articulate feelings has improved dramatically in just 4 weeks.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar av2">SM</div>
-          <div>
-            <div class="author-name">Sunita Mehta</div>
-            <div class="author-role">Kindergarten Teacher · Mumbai</div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">✨ How It Works</div>
+        <h2 class="section-title">Getting Started with PlayStudio</h2>
+        <p class="section-sub">Four simple steps to bring the magic of Toyza PlayStudio to your child or classroom.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num-circle">1</div>
+          <h3>Choose an Age Group</h3>
+          <p>Browse our collections filtered by age range — from baby sensory to tween STEM kits, every toy is matched
+            to developmental stages.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-circle">2</div>
+          <h3>Pick a Play Theme</h3>
+          <p>Select from creativity, science, literacy, social skills, or outdoor play. Each theme comes with activity
+            ideas and goals.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-circle">3</div>
+          <h3>Order & Unbox Together</h3>
+          <p>Toys arrive in joyful, sustainable packaging. The unboxing experience itself is designed to build
+            excitement and anticipation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-circle">4</div>
+          <h3>Play, Learn & Share</h3>
+          <p>Follow our guided play cards or scan the QR code for video tutorials. Share your moments with
+            #ToyzaPlayStudio!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <div style="margin-bottom:2rem;">
+            <div style="font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:700;color:#f3ac00;">Why
+              PlayStudio?</div>
+            <p style="opacity:.75;font-size:.9rem;margin-top:.5rem;">Trusted by families and educators across India</p>
+          </div>
+          <div class="benefits-visual-inner">
+            <div class="bv-item"><span class="bv-icon"><i class="fa-solid fa-leaf"></i></span>
+              <div class="bv-val">98%</div>
+              <div class="bv-label">Eco-friendly materials</div>
+            </div>
+            <div class="bv-item"><span class="bv-icon"><i class="fa-solid fa-school"></i></span>
+              <div class="bv-val">200+</div>
+              <div class="bv-label">Schools use Toyza</div>
+            </div>
+            <div class="bv-item"><span class="bv-icon"><i class="fa-solid fa-star"></i></span>
+              <div class="bv-val">4.9</div>
+              <div class="bv-label">Average rating</div>
+            </div>
+            <div class="bv-item"><span class="bv-icon"><i class="fa-solid fa-truck-fast"></i></span>
+              <div class="bv-val">48h</div>
+              <div class="bv-label">Delivery across India</div>
+            </div>
+          </div>
+        </div>
+        <div class="benefits-list">
+          <div class="benefit-card">
+            <div class="benefit-icon">🌿</div>
+            <div class="benefit-text">
+              <h4>Eco-Conscious Materials</h4>
+              <p>All PlayStudio toys are made from sustainable, non-toxic materials — safe for children and kind to the
+                planet.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📚</div>
+            <div class="benefit-text">
+              <h4>Curriculum-Aligned Play</h4>
+              <p>Every product maps to early childhood development frameworks so play always has a meaningful learning
+                outcome.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">👩‍🏫</div>
+            <div class="benefit-text">
+              <h4>Educator-Endorsed</h4>
+              <p>Reviewed and approved by a board of 50+ early childhood specialists, Montessori educators, and child
+                psychologists.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔄</div>
+            <div class="benefit-text">
+              <h4>30-Day Play Guarantee</h4>
+              <p>Not loving it? Return it, no questions asked. We stand behind every toy we curate for your child's joy.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <p class="testimonial-text">The PlayStudio videos are a blessing on weekends. My twins watch, follow along, and stay engaged for hours. The quality of content is exceptional.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar av3">AK</div>
-          <div>
-            <div class="author-name">Arjun Kumar</div>
-            <div class="author-role">Parent · Bangalore</div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">💬 Voices of Joy</div>
+        <h2 class="section-title">What Parents & Teachers Say</h2>
+        <p class="section-sub">Real stories from the families and educators who have made PlayStudio part of their daily
+          routine.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">My daughter spends hours with the Mini Lab Kit — she's learned more about science
+            at age 7 than I expected. Toyza makes it easy and safe!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av1">PR</div>
+            <div>
+              <div class="author-name">Priya Rajan</div>
+              <div class="author-role">Parent · Chennai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">I use the Emotion Puppets in my classroom every morning. The children's ability to
+            articulate feelings has improved dramatically in just 4 weeks.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av2">SM</div>
+            <div>
+              <div class="author-name">Sunita Mehta</div>
+              <div class="author-role">Kindergarten Teacher · Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p class="testimonial-text">The PlayStudio videos are a blessing on weekends. My twins watch, follow along,
+            and stay engaged for hours. The quality of content is exceptional.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av3">AK</div>
+            <div>
+              <div class="author-name">Arjun Kumar</div>
+              <div class="author-role">Parent · Bangalore</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="unique-footer">
-  <div class="footer-container">
-    <div class="footer-brand">
- <div style="display: flex; align-items: center; gap: 8px;">
-          <a href="index.html" style="text-decoration: none;">
-            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
-          </a>
-        </div>      <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-pinterest"></i></a>
+  <footer class="unique-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:8px;"><a href="index.html" style="text-decoration:none;"><span
+              style="color:#f3ac00;font-size:1.8rem;font-weight:800;font-family:'Poppins',sans-serif;">Toyza</span></a>
+        </div>
+        <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
+              class="fab fa-pinterest"></i></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Shop All</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Bestsellers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>Join the Club</h4>
+        <p>Get 10% off + early access.</p>
+        <div class="newsletter-input"><input type="email" placeholder="Your email" id="footerNewsletterEmail"><button
+            id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#">Shop All</a></li>
-        <li><a href="#">New Arrivals</a></li>
-        <li><a href="#">Bestsellers</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Support</h4>
-      <ul>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Returns</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col newsletter">
-      <h4>Join the Club</h4>
-      <p>Get 10% off + early access.</p>
-      <div class="newsletter-input">
-        <input type="email" placeholder="Your email" id="footerNewsletterEmail">
-        <button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Toyza. All rights reserved.</span>
-    <span><a href="#">Privacy</a><a href="#">Terms</a></span>
-  </div>
-</footer>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy</a><a
+          href="#">Terms</a></span></div>
+  </footer>
 
-<script>
-(function(){
-  const darkToggle=document.getElementById('darkModeToggle'),mobileDark=document.getElementById('mobileDarkToggle'),rtlToggle=document.getElementById('rtlToggle'),mobileRtl=document.getElementById('mobileRtlToggle');
-  const hamburger=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu'),closeMenu=document.getElementById('closeMenuBtn');
-  const searchBtn=document.getElementById('searchBtn'),newsletterBtn=document.getElementById('footerNewsletterBtn'),newsletterEmail=document.getElementById('footerNewsletterEmail');
-  const mobileCatToggle=document.querySelector('#mobileCatItem .mobile-dropdown-toggle'),mobileCatContent=document.getElementById('mobileCategoriesDropdown');
-  const loginDesktop=document.getElementById('loginBtnDesktop'),mobileLogin=document.getElementById('mobileLoginBtn');
-
-  function openMobileMenu(){mobileMenu.classList.add('active');document.body.style.overflow='hidden';}
-  function closeMobileMenu(){mobileMenu.classList.remove('active');document.body.style.overflow='';}
-  hamburger?.addEventListener('click',openMobileMenu);
-  closeMenu?.addEventListener('click',closeMobileMenu);
-
-  const applyDarkMode=(isDark)=>{
-    document.body.classList.toggle('dark-mode',isDark);
-    localStorage.setItem('toyzaDarkMode',isDark);
-    if(darkToggle) darkToggle.querySelector('i').className=isDark?'fas fa-sun':'fas fa-moon';
-    if(mobileDark) mobileDark.innerHTML=isDark?'☀️ Light':'🌙 Dark';
-  };
-  applyDarkMode(localStorage.getItem('toyzaDarkMode')==='true');
-  darkToggle?.addEventListener('click',()=>applyDarkMode(!document.body.classList.contains('dark-mode')));
-  mobileDark?.addEventListener('click',()=>applyDarkMode(!document.body.classList.contains('dark-mode')));
-
-  const applyRTL=(isRTL)=>{
-    document.documentElement.setAttribute('dir',isRTL?'rtl':'ltr');
-    localStorage.setItem('toyzaRTLMode',isRTL);
-    if(rtlToggle) rtlToggle.innerText=isRTL?'LTR':'RTL';
-    if(mobileRtl) mobileRtl.innerText=isRTL?'LTR':'RTL';
-  };
-  applyRTL(localStorage.getItem('toyzaRTLMode')==='true');
-  rtlToggle?.addEventListener('click',()=>applyRTL(document.documentElement.getAttribute('dir')!=='rtl'));
-  mobileRtl?.addEventListener('click',()=>applyRTL(document.documentElement.getAttribute('dir')!=='rtl'));
-
-  if(mobileCatToggle&&mobileCatContent) mobileCatToggle.addEventListener('click',()=>{
-    mobileCatContent.classList.toggle('active');
-    const icon=mobileCatToggle.querySelector('span:last-child i');
-    if(icon) icon.style.transform=mobileCatContent.classList.contains('active')?'rotate(180deg)':'rotate(0deg)';
-  });
-
-  searchBtn?.addEventListener('click',()=>alert('🔎 Search — discover playful learning at Toyza!'));
-  const handleNewsletter=()=>{
-    const email=newsletterEmail?.value.trim();
-    if(email&&email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`);
-    else alert('Please enter a valid email.');
-  };
-  newsletterBtn?.addEventListener('click',handleNewsletter);
-  newsletterEmail?.addEventListener('keypress',e=>{if(e.key==='Enter')handleNewsletter();});
-
-  const showAuthAlert=(type)=>alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
-  if(loginDesktop) loginDesktop.addEventListener('click',()=>showAuthAlert('Log in'));
-  if(mobileLogin) mobileLogin.addEventListener('click',()=>showAuthAlert('Log in'));
-
-  document.addEventListener('click',(e)=>{if(mobileMenu?.classList.contains('active')&&!mobileMenu.contains(e.target)&&!hamburger?.contains(e.target)) closeMobileMenu();});
-})();
-</script>
+  <script>
+    (function () {
+      const darkToggle = document.getElementById('darkModeToggle'), mobileDark = document.getElementById('mobileDarkToggle'), rtlToggle = document.getElementById('rtlToggle'), mobileRtl = document.getElementById('mobileRtlToggle');
+      const hamburger = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu'), closeMenu = document.getElementById('closeMenuBtn');
+      const searchBtn = document.getElementById('searchBtn'), newsletterBtn = document.getElementById('footerNewsletterBtn'), newsletterEmail = document.getElementById('footerNewsletterEmail');
+      const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle'), mobileCatContent = document.getElementById('mobileCategoriesDropdown');
+      const loginDesktop = document.getElementById('loginBtnDesktop'), mobileLogin = document.getElementById('mobileLoginBtn');
+      function openMobileMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
+      hamburger?.addEventListener('click', openMobileMenu);
+      closeMenu?.addEventListener('click', closeMobileMenu);
+      const applyDarkMode = (isDark) => { document.body.classList.toggle('dark-mode', isDark); localStorage.setItem('toyzaDarkMode', isDark); if (darkToggle) darkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon'; if (mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark'; };
+      applyDarkMode(localStorage.getItem('toyzaDarkMode') === 'true');
+      darkToggle?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+      mobileDark?.addEventListener('click', () => applyDarkMode(!document.body.classList.contains('dark-mode')));
+      const applyRTL = (isRTL) => { document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr'); localStorage.setItem('toyzaRTLMode', isRTL); if (rtlToggle) rtlToggle.innerText = isRTL ? 'LTR' : 'RTL'; if (mobileRtl) mobileRtl.innerText = isRTL ? 'LTR' : 'RTL'; };
+      applyRTL(localStorage.getItem('toyzaRTLMode') === 'true');
+      rtlToggle?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+      mobileRtl?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+      if (mobileCatToggle && mobileCatContent) mobileCatToggle.addEventListener('click', () => { mobileCatContent.classList.toggle('active'); const icon = mobileCatToggle.querySelector('span:last-child i'); if (icon) icon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'; });
+      searchBtn?.addEventListener('click', () => alert('🔎 Search — discover playful learning at Toyza!'));
+      const handleNewsletter = () => { const email = newsletterEmail?.value.trim(); if (email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); else alert('Please enter a valid email.'); };
+      newsletterBtn?.addEventListener('click', handleNewsletter);
+      newsletterEmail?.addEventListener('keypress', e => { if (e.key === 'Enter') handleNewsletter(); });
+      const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
+      if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
+      if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
+      document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
+    })();
+  </script>
 </body>
+
 </html>

@@ -1356,6 +1356,23 @@
     flex-direction: column;
     text-align: center;
   }
+
+
+}
+        .auth-link.login {
+  background-color: #f3ac00;
+  color: #2c3e2f;
+  padding: 0.45rem 1rem;
+  border-radius: 40px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect like CTA */
+.auth-link.login:hover {
+  background-color: #e09c00;
+  transform: translateY(-1px);
 }
   </style>
 </head>
@@ -1363,7 +1380,7 @@
 <body>
   <header class="main-header">
     <div class="header-container">
-      <div class="logo"><a href="#">Toyza</a></div>
+      <div class="logo"><a href="index.html">Toyza</a></div>
       <div class="desktop-nav">
         <ul class="nav-links">
           <li class="nav-item">
@@ -1384,8 +1401,9 @@
       <div class="right-icons">
         <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
         <div class="auth-buttons">
-          <button class="auth-link login" id="loginBtnDesktop">Log in</button>
-        </div>
+<button class="auth-link login" id="loginBtnDesktop">
+  Log in 
+</button>          </div>
         <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
         <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
           style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>

@@ -6,8 +6,7 @@
   <title>Toyza · Educational Play Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
-
+  <link rel="icon" type="image/jpeg" href="images\favicon.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -24,61 +23,66 @@
       transition: background-color 0.25s ease, color 0.25s ease;
     }
 
+    /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY ===== */
     body.dark-mode {
       background-color: #000000 !important;
-      color: #f0f0f0 !important;
+      color: #e0e0e0 !important;
     }
 
     body.dark-mode .top-banner {
-      background-color: #111111 !important;
-      color: #f5f5f5 !important;
+      background-color: #0a0a0a !important;
+      color: #cccccc !important;
       border-bottom: 1px solid #2a2a2a;
     }
 
     body.dark-mode .main-header {
-      background-color: #000000 !important;
+      background-color: #0a0a0a !important;
       border-bottom-color: #2a2a2a !important;
     }
 
     body.dark-mode .category-link,
     body.dark-mode .nav-link,
     body.dark-mode .dropdown-btn {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .category-link:hover,
     body.dark-mode .nav-link:hover,
     body.dark-mode .dropdown-btn:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .dropdown-content {
-      background-color: #111111 !important;
+      background-color: #1a1a1a !important;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       border: 1px solid #2a2a2a;
     }
 
     body.dark-mode .dropdown-content a {
-      color: #e0e0e0;
+      color: #cccccc;
     }
 
     body.dark-mode .dropdown-content a:hover {
-      background-color: #1e1e1e;
-      color: #f3ac00;
+      background-color: #2c2c2c;
+      color: #ffffff;
     }
 
     body.dark-mode .icon-btn {
-      color: #e0e0e0;
+      color: #dddddd;
+    }
+
+    body.dark-mode .icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
     body.dark-mode .mobile-menu {
-      background-color: #000000 !important;
+      background-color: #0a0a0a !important;
       border-left: 1px solid #2a2a2a;
     }
 
     body.dark-mode .mobile-nav-link,
     body.dark-mode .mobile-dropdown-toggle span:first-child {
-      color: #e0e0e0;
+      color: #dddddd;
     }
 
     body.dark-mode .mobile-dropdown-content a {
@@ -87,45 +91,47 @@
 
     body.dark-mode .unique-footer {
       background-color: #050505 !important;
-      border-top-color: #f3ac00 !important;
+      border-top-color: #2a2a2a !important;
     }
 
     body.dark-mode .footer-col a {
-      color: #bbbbbb;
+      color: #aaaaaa;
     }
 
     body.dark-mode .footer-col a:hover {
-      color: #f3ac00;
+      color: #ffffff;
     }
 
     body.dark-mode .newsletter-input input {
-      color: #f0f0f0;
+      color: #e0e0e0;
       background: transparent;
     }
 
     body.dark-mode .footer-col h4::after {
-      background-color: #f3ac00;
+      background-color: #666666;
     }
 
     body.dark-mode .social-links a {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
+      background-color: #1f1f1f;
+      color: #cccccc;
     }
 
     body.dark-mode .social-links a:hover {
-      background-color: #f3ac00;
-      color: #000000;
+      background-color: #333333;
+      color: #ffffff;
     }
 
+    /* Dark mode login button */
     body.dark-mode .auth-link.login {
       color: #ffffff !important;
     }
 
     body.dark-mode .auth-link.signup {
-      background-color: #f3ac00;
-      color: #000000 !important;
+      background-color: #3a3a3a;
+      color: #ffffff !important;
     }
 
+    /* Footer dark mode */
     body.dark-mode .footer-col h4 {
       color: #ffffff !important;
     }
@@ -140,34 +146,32 @@
     }
 
     body.dark-mode .footer-bottom a:hover {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
+    /* Logo dark mode */
     body.dark-mode .logo a {
-      color: #f3ac00 !important;
+      color: #ffffff !important;
     }
 
     body.dark-mode .logo span {
-      color: #888888 !important;
+      color: #aaaaaa !important;
     }
 
-    body.dark-mode .icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
+    /* Mobile auth */
     body.dark-mode .mobile-auth-btn {
       color: #ffffff;
       border-color: #444;
     }
 
     body.dark-mode .mobile-auth-btn.signup-mobile {
-      background: #f3ac00;
-      color: #000000;
+      background: #3a3a3a;
+      color: #ffffff;
     }
 
-    /* DARK MODE HERO - PRESERVE BACKGROUND IMAGE */
+    /* Hero dark mode - preserve background image */
     body.dark-mode .eps-hero {
-      background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%), url('images/img (45).jpg');
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%), url('images/img (45).jpg');
       background-size: cover;
       background-position: center 40%;
       background-repeat: no-repeat;
@@ -178,28 +182,29 @@
     }
 
     body.dark-mode .eps-hero-sub {
-      color: #f0f0f0 !important;
+      color: #e0e0e0 !important;
     }
 
     body.dark-mode .eps-stat-num {
-      color: #f3ac00;
+      color: #cccccc;
     }
 
     body.dark-mode .eps-stat-lbl {
-      color: #ccc;
+      color: #aaaaaa;
     }
 
     body.dark-mode .eps-stat-divider {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
     }
 
+    /* Zone cards dark mode */
     body.dark-mode .zone-card {
       background: #0a0a0a !important;
       border-color: #2a2a2a !important;
     }
 
     body.dark-mode .zone-card:hover {
-      border-color: #f3ac00 !important;
+      border-color: #666666 !important;
       background: #111111 !important;
     }
 
@@ -212,7 +217,7 @@
     }
 
     body.dark-mode .eps-section-label {
-      color: #f3ac00;
+      color: #aaaaaa;
     }
 
     body.dark-mode .eps-section-title {
@@ -223,8 +228,9 @@
       color: #aaaaaa !important;
     }
 
+    /* Age section dark mode */
     body.dark-mode .age-section {
-      background: #050505 !important;
+      background: #080808 !important;
       border-color: #2a2a2a;
     }
 
@@ -234,7 +240,7 @@
     }
 
     body.dark-mode .age-band:hover {
-      border-color: #f3ac00 !important;
+      border-color: #666666 !important;
       background: #111111 !important;
     }
 
@@ -243,9 +249,10 @@
     }
 
     body.dark-mode .age-band .toy-count {
-      color: #666;
+      color: #666666;
     }
 
+    /* Step cards */
     body.dark-mode .step-card {
       background: #0a0a0a !important;
     }
@@ -262,13 +269,14 @@
       background: #000000 !important;
     }
 
+    /* Feature cards */
     body.dark-mode .feat-card {
       background: #0a0a0a !important;
       border-color: #2a2a2a !important;
     }
 
     body.dark-mode .feat-card:hover {
-      border-color: #f3ac00 !important;
+      border-color: #666666 !important;
     }
 
     body.dark-mode .feat-card h3 {
@@ -283,13 +291,14 @@
       background: #1a1a1a !important;
     }
 
+    /* Kit cards */
     body.dark-mode .kit-card {
       background: #0a0a0a !important;
       border-color: #2a2a2a !important;
     }
 
     body.dark-mode .kit-card:hover {
-      border-color: #f3ac00 !important;
+      border-color: #666666 !important;
     }
 
     body.dark-mode .kit-thumb {
@@ -305,21 +314,26 @@
     }
 
     body.dark-mode .kit-age {
-      background: #2a2a1a !important;
-      color: #f3ac00 !important;
+      background: #1a1a1a !important;
+      color: #aaaaaa !important;
     }
 
     body.dark-mode .kit-price {
-      color: #f3ac00;
+      color: #cccccc;
     }
 
     body.dark-mode .kit-btn {
-      background: #f3ac00;
-      color: #000000;
+      background: #2a2a2a;
+      color: #e0e0e0;
     }
 
+    body.dark-mode .kit-btn:hover {
+      background: #3a3a3a;
+    }
+
+    /* Testimonials */
     body.dark-mode .testi-section {
-      background: #050505 !important;
+      background: #080808 !important;
       border-color: #2a2a2a;
     }
 
@@ -337,9 +351,10 @@
     }
 
     body.dark-mode .testimonial-author span {
-      color: #888;
+      color: #888888;
     }
 
+    /* CTA banner */
     body.dark-mode .cta-banner {
       background: #0a0a0a !important;
     }
@@ -353,14 +368,14 @@
     }
 
     body.dark-mode .cta-outline {
-      border-color: #f0f0f0;
-      color: #f0f0f0;
+      border-color: #aaaaaa;
+      color: #e0e0e0;
     }
 
     body.dark-mode .cta-outline:hover {
-      background: #f3ac00;
-      border-color: #f3ac00;
-      color: #000000;
+      background: #2a2a2a;
+      border-color: #2a2a2a;
+      color: #ffffff;
     }
 
     body.dark-mode .btn-ghost {
@@ -369,81 +384,74 @@
     }
 
     body.dark-mode .btn-ghost:hover {
-      background: #f3ac00;
-      border-color: #f3ac00;
-      color: #000000;
+      background: #2a2a2a;
+      border-color: #2a2a2a;
+      color: #ffffff;
     }
 
-    body.dark-mode .zc-stem .zone-icon {
-      background: #1a2a1a;
-    }
-
-    body.dark-mode .zc-arts .zone-icon {
-      background: #2a2a1a;
-    }
-
-    body.dark-mode .zc-reading .zone-icon {
-      background: #2a1a1a;
-    }
-
-    body.dark-mode .zc-math .zone-icon {
-      background: #1a1a2a;
-    }
-
-    body.dark-mode .zc-music .zone-icon {
-      background: #2a1a2a;
-    }
-
+    /* Zone specific dark mode */
+    body.dark-mode .zc-stem .zone-icon,
+    body.dark-mode .zc-arts .zone-icon,
+    body.dark-mode .zc-reading .zone-icon,
+    body.dark-mode .zc-math .zone-icon,
+    body.dark-mode .zc-music .zone-icon,
     body.dark-mode .zc-nature .zone-icon {
-      background: #1a2a1a;
+      background: #1a1a1a;
     }
 
-    body.dark-mode .zc-stem .zone-tag {
-      background: #1a2a1a;
-      color: #7da064;
-    }
-
-    body.dark-mode .zc-arts .zone-tag {
-      background: #2a2a1a;
-      color: #f3ac00;
-    }
-
-    body.dark-mode .zc-reading .zone-tag {
-      background: #2a1a1a;
-      color: #f3ac00;
-    }
-
-    body.dark-mode .zc-math .zone-tag {
-      background: #1a1a2a;
-      color: #f3ac00;
-    }
-
-    body.dark-mode .zc-music .zone-tag {
-      background: #2a1a2a;
-      color: #f3ac00;
-    }
-
+    body.dark-mode .zc-stem .zone-tag,
+    body.dark-mode .zc-arts .zone-tag,
+    body.dark-mode .zc-reading .zone-tag,
+    body.dark-mode .zc-math .zone-tag,
+    body.dark-mode .zc-music .zone-tag,
     body.dark-mode .zc-nature .zone-tag {
-      background: #1a2a1a;
-      color: #f3ac00;
+      background: #1a1a1a;
+      color: #aaaaaa;
     }
 
-    body.dark-mode .kt1 {
-      background: linear-gradient(145deg, #1a2a1a, #2a3a2a) !important;
-    }
-
-    body.dark-mode .kt2 {
-      background: linear-gradient(145deg, #2a2a1a, #3a3a1a) !important;
-    }
-
-    body.dark-mode .kt3 {
-      background: linear-gradient(145deg, #1a1a2a, #2a2a3a) !important;
-    }
-
+    body.dark-mode .kt1,
+    body.dark-mode .kt2,
+    body.dark-mode .kt3,
     body.dark-mode .kt4 {
-      background: linear-gradient(145deg, #2a1a1a, #3a2a2a) !important;
+      background: #1a1a1a !important;
     }
 
+    body.dark-mode .testi-avatar.ta1,
+    body.dark-mode .testi-avatar.ta2,
+    body.dark-mode .testi-avatar.ta3 {
+      background: #1a1a1a;
+      color: #aaaaaa;
+    }
+
+    /* Active link style */
+    .nav-link.active,
+    .mobile-nav-link.active {
+      color: #f3ac00;
+      font-weight: 700;
+    }
+
+    body.dark-mode .nav-link.active,
+    body.dark-mode .mobile-nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after,
+    .mobile-nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #f3ac00;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+
+    body.dark-mode .nav-link.active::after,
+    body.dark-mode .mobile-nav-link.active::after {
+      background: #ffffff;
+    }
+
+    /* RTL */
     [dir="rtl"] .desktop-nav ul {
       flex-direction: row-reverse;
     }
@@ -490,6 +498,7 @@
       right: 0;
     }
 
+    /* Main Header */
     .main-header {
       background-color: #ffffff;
       border-bottom: 1px solid #eaeef2;
@@ -664,15 +673,6 @@
       box-shadow: 0 2px 6px rgba(243, 172, 0, 0.2);
     }
 
-    .auth-link.signup:hover {
-      background-color: #e09d00;
-      transform: translateY(-1px);
-    }
-
-    .auth-link.login:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-
     .hamburger {
       display: none;
       flex-direction: column;
@@ -690,7 +690,6 @@
       height: 2px;
       background-color: #2c3e2f;
       border-radius: 2px;
-      transition: all 0.2s;
     }
 
     .mobile-menu {
@@ -754,12 +753,6 @@
       padding: 0.6rem 0;
     }
 
-    .mobile-dropdown-toggle span:first-child {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #2c3e2f;
-    }
-
     .mobile-dropdown-content {
       max-height: 0;
       overflow: hidden;
@@ -800,7 +793,6 @@
       background: transparent;
       border: 1px solid #e0d6cc;
       cursor: pointer;
-      transition: all 0.2s;
     }
 
     .mobile-auth-btn.signup-mobile {
@@ -809,13 +801,13 @@
       color: #2c3e2f;
     }
 
+    /* Footer */
     .unique-footer {
       background-color: #faf8f5;
       color: #2c3e2f;
       padding: 3rem 2rem 2rem;
       border-top: 4px solid #f3ac00;
       margin-top: 4rem;
-      transition: all 0.2s;
     }
 
     .footer-container {
@@ -900,17 +892,10 @@
       color: #f3ac00;
     }
 
-    .newsletter p {
-      color: #5a6e5a;
-      margin-bottom: 1.2rem;
-      font-size: 0.9rem;
-    }
-
     .newsletter-input {
       display: flex;
       border-bottom: 2px solid #e0d6cc;
       padding-bottom: 0.5rem;
-      transition: border-color 0.2s;
     }
 
     .newsletter-input:focus-within {
@@ -927,10 +912,6 @@
       outline: none;
     }
 
-    .newsletter-input input::placeholder {
-      color: #aaa;
-    }
-
     .newsletter-input button {
       background: none;
       border: none;
@@ -938,15 +919,6 @@
       cursor: pointer;
       font-size: 1.1rem;
       color: #f3ac00;
-      transition: transform 0.2s;
-    }
-
-    .newsletter-input button:hover {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .newsletter-input button:hover {
-      transform: translateX(-4px);
     }
 
     .footer-bottom {
@@ -966,82 +938,33 @@
       color: #7a8a7a;
       text-decoration: none;
       margin-left: 1.5rem;
-      transition: color 0.2s;
     }
 
     .footer-bottom a:hover {
       color: #f3ac00;
     }
 
-    [dir="rtl"] .footer-bottom a {
-      margin-left: 0;
-      margin-right: 1.5rem;
-    }
-
     @media (max-width: 1024px) {
-      .desktop-nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .right-icons .icon-btn:not(.hamburger) {
-        display: none;
-      }
-      .right-icons .auth-buttons {
-        display: none;
-      }
-      .right-icons .hamburger {
-        display: flex;
-      }
-      .right-icons {
-        gap: 0;
-      }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .right-icons .icon-btn:not(.hamburger) { display: none; }
+      .right-icons .auth-buttons { display: none; }
+      .right-icons .hamburger { display: flex; }
+      .right-icons { gap: 0; }
     }
 
     @media (max-width: 900px) {
-      .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
     @media (max-width: 768px) {
-      .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      [dir="rtl"] .footer-col h4::after {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-      }
-      .social-links {
-        justify-content: center;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer-bottom a {
-        margin: 0 0.8rem;
-      }
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
-    @media (max-width: 640px) {
-      .main-header {
-        padding: 0.7rem 1rem;
-      }
-      .logo a {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* HERO SECTION WITH BACKGROUND IMAGE */
+    /* Hero Section */
     .eps-hero {
       background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 100%), url('images/img (45).jpg');
       background-size: cover;
@@ -1067,6 +990,11 @@
       margin-bottom: 1.4rem;
     }
 
+    body.dark-mode .eps-pill {
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+
     .eps-hero-title {
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 800;
@@ -1079,6 +1007,10 @@
 
     .eps-hero-title span {
       color: #f3ac00;
+    }
+
+    body.dark-mode .eps-hero-title span {
+      color: #cccccc;
     }
 
     .eps-hero-sub {
@@ -1111,10 +1043,18 @@
       font-family: inherit;
     }
 
+    body.dark-mode .btn-gold {
+      background: #2a2a2a;
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn-gold:hover {
+      background: #3a3a3a;
+    }
+
     .btn-gold:hover {
       background: #e09d00;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(243, 172, 0, 0.3);
     }
 
     .btn-ghost {
@@ -1219,32 +1159,11 @@
       overflow: hidden;
     }
 
-    .zone-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      transition: width 0.2s;
-    }
-
-    .zone-card:hover::before {
-      width: 8px;
-    }
-
     .zone-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       border-color: #f3ac00;
     }
-
-    .zc-stem::before { background: #4a6a3b; }
-    .zc-arts::before { background: #f3ac00; }
-    .zc-reading::before { background: #e05c2e; }
-    .zc-math::before { background: #2980b9; }
-    .zc-music::before { background: #8e44ad; }
-    .zc-nature::before { background: #27ae60; }
 
     .zone-icon {
       width: 52px;
@@ -1263,6 +1182,10 @@
     .zc-math .zone-icon { background: #e6f1fb; }
     .zc-music .zone-icon { background: #f3ecfa; }
     .zc-nature .zone-icon { background: #e8f8ed; }
+
+    .zone-icon i {
+      font-size: 34px;
+    }
 
     .zone-card h3 {
       font-size: 1.05rem;
@@ -1327,13 +1250,11 @@
     .age-band:hover {
       border-color: #f3ac00;
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(243, 172, 0, 0.12);
     }
 
-    .age-band .age-emoji {
-      font-size: 1.8rem;
-      display: block;
-      margin-bottom: 0.5rem;
+    .age-band .age-emoji i {
+      font-size: 28px;
+      color: #f3ac00;
     }
 
     .age-band .age-range {
@@ -1378,16 +1299,20 @@
 
     .kit-thumb {
       height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
+      width: 100%;
+      overflow: hidden;
     }
 
-    .kt1 { background: linear-gradient(135deg, #eaf3de, #d4edbc); }
-    .kt2 { background: linear-gradient(135deg, #fff8e7, #fde8a0); }
-    .kt3 { background: linear-gradient(135deg, #e6f1fb, #c2ddf6); }
-    .kt4 { background: linear-gradient(135deg, #fae8e0, #f5c4b3); }
+    .kit-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .kt1, .kt2, .kt3, .kt4 {
+      background: linear-gradient(135deg, #eaf3de, #d4edbc);
+    }
 
     .kit-info {
       padding: 1.2rem;
@@ -1446,7 +1371,6 @@
 
     .kit-btn:hover {
       background: #e09d00;
-      transform: scale(1.03);
     }
 
     .how-section {
@@ -1491,7 +1415,11 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.1rem;
-      box-shadow: 0 4px 12px rgba(243, 172, 0, 0.3);
+    }
+
+    body.dark-mode .step-num {
+      background: #2a2a2a;
+      color: #e0e0e0;
     }
 
     .step-card h4 {
@@ -1505,12 +1433,6 @@
       font-size: 0.86rem;
       color: #7a8a7a;
       line-height: 1.6;
-    }
-
-    .step-icon {
-      font-size: 1.8rem;
-      display: block;
-      margin-bottom: 0.8rem;
     }
 
     .feat-grid {
@@ -1533,7 +1455,6 @@
     .feat-card:hover {
       border-color: #f3ac00;
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
     }
 
     .feat-icon-wrap {
@@ -1589,7 +1510,6 @@
 
     .testimonial-card:hover {
       border-color: #f3ac00;
-      box-shadow: 0 10px 24px rgba(243, 172, 0, 0.08);
     }
 
     .testi-stars {
@@ -1629,14 +1549,11 @@
     .ta2 { background: #fff3cd; color: #854f0b; }
     .ta3 { background: #e6f1fb; color: #185fa5; }
 
-    .testimonial-author {
-      font-size: 0.85rem;
-    }
-
     .testimonial-author strong {
       display: block;
       color: #2c3e2f;
       font-weight: 700;
+      font-size: 0.85rem;
     }
 
     .testimonial-author span {
@@ -1648,6 +1565,10 @@
       background: linear-gradient(135deg, #fff8e7 0%, #fef5e0 100%);
       padding: 5rem 2rem;
       text-align: center;
+    }
+
+    body.dark-mode .cta-banner {
+      background: #0a0a0a !important;
     }
 
     .cta-banner h2 {
@@ -1711,79 +1632,31 @@
       .eps-stats { gap: 1rem; }
       .age-band { min-width: 120px; }
     }
-    .kit-thumb {
-  height: 160px;
-  width: 100%;
-  overflow: hidden;
-  border-bottom: 1px solid #f0e4d8;
-}
 
-.kit-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    @media (max-width: 1024px) and (min-width: 601px) {
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
 
-}
-.age-emoji i {
-  font-size: 28px;
-  color: #ffa805; /* change to your theme */
-}
-.zone-icon i {
-  font-size: 34px; /* increase size */
-}
-/* ACTIVE LINK STYLE */
-.nav-link.active,
-.mobile-nav-link.active {
-  color: #f3ac00;
+    @media (max-width: 600px) {
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+      .social-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+        .auth-link.login {
+  background-color: #f3ac00;
+  color: #2c3e2f;
+  padding: 0.45rem 1rem;
+  border-radius: 40px;
   font-weight: 700;
+  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-/* Underline effect */
-.nav-link.active::after,
-.mobile-nav-link.active::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #f3ac00;
-  margin-top: 3px;
-  border-radius: 2px;
-}
-
-/* Optional: dropdown active */
-.dropdown-btn.active {
-  color: #f3ac00;
-  font-weight: 700;
-}
-/* Tablet (iPad sizes: 768–1024) → 2x2 layout */
-@media (max-width: 1024px) and (min-width: 601px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
-/* Mobile → single column */
-@media (max-width: 600px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-col h4::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Hover effect like CTA */
+.auth-link.login:hover {
+  background-color: #e09c00;
+  transform: translateY(-1px);
 }
   </style>
 </head>
@@ -1801,8 +1674,9 @@
           </div>
         </li>
         <li><a href="about.html" class="nav-link">About</a></li>
-<li><a href="about.html" class="nav-link active">Service</a></li>        <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
-        <li><a href="playStudio.html" class="nav-link ">playStudio</a></li>
+        <li><a href="service.html" class="nav-link active">Service</a></li>
+        <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
+        <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
         <li><a href="gifts.html" class="nav-link">Gifting</a></li>
         <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -1811,8 +1685,9 @@
     <div class="right-icons">
       <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
       <div class="auth-buttons">
-        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
-      </div>
+<button class="auth-link login" id="loginBtnDesktop">
+  Log in 
+</button>        </div>
       <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
       <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1830,9 +1705,8 @@
       </div>
     </li>
     <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
-<li class="mobile-nav-item">
-  <a href="about.html" class="mobile-nav-link active">Service</a>
-</li>    <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
+    <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link active">Service</a></li>
+    <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
     <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
     <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
     <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
@@ -1877,16 +1751,11 @@
       <div class="eps-section-title">Our 6 Learning Zones</div>
       <div class="eps-section-sub">Each zone is curated by child development experts to match the way kids naturally explore and absorb knowledge.</div>
       <div class="zone-grid">
-        <div class="zone-card zc-stem"><div class="zone-icon"><i class="fa-solid fa-microscope"></i>
-</div><h3>STEM Discovery</h3><p>Hands-on science experiments, engineering sets, and coding kits that build problem-solving skills from an early age.</p><span class="zone-tag">Ages 4–12</span></div>
-        <div class="zone-card zc-arts"><div class="zone-icon"><i class="fa-solid fa-palette"></i>
-</div><h3>Creative Arts</h3><p>Open-ended art materials, clay kits, and craft sets that nurture self-expression and fine motor development.</p><span class="zone-tag">Ages 2–10</span></div>
-        <div class="zone-card zc-reading"><div class="zone-icon"><i class="fa-solid fa-book-open"></i>
-</div><h3>Literacy & Stories</h3><p>Alphabet puzzles, storybuilding games, and reading kits that make language a joyful adventure.</p><span class="zone-tag">Ages 2–8</span></div>
-        <div class="zone-card zc-math"><div class="zone-icon"><i class="fa-solid fa-calculator"></i>
-</div><h3>Numbers & Logic</h3><p>Counting boards, pattern games, and strategy puzzles that build mathematical thinking through play.</p><span class="zone-tag">Ages 3–10</span></div>
-        <div class="zone-card zc-music"><div class="zone-icon"><i class="fa-solid fa-music"></i>
-</div><h3>Music & Rhythm</h3><p>Starter instruments, beat boxes, and musical exploration kits that awaken auditory creativity.</p><span class="zone-tag">Ages 1–8</span></div>
+        <div class="zone-card zc-stem"><div class="zone-icon"><i class="fa-solid fa-microscope"></i></div><h3>STEM Discovery</h3><p>Hands-on science experiments, engineering sets, and coding kits that build problem-solving skills from an early age.</p><span class="zone-tag">Ages 4–12</span></div>
+        <div class="zone-card zc-arts"><div class="zone-icon"><i class="fa-solid fa-palette"></i></div><h3>Creative Arts</h3><p>Open-ended art materials, clay kits, and craft sets that nurture self-expression and fine motor development.</p><span class="zone-tag">Ages 2–10</span></div>
+        <div class="zone-card zc-reading"><div class="zone-icon"><i class="fa-solid fa-book-open"></i></div><h3>Literacy & Stories</h3><p>Alphabet puzzles, storybuilding games, and reading kits that make language a joyful adventure.</p><span class="zone-tag">Ages 2–8</span></div>
+        <div class="zone-card zc-math"><div class="zone-icon"><i class="fa-solid fa-calculator"></i></div><h3>Numbers & Logic</h3><p>Counting boards, pattern games, and strategy puzzles that build mathematical thinking through play.</p><span class="zone-tag">Ages 3–10</span></div>
+        <div class="zone-card zc-music"><div class="zone-icon"><i class="fa-solid fa-music"></i></div><h3>Music & Rhythm</h3><p>Starter instruments, beat boxes, and musical exploration kits that awaken auditory creativity.</p><span class="zone-tag">Ages 1–8</span></div>
         <div class="zone-card zc-nature"><div class="zone-icon"><i class="fa-solid fa-leaf"></i></div><h3>Nature & Outdoors</h3><p>Bug kits, plant growing sets, and outdoor explorer tools that build curiosity about the natural world.</p><span class="zone-tag">Ages 3–12</span></div>
       </div>
     </div>
@@ -1898,14 +1767,10 @@
       <div class="eps-section-title">Shop by Age</div>
       <div class="eps-section-sub" style="margin-bottom:0;">Every toy is developmentally matched so kids are always challenged at just the right level.</div>
       <div class="age-bands">
-        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-baby"></i>
-</span><div class="age-range">0–1</div><div class="age-label">Newborn & Infant</div><div class="toy-count">22 kits</div></div>
-        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-person-walking"></i>
-</span><div class="age-range">1–3</div><div class="age-label">Toddler Explorers</div><div class="toy-count">38 kits</div></div>
-        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-school"></i>
-</span><div class="age-range">3–5</div><div class="age-label">Early Learners</div><div class="toy-count">44 kits</div></div>
-        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-puzzle-piece"></i>
-</span><div class="age-range">5–8</div><div class="age-label">Junior Thinkers</div><div class="toy-count">31 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-baby"></i></span><div class="age-range">0–1</div><div class="age-label">Newborn & Infant</div><div class="toy-count">22 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-person-walking"></i></span><div class="age-range">1–3</div><div class="age-label">Toddler Explorers</div><div class="toy-count">38 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-school"></i></span><div class="age-range">3–5</div><div class="age-label">Early Learners</div><div class="toy-count">44 kits</div></div>
+        <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-puzzle-piece"></i></span><div class="age-range">5–8</div><div class="age-label">Junior Thinkers</div><div class="toy-count">31 kits</div></div>
         <div class="age-band"><span class="age-emoji"><i class="fa-solid fa-microscope"></i></span><div class="age-range">8–12</div><div class="age-label">Advanced Builders</div><div class="toy-count">19 kits</div></div>
       </div>
     </div>
@@ -1917,18 +1782,10 @@
       <div class="eps-section-title">Featured Learning Kits</div>
       <div class="eps-section-sub">Handpicked by our educators — bestsellers that kids keep coming back to.</div>
       <div class="kits-grid">
-        <div class="kit-card"><div class="kit-thumb">
-  <img src="images\img (39).jpg" alt="Mini Garden Science Kit">
-</div><div class="kit-info"><span class="kit-age">Ages 4–8</span><h4>Mini Garden Science Kit</h4><p>Grow, observe & record — a complete plant life-cycle experiment set.</p><div class="kit-footer"><span class="kit-price">₹849</span><button class="kit-btn">Add to Cart</button></div></div></div>
-        <div class="kit-card"><div class="kit-thumb">
-  <img src="images\img (37).jpg" alt="Mini Garden Science Kit">
-</div><div class="kit-info"><span class="kit-age">Ages 5–10</span><h4>Junior Engineer Builder Set</h4><p>200 wooden pieces that inspire bridges, towers and endless creations.</p><div class="kit-footer"><span class="kit-price">₹1,299</span><button class="kit-btn">Add to Cart</button></div></div></div>
-        <div class="kit-card"><div class="kit-thumb">
-  <img src="images\img (38).jpg" alt="Mini Garden Science Kit">
-</div><div class="kit-info"><span class="kit-age">Ages 3–6</span><h4>Alphabet Adventure Puzzle</h4><p>Magnetic letters, story cards and a phonics board in one.</p><div class="kit-footer"><span class="kit-price">₹649</span><button class="kit-btn">Add to Cart</button></div></div></div>
-        <div class="kit-card"><div class="kit-thumb">
-  <img src="images\img (43).jpg" alt="Mini Garden Science Kit">
-</div><div class="kit-info"><span class="kit-age">Ages 2–7</span><h4>Rainbow Watercolour Studio</h4><p>Non-toxic, eco-friendly paints with canvas boards and guided art cards.</p><div class="kit-footer"><span class="kit-price">₹749</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb"><img src="images\img (39).jpg" alt="Mini Garden Science Kit"></div><div class="kit-info"><span class="kit-age">Ages 4–8</span><h4>Mini Garden Science Kit</h4><p>Grow, observe & record — a complete plant life-cycle experiment set.</p><div class="kit-footer"><span class="kit-price">₹849</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb"><img src="images\img (37).jpg" alt="Junior Engineer Builder Set"></div><div class="kit-info"><span class="kit-age">Ages 5–10</span><h4>Junior Engineer Builder Set</h4><p>200 wooden pieces that inspire bridges, towers and endless creations.</p><div class="kit-footer"><span class="kit-price">₹1,299</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb"><img src="images\img (38).jpg" alt="Alphabet Adventure Puzzle"></div><div class="kit-info"><span class="kit-age">Ages 3–6</span><h4>Alphabet Adventure Puzzle</h4><p>Magnetic letters, story cards and a phonics board in one.</p><div class="kit-footer"><span class="kit-price">₹649</span><button class="kit-btn">Add to Cart</button></div></div></div>
+        <div class="kit-card"><div class="kit-thumb"><img src="images\img (43).jpg" alt="Rainbow Watercolour Studio"></div><div class="kit-info"><span class="kit-age">Ages 2–7</span><h4>Rainbow Watercolour Studio</h4><p>Non-toxic, eco-friendly paints with canvas boards and guided art cards.</p><div class="kit-footer"><span class="kit-price">₹749</span><button class="kit-btn">Add to Cart</button></div></div></div>
       </div>
     </div>
   </section>
@@ -1939,10 +1796,10 @@
       <div class="eps-section-title">Your Child's Play Journey</div>
       <div class="eps-section-sub" style="margin-bottom:0;">Four simple steps from discovery to delivered delight.</div>
       <div class="steps-grid">
-        <div class="step-card"><span class="step-icon"></span><div class="step-num">1</div><h4>Discover</h4><p>Browse our expertly curated zones and pick the learning area that excites your child most.</p></div>
-        <div class="step-card"><span class="step-icon"></span><div class="step-num">2</div><h4>Match by Age</h4><p>Filter by your child's age group to ensure the kit is developmentally appropriate.</p></div>
-        <div class="step-card"><span class="step-icon"></span><div class="step-num">3</div><h4>Unbox Together</h4><p>Eco-friendly packaging with parent activity guides inside every kit.</p></div>
-        <div class="step-card"><span class="step-icon"></span><div class="step-num">4</div><h4>Play & Grow</h4><p>Track milestones and share progress — then level up to the next kit when ready.</p></div>
+        <div class="step-card"><div class="step-num">1</div><h4>Discover</h4><p>Browse our expertly curated zones and pick the learning area that excites your child most.</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Match by Age</h4><p>Filter by your child's age group to ensure the kit is developmentally appropriate.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Unbox Together</h4><p>Eco-friendly packaging with parent activity guides inside every kit.</p></div>
+        <div class="step-card"><div class="step-num">4</div><h4>Play & Grow</h4><p>Track milestones and share progress — then level up to the next kit when ready.</p></div>
       </div>
     </div>
   </section>
@@ -1953,16 +1810,11 @@
       <div class="eps-section-title">Thoughtfully Made for Little Minds</div>
       <div class="eps-section-sub">Every decision — materials, design, curriculum — is made with your child's development in mind.</div>
       <div class="feat-grid">
-        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-leaf"></i>
-</div><div><h3>Eco-Conscious Materials</h3><p>All kits use sustainably sourced wood, recycled packaging, and non-toxic, child-safe paints and dyes.</p></div></div>
-        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-brain"></i>
-</div><div><h3>Expert-Curated Curriculum</h3><p>Designed with child psychologists and Montessori educators to align with developmental milestones.</p></div></div>
-        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-arrows-rotate"></i>
-</div><div><h3>Open-Ended Play</h3><p>No single right answer — our kits encourage exploration, divergent thinking, and creative problem solving.</p></div></div>
-        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-people-group"></i>
-</div><div><h3>Parent Activity Guides</h3><p>Every kit ships with a parent card offering extension activities, conversation starters and learning goals.</p></div></div>
-        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-trophy"></i>
-</div><div><h3>Award-Winning Designs</h3><p>Recognised by the Indian Toy Federation and global parenting platforms for safety and innovation.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-leaf"></i></div><div><h3>Eco-Conscious Materials</h3><p>All kits use sustainably sourced wood, recycled packaging, and non-toxic, child-safe paints and dyes.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-brain"></i></div><div><h3>Expert-Curated Curriculum</h3><p>Designed with child psychologists and Montessori educators to align with developmental milestones.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-arrows-rotate"></i></div><div><h3>Open-Ended Play</h3><p>No single right answer — our kits encourage exploration, divergent thinking, and creative problem solving.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-people-group"></i></div><div><h3>Parent Activity Guides</h3><p>Every kit ships with a parent card offering extension activities, conversation starters and learning goals.</p></div></div>
+        <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-trophy"></i></div><div><h3>Award-Winning Designs</h3><p>Recognised by the Indian Toy Federation and global parenting platforms for safety and innovation.</p></div></div>
         <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-truck"></i></div><div><h3>Free Pan-India Shipping</h3><p>All orders ship free. Delivered in 3–5 business days with easy 30-day hassle-free returns.</p></div></div>
       </div>
     </div>
@@ -1974,9 +1826,9 @@
       <div class="eps-section-title">Loved by Families Across India</div>
       <div class="eps-section-sub" style="margin-bottom:0;">Real words from real parents who've watched their children grow through play.</div>
       <div class="testi-grid">
-        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"The STEM Discovery kit was a game-changer. My 6-year-old now asks to do 'experiments' every evening instead of screen time. Beautifully made and so thoughtfully designed."</blockquote><div class="testi-author"><div class="testi-avatar ta1">PR</div><div class="testimonial-author"><strong>Priya Ramachandran</strong><span>Parent of Aryan, 6 · Bengaluru</span></div></div></div>
-        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"My daughter was struggling with reading. The Literacy kit made letters feel like a game. Within 3 weeks she was reading her first words — I genuinely cried happy tears."</blockquote><div class="testi-author"><div class="testi-avatar ta2">SK</div><div class="testimonial-author"><strong>Sunita Khanna</strong><span>Parent of Meera, 4 · Mumbai</span></div></div></div>
-        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"As a Montessori teacher I'm very particular about materials. Toyza's kits genuinely impress me — the wood quality, the open-ended design, the activity guides are all top-tier."</blockquote><div class="testi-author"><div class="testi-avatar ta3">AN</div><div class="testimonial-author"><strong>Ananya Nair</strong><span>Montessori Educator · Kochi</span></div></div></div>
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"The STEM Discovery kit was a game-changer. My 6-year-old now asks to do 'experiments' every evening instead of screen time. Beautifully made and so thoughtfully designed."</blockquote><div class="testi-author"><div class="testi-avatar ta1">PR</div><div><strong>Priya Ramachandran</strong><span>Parent of Aryan, 6 · Bengaluru</span></div></div></div>
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"My daughter was struggling with reading. The Literacy kit made letters feel like a game. Within 3 weeks she was reading her first words — I genuinely cried happy tears."</blockquote><div class="testi-author"><div class="testi-avatar ta2">SK</div><div><strong>Sunita Khanna</strong><span>Parent of Meera, 4 · Mumbai</span></div></div></div>
+        <div class="testimonial-card"><div class="testi-stars">★★★★★</div><blockquote>"As a Montessori teacher I'm very particular about materials. Toyza's kits genuinely impress me — the wood quality, the open-ended design, the activity guides are all top-tier."</blockquote><div class="testi-author"><div class="testi-avatar ta3">AN</div><div><strong>Ananya Nair</strong><span>Montessori Educator · Kochi</span></div></div></div>
       </div>
     </div>
   </section>
@@ -1995,10 +1847,10 @@
   <div class="footer-container">
     <div class="footer-brand">
       <div style="display: flex; align-items: center; gap: 8px;">
-          <a href="index.html" style="text-decoration: none;">
-            <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
-          </a>
-        </div>
+        <a href="index.html" style="text-decoration: none;">
+          <span style="color: #f3ac00; font-size: 1.8rem; font-weight: 800;">Toyza</span>
+        </a>
+      </div>
       <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds. Thoughtfully designed for modern families.</p>
       <div class="social-links">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
