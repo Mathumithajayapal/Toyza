@@ -182,13 +182,13 @@
       justify-content: space-between;
       gap: 2rem;
     }
-    .logo a {
+   .logo a {
       text-decoration: none;
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: #f3ac00;
-    }
+    } 
     .logo span { font-weight: 400; color: #4a6a3b; }
     body.dark-mode .logo span { color: #7da064; }
 
@@ -889,6 +889,8 @@
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
   transition: all 0.2s ease;
+     text-decoration: none;
+
 }
 
 /* Hover effect like CTA */
@@ -923,9 +925,11 @@
     <div class="right-icons">
       <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
       <div class="auth-buttons">
-<button class="auth-link login" id="loginBtnDesktop">
-  Log in <i class="fas fa-arrow-right"></i>
-</button>       </div>
+<div class="auth-buttons">
+  <a href="login.html" class="auth-link login" id="loginBtnDesktop">
+    Log in
+  </a>
+</div>     </div>
       <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
       <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>

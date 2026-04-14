@@ -391,13 +391,13 @@
             gap: 2rem;
         }
 
-        .logo a {
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #f3ac00;
-        }
+       .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    } 
 
         .logo span {
             font-weight: 400;
@@ -1634,6 +1634,7 @@
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 /* Hover effect like CTA */
@@ -1641,6 +1642,11 @@
   background-color: #e09c00;
   transform: translateY(-1px);
 }
+/* Footer headings in dark mode */
+body.dark-mode .footer-col h4 {
+  color: #ffffff !important;
+}
+
     </style>
 </head>
 
@@ -1669,10 +1675,11 @@
             </div>
             <div class="right-icons">
                 <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
-                <div class="auth-buttons">
-<button class="auth-link login" id="loginBtnDesktop">
-  Log in <i class="fas fa-arrow-right"></i>
-</button>                </div>
+             <div class="auth-buttons">
+  <a href="login.html" class="auth-link login" id="loginBtnDesktop">
+    Log in
+  </a>
+</div> 
                 <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
                 <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
                     style="font-weight:600;font-size:0.85rem;width:auto;padding:0 12px;border-radius:40px;gap:4px;">RTL</button>
@@ -1829,7 +1836,6 @@
                 <img class="why-img-accent" src="images\img (54).jpg" alt="Wrapped gift" loading="lazy">
             </div>
             <div class="why-text">
-                <p class="section-label" style="color:#f3ac00;opacity:0.85;">Why Choose Us</p>
                 <h2 class="section-title">More Than a Toy.<br><span>A Lasting Memory.</span></h2>
                 <p class="section-body">Every Toyza gift is carefully chosen by child development experts and packaged
                     with love. We believe every present should do more than entertain — it should open a door to wonder.
@@ -1998,7 +2004,7 @@
     <footer class="unique-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <div><span style="font-size:1.8rem;font-weight:800;">Toyza<span style="color:#f3ac00;">.</span></span>
+                <div><span style="font-size:1.8rem;font-weight:800;color:#f3ac00;">Toyza</span>
                 </div>
                 <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
                 <div class="social-links">

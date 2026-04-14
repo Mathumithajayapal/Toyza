@@ -28,14 +28,11 @@
       --radius: 20px;
     }
 
-    body {
+     body {
       font-family: 'Inter', sans-serif;
-      background: #fff;
+      background-color: #ffffff;
       color: #1a1a1a;
-      transition: background .25s, color .25s;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     /* ===== DARK MODE - PURE BLACK & DARK GREY WITH WHITE TEXT ===== */
@@ -439,21 +436,16 @@
       justify-content: space-between;
       gap: 2rem;
     }
-
-    .logo a {
+.logo a {
       text-decoration: none;
       font-size: 1.8rem;
       font-weight: 800;
-      letter-spacing: -.5px;
+      letter-spacing: -0.5px;
       color: #f3ac00;
-      font-family: 'Poppins', sans-serif;
-    }
+            font-family: 'Inter', sans-serif;
 
-    .logo span {
-      font-weight: 400;
-      color: #4a6a3b;
-      font-family: 'Poppins', sans-serif;
-    }
+    } 
+
 
     .desktop-nav {
       flex: 1;
@@ -736,7 +728,7 @@
     .footer-col h4,
     .logo a,
     .ps-hero-badge {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     .ps-hero p,
@@ -1510,12 +1502,27 @@
       }
     }
 
-    @media(max-width:768px) {
-      .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+  @media(max-width:768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    text-align: center;
+    gap: 1.5rem;
+  }
 
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
       .footer-col h4::after {
         left: 50%;
         transform: translateX(-50%);
@@ -1541,7 +1548,7 @@
       .section {
         padding: 3.5rem 1.5rem;
       }
-    }
+    
 
     .video-card {
       min-height: 420px;
@@ -1566,6 +1573,7 @@
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 /* Hover effect like CTA */
@@ -1573,16 +1581,16 @@
   background-color: #e09c00;
   transform: translateY(-1px);
 }
-.right-icons .icon-btn:not(.hamburger) {
-  display: none;
-}
 
-.right-icons .auth-buttons {
-  display: none;
+/* Hide login button in mobile navbar */
+@media (max-width: 1024px) {
+  #loginBtnDesktop {
+    display: none !important;
+  }
 }
-/* Hide everything except hamburger */
-.right-icons > *:not(.hamburger) {
-  display: none !important;
+/* Footer headings in dark mode */
+body.dark-mode .footer-col h4 {
+  color: #ffffff !important;
 }
   </style>
 </head>
@@ -1608,9 +1616,11 @@
       </div>
       <div class="right-icons"><button class="icon-btn" aria-label="Search" id="searchBtn"><i
             class="fas fa-search"></i></button>
-      <button class="auth-link login" id="loginBtnDesktop">
-  Log in 
-</button>      <button
+    <div class="auth-buttons">
+  <a href="login.html" class="auth-link login" id="loginBtnDesktop">
+    Log in
+  </a>
+</div>       <button
           class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button><button
           class="icon-btn" id="rtlToggle" aria-label="RTL/LTR"
           style="font-weight:600;font-size:.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button><button

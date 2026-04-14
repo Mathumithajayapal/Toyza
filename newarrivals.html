@@ -397,14 +397,13 @@
       justify-content: space-between;
       gap: 2rem;
     }
-
-    .logo a {
+.logo a {
       text-decoration: none;
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: #f3ac00;
-    }
+    } 
 
     .logo span {
       font-weight: 400;
@@ -1257,12 +1256,17 @@
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 /* Hover effect like CTA */
 .auth-link.login:hover {
   background-color: #e09c00;
   transform: translateY(-1px);
+}
+/* Dark mode - New Arrivals heading */
+body.dark-mode .arrivals-section .section-header h2 {
+  color: #ffffff;
 }
   </style>
 </head>
@@ -1291,10 +1295,11 @@
       </div>
       <div class="right-icons">
         <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
-        <div class="auth-buttons">
-<button class="auth-link login" id="loginBtnDesktop">
-  Log in 
-</button>         </div>
+      <div class="auth-buttons">
+  <a href="login.html" class="auth-link login" id="loginBtnDesktop">
+    Log in
+  </a>
+</div> 
         <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
         <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle"
           style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>

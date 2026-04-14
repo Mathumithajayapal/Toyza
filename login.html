@@ -311,6 +311,89 @@
       .social-login-btn { font-size: 0.8rem; }
       [dir="rtl"] .global-controls { right: auto; left: 1rem; }
     }
+    .form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #5a6e5a;
+  cursor: pointer;
+}
+
+.remember-me input {
+  accent-color: #f3ac00;
+  cursor: pointer;
+}
+@media (max-width: 400px) {
+  body {
+    padding: 1rem 0.8rem;
+    align-items: flex-start; /* 🔥 moves card down */
+  }
+
+  .login-container {
+    margin-top: 2.5rem; /* 🔥 controls how much it moves down */
+    max-width: 100%;
+  }
+
+  .login-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: 28px;
+  }
+
+  .brand-logo a {
+    font-size: 1.6rem;
+  }
+
+  .login-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .login-header p {
+    font-size: 0.75rem;
+  }
+
+  .input-group input {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .login-btn {
+    padding: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .social-login {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-login-btn {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .form-options {
+    font-size: 0.75rem;
+  }
+
+  .global-controls {
+    top: 0.7rem;
+    right: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .global-btn {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -325,7 +408,7 @@
   <div class="login-card">
     <!-- Logo inside card as requested -->
     <div class="brand-logo">
-      <a href="index.html">Toyza<span>.</span></a>
+      <a href="index.html">Toyza</a>
     </div>
 
     <div class="login-header">
@@ -343,8 +426,14 @@
         <input type="password" id="loginPassword" placeholder="••••••••" required>
       </div>
       <div class="forgot-row">
-        <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot password?</a>
-      </div>
+<div class="form-options">
+  <label class="remember-me">
+    <input type="checkbox" id="rememberMe">
+    <span>Remember me</span>
+  </label>
+
+  <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot password?</a>
+</div>      </div>
       <button type="submit" class="login-btn"><i class="fas fa-arrow-right-to-bracket"></i> Log in to Toyza</button>
     </form>
 

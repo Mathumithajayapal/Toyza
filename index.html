@@ -31,15 +31,14 @@
       --radius: 24px;
     }
 
+ 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: var(--white);
-      color: var(--text);
-      transition: background-color 0.25s, color 0.25s;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
+
 
     /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY, NO GREEN BACKGROUNDS ===== */
     body.dark-mode {
@@ -72,7 +71,7 @@
     body.dark-mode .hamburger span { background-color: #e0e0e0; }
     
     /* Login button dark mode */
-    body.dark-mode .auth-link.login { color: #ffffff !important; }
+    body.dark-mode .auth-link.login { color: #ffffff !important; background-color: #3a3a3a; }
     body.dark-mode .auth-link.signup { background-color: #3a3a3a; color: #ffffff !important; }
     
     /* Footer dark mode */
@@ -91,8 +90,7 @@
     body.dark-mode .newsletter-input:focus-within { border-bottom-color: #666666; }
     
     /* Logo dark mode */
-    body.dark-mode .logo a {       color: #f3ac00 !important;
- }
+    body.dark-mode .logo a { color: #f3ac00 !important; }
     body.dark-mode .logo span { color: #aaaaaa !important; }
     
     /* Mobile auth buttons */
@@ -132,8 +130,14 @@
       justify-content: space-between;
       gap: 2rem;
     }
-    .logo a { text-decoration: none; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; color: #f3ac00; }
-    .logo span { font-weight: 400; color: #4a6a3b; }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f3ac00;
+    }   
     .desktop-nav { flex: 1; display: flex; justify-content: center; }
     .nav-links { display: flex; list-style: none; gap: 1.8rem; align-items: center; flex-wrap: wrap; }
     .nav-item { position: relative; }
@@ -616,11 +620,15 @@
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE (hide desktop search icon on mobile) ── */
     @media (max-width: 1024px) {
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
       .right-icons .auth-buttons { display: none; }
+      /* Hide the main search icon button only on mobile/tablet */
+      .right-icons .icon-btn#searchBtn {
+        display: none;
+      }
       #darkModeToggle, #rtlToggle { display: none; }
       .hero { padding: 60px 1.5rem 50px; }
       .age-cards { grid-template-columns: repeat(2, 1fr); }
@@ -647,34 +655,26 @@
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr; }
     }
-        .auth-link.login {
-  background-color: #f3ac00;
-  color: #2c3e2f;
-  padding: 0.45rem 1rem;
-  border-radius: 40px;
-  font-weight: 700;
-  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
-  transition: all 0.2s ease;
-}
-
-/* Hover effect like CTA */
-.auth-link.login:hover {
-  background-color: #e09c00;
-  transform: translateY(-1px);
-}
-.right-icons {
-  gap: 0; /* optional */
-}
-
-/* Hide everything except hamburger */
-.right-icons .icon-btn,
-.right-icons .auth-buttons {
-  display: none;
-}
-
-/* Show only hamburger */
-.hamburger {
-  display: flex;
+    .auth-link.login {
+      background-color: #f3ac00;
+      color: #2c3e2f;
+      padding: 0.45rem 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+      transition: all 0.2s ease;
+    }
+    .auth-link.login:hover {
+      background-color: #e09c00;
+      transform: translateY(-1px);
+    }
+    .right-icons {
+      gap: 0;
+    }
+    .age-cards {
+  display: grid;
+  grid-template-columns: 1fr; /* one card per row */
+  gap: 20px;
 }
   </style>
 </head>
@@ -704,9 +704,8 @@
     <div class="right-icons">
       <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
       <div class="auth-buttons">
-<button class="auth-link login" id="loginBtnDesktop">
-  Log in 
-</button>      </div>
+        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+      </div>
       <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
       <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight:600;font-size:0.85rem;width:auto;padding:0 12px;border-radius:40px;gap:4px;">RTL</button>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -714,7 +713,7 @@
   </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- MOBILE MENU (search icon added inside hamburger menu) -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenuBtn">&#10005;</button>
   <ul class="mobile-nav-links">
@@ -731,6 +730,19 @@
     <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
     <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
     <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    <!-- Mobile Search Icon Item (visible only inside hamburger) -->
+    <li class="mobile-nav-item">
+      <div class="mobile-dropdown-toggle" id="mobileSearchToggle" style="cursor:pointer;">
+        <span><i class="fas fa-search" style="margin-right: 10px;"></i> Search</span>
+        <span><i class="fas fa-chevron-down"></i></span>
+      </div>
+      <div class="mobile-dropdown-content" id="mobileSearchContent">
+        <div style="padding: 0.6rem 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <input type="text" id="mobileSearchInput" placeholder="What are you looking for?" style="flex:1; padding: 8px 12px; border-radius: 40px; border: 1px solid #e0d6cc; background: transparent; font-family: inherit;">
+          <button id="mobileSearchSubmit" style="background:#f3ac00; border:none; border-radius: 40px; padding: 8px 18px; font-weight:600; cursor:pointer;">Go</button>
+        </div>
+      </div>
+    </li>
     <li class="mobile-nav-item">
       <div class="mobile-auth">
         <button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button>
@@ -923,6 +935,12 @@
   const mobileCatContent = document.getElementById('mobileCategoriesDropdown');
   const loginDesktop = document.getElementById('loginBtnDesktop');
   const mobileLogin = document.getElementById('mobileLoginBtn');
+  
+  // Mobile search toggle elements
+  const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+  const mobileSearchContent = document.getElementById('mobileSearchContent');
+  const mobileSearchInput = document.getElementById('mobileSearchInput');
+  const mobileSearchSubmit = document.getElementById('mobileSearchSubmit');
 
   // Mobile menu
   const openMenu = () => { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; };
@@ -961,6 +979,31 @@
       if (icon) icon.style.transform = mobileCatContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
     });
   }
+
+  // Mobile search dropdown
+  if (mobileSearchToggle && mobileSearchContent) {
+    mobileSearchToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileSearchContent.classList.toggle('active');
+      const icon = mobileSearchToggle.querySelector('span:last-child i');
+      if (icon) icon.style.transform = mobileSearchContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    });
+  }
+
+  // Handle mobile search submission
+  const performMobileSearch = () => {
+    const query = mobileSearchInput?.value.trim();
+    if (query) {
+      alert(`Searching for: "${query}" (demo action - integrate with your search backend)`);
+      // You can replace with actual search logic: window.location.href = `/search?q=${encodeURIComponent(query)}`;
+      mobileSearchInput.value = '';
+      mobileSearchContent.classList.remove('active');
+    } else {
+      alert('Please enter something to search.');
+    }
+  };
+  mobileSearchSubmit?.addEventListener('click', performMobileSearch);
+  mobileSearchInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performMobileSearch(); });
 
   // Newsletter
   const handleNewsletter = () => {
