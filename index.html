@@ -91,7 +91,8 @@
     body.dark-mode .newsletter-input:focus-within { border-bottom-color: #666666; }
     
     /* Logo dark mode */
-    body.dark-mode .logo a { color: #ffffff !important; }
+    body.dark-mode .logo a {       color: #f3ac00 !important;
+ }
     body.dark-mode .logo span { color: #aaaaaa !important; }
     
     /* Mobile auth buttons */
@@ -661,6 +662,20 @@
   background-color: #e09c00;
   transform: translateY(-1px);
 }
+.right-icons {
+  gap: 0; /* optional */
+}
+
+/* Hide everything except hamburger */
+.right-icons .icon-btn,
+.right-icons .auth-buttons {
+  display: none;
+}
+
+/* Show only hamburger */
+.hamburger {
+  display: flex;
+}
   </style>
 </head>
 <body>
@@ -888,7 +903,7 @@
     </div>
     <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Collections</a></li></ul></div>
     <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns &amp; Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
-    <div class="footer-col newsletter"><h4>Join the Club</h4><p style="color:#5a6e5a;margin-bottom:1rem;font-size:0.88rem;">Get 10% off + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+    <div class="footer-col newsletter"><h4>MailBox</h4><p style="color:#5a6e5a;margin-bottom:1rem;font-size:0.88rem;">Get 10% off + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
 </footer>

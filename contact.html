@@ -1098,7 +1098,7 @@
     </div>
     <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div>
     <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
-    <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+    <div class="footer-col newsletter"><h4>MailBox</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
 </footer>
@@ -1199,7 +1199,6 @@
     newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(); });
     newsletterEmail?.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleNewsletter(); } });
     
-    const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
     if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
     if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
     
@@ -1246,6 +1245,9 @@
     if (darkToggle && document.body.classList.contains('dark-mode')) darkToggle.querySelector('i').className = 'fas fa-sun';
   })();
     document.getElementById("loginBtnDesktop").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
+   document.getElementById("mobileLoginBtn").addEventListener("click", function() {
     window.location.href = "login.html";
   });
 </script>

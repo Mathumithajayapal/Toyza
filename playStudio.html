@@ -38,10 +38,10 @@
       flex-direction: column;
     }
 
-    /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY, NO GREEN BACKGROUNDS ===== */
+    /* ===== DARK MODE - PURE BLACK & DARK GREY WITH WHITE TEXT ===== */
     body.dark-mode {
       background: #000000;
-      color: #e0e0e0;
+      color: #ffffff;
     }
 
     body.dark-mode .main-header {
@@ -52,13 +52,13 @@
     body.dark-mode .category-link,
     body.dark-mode .nav-link,
     body.dark-mode .dropdown-btn {
-      color: #dddddd;
+      color: #ffffff;
     }
 
     body.dark-mode .category-link:hover,
     body.dark-mode .nav-link:hover,
     body.dark-mode .dropdown-btn:hover {
-      color: #ffffff;
+      color: #f3ac00;
     }
 
     body.dark-mode .dropdown-content {
@@ -67,16 +67,16 @@
     }
 
     body.dark-mode .dropdown-content a {
-      color: #cccccc;
+      color: #ffffff;
     }
 
     body.dark-mode .dropdown-content a:hover {
       background: #2c2c2c;
-      color: #ffffff;
+      color: #f3ac00;
     }
 
     body.dark-mode .icon-btn {
-      color: #dddddd;
+      color: #ffffff;
     }
 
     body.dark-mode .mobile-menu {
@@ -85,11 +85,11 @@
 
     body.dark-mode .mobile-nav-link,
     body.dark-mode .mobile-dropdown-toggle span:first-child {
-      color: #dddddd;
+      color: #ffffff;
     }
 
     body.dark-mode .mobile-dropdown-content a {
-      color: #bbbbbb;
+      color: #cccccc;
     }
 
     body.dark-mode .unique-footer {
@@ -98,11 +98,11 @@
     }
 
     body.dark-mode .footer-col a {
-      color: #aaaaaa;
+      color: #cccccc;
     }
 
     body.dark-mode .footer-col a:hover {
-      color: #ffffff;
+      color: #f3ac00;
     }
 
     body.dark-mode .footer-col h4::after {
@@ -111,21 +111,21 @@
 
     body.dark-mode .social-links a {
       background: #1f1f1f;
-      color: #cccccc;
-    }
-
-    body.dark-mode .social-links a:hover {
-      background: #333333;
       color: #ffffff;
     }
 
+    body.dark-mode .social-links a:hover {
+      background: #f3ac00;
+      color: #000000;
+    }
+
     body.dark-mode .newsletter-input input {
-      color: #e0e0e0;
+      color: #ffffff;
     }
 
     /* Hero dark mode - preserve background image */
     body.dark-mode .ps-hero {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/img (48).jpg');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
@@ -168,18 +168,18 @@
     }
 
     body.dark-mode .section-title {
-      color: #e0e0e0;
+      color: #ffffff;
     }
 
     body.dark-mode .section-sub {
-      color: #aaaaaa;
+      color: #cccccc;
     }
 
     body.dark-mode .ps-hero-badge {
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(4px);
       border-color: rgba(255, 255, 255, 0.2);
-      color: #cccccc;
+      color: #f3ac00;
     }
 
     body.dark-mode .hero-stat-label {
@@ -187,12 +187,12 @@
     }
 
     body.dark-mode .ps-hero p {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     body.dark-mode .section-badge {
-      background: rgba(255, 255, 255, 0.08);
-      color: #aaaaaa;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f3ac00;
     }
 
     body.dark-mode .toy-icon-wrap.yellow,
@@ -203,8 +203,8 @@
     }
 
     body.dark-mode .toy-tag {
-      background: rgba(255, 255, 255, 0.08);
-      color: #aaaaaa;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f3ac00;
     }
 
     body.dark-mode .benefit-icon {
@@ -216,14 +216,18 @@
     }
 
     body.dark-mode .bv-item {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark-mode .bv-label {
+      color: #cccccc;
     }
 
     body.dark-mode .author-avatar.av1,
     body.dark-mode .author-avatar.av2,
     body.dark-mode .author-avatar.av3 {
       background: #1a1a1a;
-      color: #aaaaaa;
+      color: #f3ac00;
     }
 
     /* Dark mode login button fix */
@@ -232,17 +236,13 @@
     }
 
     body.dark-mode .auth-link.signup {
-      background-color: #3a3a3a;
-      color: #ffffff !important;
+      background-color: #f3ac00;
+      color: #000000 !important;
     }
 
     /* Logo dark mode */
     body.dark-mode .logo a {
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .logo span {
-      color: #aaaaaa !important;
+      color: #f3ac00 !important;
     }
 
     body.dark-mode .icon-btn:hover {
@@ -255,8 +255,98 @@
     }
 
     body.dark-mode .mobile-auth-btn.signup-mobile {
-      background: #3a3a3a;
+      background: #f3ac00;
+      color: #000000;
+    }
+
+    /* Fix all text colors in dark mode */
+    body.dark-mode .ps-hero h1 {
       color: #ffffff;
+    }
+
+    body.dark-mode .ps-hero h1 span {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .hero-stat-num {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .gallery-label h3 {
+      color: #ffffff;
+    }
+
+    body.dark-mode .gallery-label p {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .video-category {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .video-title {
+      color: #ffffff;
+    }
+
+    body.dark-mode .video-meta {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .step-card h3 {
+      color: #ffffff;
+    }
+
+    body.dark-mode .step-card p {
+      color: #cccccc;
+    }
+
+    body.dark-mode .benefit-text h4 {
+      color: #ffffff;
+    }
+
+    body.dark-mode .benefit-text p {
+      color: #cccccc;
+    }
+
+    body.dark-mode .testimonial-text {
+      color: #cccccc;
+    }
+
+    body.dark-mode .author-name {
+      color: #ffffff;
+    }
+
+    body.dark-mode .author-role {
+      color: #aaaaaa;
+    }
+
+    body.dark-mode .stars {
+      color: #f3ac00;
+    }
+
+    body.dark-mode .step-num-circle {
+      background: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .btn-primary {
+      background: #f3ac00;
+      color: #000000;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background: #e09e00;
+    }
+
+    body.dark-mode .btn-outline {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn-outline:hover {
+      border-color: #f3ac00;
+      color: #f3ac00;
+      background: rgba(0, 0, 0, 0.3);
     }
 
     /* Active link */
@@ -266,7 +356,7 @@
     }
 
     body.dark-mode .nav-link.active {
-      color: #ffffff !important;
+      color: #f3ac00 !important;
     }
 
     .nav-link.active::after {
@@ -280,7 +370,7 @@
     }
 
     body.dark-mode .nav-link.active::after {
-      background: #ffffff;
+      background: #f3ac00;
     }
 
     /* RTL */
@@ -663,7 +753,7 @@
 
     /* HERO WITH BACKGROUND IMAGE */
     .ps-hero {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://images.pexels.com/photos/366108/pexels-photo-366108.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 100%), url('images/img (48).jpg');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
@@ -762,16 +852,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    body.dark-mode .btn-primary {
-      background: #2a2a2a;
-      color: #ffffff;
-      box-shadow: none;
-    }
-
-    body.dark-mode .btn-primary:hover {
-      background: #3a3a3a;
-    }
-
     .btn-primary:hover {
       background: #e09e00;
       transform: translateY(-2px);
@@ -790,10 +870,6 @@
       font-size: 1rem;
       transition: all .2s;
       backdrop-filter: blur(2px);
-    }
-
-    body.dark-mode .btn-outline {
-      border-color: rgba(255, 255, 255, 0.3);
     }
 
     .btn-outline:hover {
@@ -1039,11 +1115,6 @@
       margin: 0 auto 1.5rem;
     }
 
-    body.dark-mode .step-num-circle {
-      background: #2a2a2a;
-      color: #e0e0e0;
-    }
-
     .step-card h3 {
       font-size: 1.2rem;
       font-weight: 600;
@@ -1074,10 +1145,6 @@
       color: #fff;
     }
 
-    body.dark-mode .benefits-visual {
-      background: #0a0a0a;
-    }
-
     .benefits-visual-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1089,10 +1156,6 @@
       border-radius: 16px;
       padding: 1.5rem 1rem;
       text-align: center;
-    }
-
-    body.dark-mode .bv-item {
-      background: rgba(255, 255, 255, 0.05);
     }
 
     .bv-icon {
@@ -1145,10 +1208,6 @@
       justify-content: center;
       font-size: 1.3rem;
       flex-shrink: 0;
-    }
-
-    body.dark-mode .benefit-icon {
-      background: #1a1a1a;
     }
 
     .benefit-text h4 {
@@ -1499,7 +1558,7 @@
       padding: 16px;
       flex-grow: 1;
     }
-        .auth-link.login {
+      .auth-link.login {
   background-color: #f3ac00;
   color: #2c3e2f;
   padding: 0.45rem 1rem;
@@ -1513,6 +1572,17 @@
 .auth-link.login:hover {
   background-color: #e09c00;
   transform: translateY(-1px);
+}
+.right-icons .icon-btn:not(.hamburger) {
+  display: none;
+}
+
+.right-icons .auth-buttons {
+  display: none;
+}
+/* Hide everything except hamburger */
+.right-icons > *:not(.hamburger) {
+  display: none !important;
 }
   </style>
 </head>
@@ -1540,7 +1610,7 @@
             class="fas fa-search"></i></button>
       <button class="auth-link login" id="loginBtnDesktop">
   Log in 
-</button> <button
+</button>      <button
           class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button><button
           class="icon-btn" id="rtlToggle" aria-label="RTL/LTR"
           style="font-weight:600;font-size:.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button><button
@@ -1552,7 +1622,7 @@
     <ul class="mobile-nav-links">
       <li class="mobile-nav-item" id="mobileCatItem">
         <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
-        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="#">Home 1</a><a href="#">Home 2</a>
+        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
         </div>
       </li>
       <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
@@ -1871,7 +1941,7 @@
         </ul>
       </div>
       <div class="footer-col newsletter">
-        <h4>Join the Club</h4>
+        <h4>MailBox</h4>
         <p>Get 10% off + early access.</p>
         <div class="newsletter-input"><input type="email" placeholder="Your email" id="footerNewsletterEmail"><button
             id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div>
@@ -1905,11 +1975,13 @@
       const handleNewsletter = () => { const email = newsletterEmail?.value.trim(); if (email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of Toyza club.`); else alert('Please enter a valid email.'); };
       newsletterBtn?.addEventListener('click', handleNewsletter);
       newsletterEmail?.addEventListener('keypress', e => { if (e.key === 'Enter') handleNewsletter(); });
-      const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
       if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
       if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
       document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu(); });
     })();
+     document.getElementById("mobileLoginBtn").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
   </script>
 </body>
 

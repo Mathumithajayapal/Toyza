@@ -1509,7 +1509,7 @@
         </ul>
       </div>
       <div class="footer-col newsletter">
-        <h4>Join the Club</h4>
+        <h4>MailBox</h4>
         <p>Get 10% off your first order + early access to sales.</p>
         <div class="newsletter-input"><input type="email" placeholder="Your email address"
             id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
@@ -1562,7 +1562,6 @@
       const mobileCatToggle = document.querySelector('#mobileCatItem .mobile-dropdown-toggle'), mobileCatContent = document.getElementById('mobileCategoriesDropdown');
       if (mobileCatToggle && mobileCatContent) mobileCatToggle.addEventListener('click', e => { e.stopPropagation(); mobileCatContent.classList.toggle('active'); });
       document.getElementById('searchBtn')?.addEventListener('click', () => alert('🔍 Search coming soon!'));
-      const authAlert = t => alert(t + ' — Account features coming soon!');
       document.getElementById('loginBtnDesktop')?.addEventListener('click', () => authAlert('Log in'));
       document.getElementById('mobileLoginBtn')?.addEventListener('click', () => authAlert('Log in'));
       const nlEmail = document.getElementById('footerNewsletterEmail'), nlBtn = document.getElementById('footerNewsletterBtn');
@@ -1571,6 +1570,9 @@
       nlEmail?.addEventListener('keypress', e => { if (e.key === 'Enter') { e.preventDefault(); doNewsletter(); } });
     })();
     document.getElementById("loginBtnDesktop")?.addEventListener("click", function () { window.location.href = "login.html"; });
+     document.getElementById("mobileLoginBtn").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
   </script>
 </body>
 

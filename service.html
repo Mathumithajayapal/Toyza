@@ -21,6 +21,9 @@
       background-color: #ffffff;
       color: #1a1a1a;
       transition: background-color 0.25s ease, color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* ===== DARK MODE - PURE BLACK & DARK GREY ONLY ===== */
@@ -151,7 +154,7 @@
 
     /* Logo dark mode */
     body.dark-mode .logo a {
-      color: #ffffff !important;
+      color: #f3ac00 !important;
     }
 
     body.dark-mode .logo span {
@@ -664,7 +667,17 @@
     }
 
     .auth-link.login {
+      background-color: #f3ac00;
       color: #2c3e2f;
+      padding: 0.45rem 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
+    }
+
+    .auth-link.login:hover {
+      background-color: #e09c00;
+      transform: translateY(-1px);
     }
 
     .auth-link.signup {
@@ -801,13 +814,13 @@
       color: #2c3e2f;
     }
 
-    /* Footer */
+    /* Footer - removed extra margin-top */
     .unique-footer {
       background-color: #faf8f5;
       color: #2c3e2f;
       padding: 3rem 2rem 2rem;
       border-top: 4px solid #f3ac00;
-      margin-top: 4rem;
+      margin-top: 0;
     }
 
     .footer-container {
@@ -1643,21 +1656,6 @@
       .social-links { justify-content: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
-        .auth-link.login {
-  background-color: #f3ac00;
-  color: #2c3e2f;
-  padding: 0.45rem 1rem;
-  border-radius: 40px;
-  font-weight: 700;
-  box-shadow: 0 2px 6px rgba(243, 172, 0, 0.25);
-  transition: all 0.2s ease;
-}
-
-/* Hover effect like CTA */
-.auth-link.login:hover {
-  background-color: #e09c00;
-  transform: translateY(-1px);
-}
   </style>
 </head>
 <body>
@@ -1685,9 +1683,8 @@
     <div class="right-icons">
       <button class="icon-btn" aria-label="Search" id="searchBtn"><i class="fas fa-search"></i></button>
       <div class="auth-buttons">
-<button class="auth-link login" id="loginBtnDesktop">
-  Log in 
-</button>        </div>
+        <button class="auth-link login" id="loginBtnDesktop">Log in</button>
+      </div>
       <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button>
       <button class="icon-btn" id="rtlToggle" aria-label="RTL / LTR toggle" style="font-weight: 600; font-size: 0.85rem; width: auto; padding: 0 12px; border-radius: 40px; gap: 4px;">RTL</button>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1808,7 +1805,7 @@
     <div class="eps-section">
       <div class="eps-section-label">Why Toyza Studio</div>
       <div class="eps-section-title">Thoughtfully Made for Little Minds</div>
-      <div class="eps-section-sub">Every decision — materials, design, curriculum — is made with your child's development in mind.</div>
+      <div class="eps-section-sub" style="margin-bottom:0;">Every decision — materials, design, curriculum — is made with your child's development in mind.</div>
       <div class="feat-grid">
         <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-leaf"></i></div><div><h3>Eco-Conscious Materials</h3><p>All kits use sustainably sourced wood, recycled packaging, and non-toxic, child-safe paints and dyes.</p></div></div>
         <div class="feat-card"><div class="feat-icon-wrap"><i class="fa-solid fa-brain"></i></div><div><h3>Expert-Curated Curriculum</h3><p>Designed with child psychologists and Montessori educators to align with developmental milestones.</p></div></div>
@@ -1861,7 +1858,7 @@
     </div>
     <div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div>
     <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div>
-    <div class="footer-col newsletter"><h4>Join the Club</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
+    <div class="footer-col newsletter"><h4>MailBox</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
 </footer>

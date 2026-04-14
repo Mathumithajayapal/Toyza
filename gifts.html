@@ -312,7 +312,7 @@
 
         /* Logo in dark mode */
         body.dark-mode .logo a {
-            color: #ffffff;
+      color: #f3ac00 !important;
         }
 
         body.dark-mode .logo span {
@@ -2025,7 +2025,7 @@
                 </ul>
             </div>
             <div class="footer-col newsletter">
-                <h4>Join the Club</h4>
+                <h4>MailBox</h4>
                 <p>Get 10% off + early access.</p>
                 <div class="newsletter-input">
                     <input type="email" placeholder="Your email" id="footerNewsletterEmail">
@@ -2088,7 +2088,6 @@
             };
             newsletterBtn?.addEventListener('click', handleNewsletter);
 
-            const showAuthAlert = (type) => alert(`🔐 ${type} — Welcome to Toyza! Account features coming soon.`);
             if (loginDesktop) loginDesktop.addEventListener('click', () => showAuthAlert('Log in'));
             if (mobileLogin) mobileLogin.addEventListener('click', () => showAuthAlert('Log in'));
 
@@ -2096,6 +2095,9 @@
                 if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) closeMobileMenu();
             });
         })();
+         document.getElementById("mobileLoginBtn").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
     </script>
 </body>
 
