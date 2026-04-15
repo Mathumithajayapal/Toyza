@@ -1104,9 +1104,21 @@
       border-radius: 20px;
     }
 
-    .badge-new { background: #4a6a3b; color: #fff; }
-    .badge-bestseller { background: #f3ac00; color: #2c3e2f; }
-    .badge-montessori { background: #e8f0e4; color: #2c5a2a; border: 1px solid #b0d0a8; }
+    .badge-new {
+      background: #4a6a3b;
+      color: #fff;
+    }
+
+    .badge-bestseller {
+      background: #f3ac00;
+      color: #2c3e2f;
+    }
+
+    .badge-montessori {
+      background: #e8f0e4;
+      color: #2c5a2a;
+      border: 1px solid #b0d0a8;
+    }
 
     .product-wishlist {
       position: absolute;
@@ -1123,15 +1135,58 @@
       border: none;
     }
 
-    .product-info { padding: 1.2rem; }
-    .product-age { font-size: 0.75rem; font-weight: 600; color: #8a9e8a; margin-bottom: 0.4rem; }
-    .product-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.6rem; }
-    .product-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 0.8rem; }
-    .stars { color: #f3ac00; font-size: 0.78rem; }
-    .rating-count { font-size: 0.75rem; color: #8a9e8a; }
-    .product-price-row { display: flex; align-items: center; justify-content: space-between; }
-    .product-price { font-weight: 800; font-size: 1.1rem; color: #2c3e2f; }
-    .product-price-old { font-size: 0.82rem; color: #bbb; text-decoration: line-through; }
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-age {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8a9e8a;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    .stars {
+      color: #f3ac00;
+      font-size: 0.78rem;
+    }
+
+    .rating-count {
+      font-size: 0.75rem;
+      color: #8a9e8a;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #2c3e2f;
+    }
+
+    .product-price-old {
+      font-size: 0.82rem;
+      color: #bbb;
+      text-decoration: line-through;
+    }
+
     .add-to-cart {
       background: #f3ac00;
       border: none;
@@ -1151,17 +1206,63 @@
       color: inherit;
       border: 2px solid transparent;
     }
-    .age-card.age-0 { border-color: #ffd6d6; }
-    .age-card.age-1 { border-color: #ffe6b3; }
-    .age-card.age-2 { border-color: #b3e8c8; }
-    .age-card.age-3 { border-color: #c8d8ff; }
 
-    .age-emoji { display: block; width: 100%; height: 140px; overflow: hidden; border-radius: 12px; margin-bottom: 0.8rem; }
-    .age-emoji img { width: 100%; height: 100%; object-fit: cover; }
-    .age-range { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; }
-    .age-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; }
-    .age-desc { font-size: 0.82rem; color: #7a8a7a; }
-    .age-count { display: inline-block; margin-top: 0.8rem; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+    .age-card.age-0 {
+      border-color: #ffd6d6;
+    }
+
+    .age-card.age-1 {
+      border-color: #ffe6b3;
+    }
+
+    .age-card.age-2 {
+      border-color: #b3e8c8;
+    }
+
+    .age-card.age-3 {
+      border-color: #c8d8ff;
+    }
+
+    .age-emoji {
+      display: block;
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+
+    .age-emoji img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .age-range {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .age-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .age-desc {
+      font-size: 0.82rem;
+      color: #7a8a7a;
+    }
+
+    .age-count {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
 
     .blog-card {
       background: #ffffff;
@@ -1170,23 +1271,111 @@
       overflow: hidden;
       cursor: pointer;
     }
-    .blog-thumb { width: 100%; aspect-ratio: 16/9; position: relative; }
-    .blog-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-tag { position: absolute; top: 12px; left: 12px; background: #f3ac00; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; }
-    .blog-content { padding: 1.2rem; }
-    .blog-title { font-weight: 700; font-size: 0.96rem; margin-bottom: 0.6rem; }
-    .blog-meta { font-size: 0.78rem; color: #8a9e8a; display: flex; align-items: center; gap: 8px; }
 
-    .view-all-wrap { text-align: center; margin-top: 2.5rem; }
-    .view-all { display: inline-flex; align-items: center; gap: 8px; color: #4a6a3b; font-weight: 700; text-decoration: none; border-bottom: 2px solid #a0c890; }
+    .blog-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
 
-    .newsletter-banner { background: #fff8e7; padding: 4rem 2rem; border-top: 1px solid #f0e4cc; }
-    .nl-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-    .nl-inner h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; }
-    .nl-inner p { color: #5a6e5a; margin-bottom: 1.8rem; }
-    .nl-form { display: flex; background: #fff; border: 2px solid #e0d0b4; border-radius: 50px; overflow: hidden; max-width: 480px; margin: 0 auto; }
-    .nl-form input { flex: 1; border: none; padding: 0.8rem 1.4rem; font-size: 0.9rem; outline: none; }
-    .nl-form button { background: #f3ac00; border: none; font-weight: 700; padding: 0 1.6rem; cursor: pointer; }
+    .blog-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #f3ac00;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .blog-content {
+      padding: 1.2rem;
+    }
+
+    .blog-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-meta {
+      font-size: 0.78rem;
+      color: #8a9e8a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .view-all-wrap {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4a6a3b;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid #a0c890;
+    }
+
+    .newsletter-banner {
+      background: #fff8e7;
+      padding: 4rem 2rem;
+      border-top: 1px solid #f0e4cc;
+    }
+
+    .nl-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nl-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .nl-inner p {
+      color: #5a6e5a;
+      margin-bottom: 1.8rem;
+    }
+
+    .nl-form {
+      display: flex;
+      background: #fff;
+      border: 2px solid #e0d0b4;
+      border-radius: 50px;
+      overflow: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .nl-form input {
+      flex: 1;
+      border: none;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .nl-form button {
+      background: #f3ac00;
+      border: none;
+      font-weight: 700;
+      padding: 0 1.6rem;
+      cursor: pointer;
+    }
 
     /* FOOTER */
     .unique-footer {
@@ -1194,59 +1383,262 @@
       padding: 3rem 2rem 2rem;
       border-top: 4px solid #f3ac00;
     }
-    .footer-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.5fr; gap: 2.5rem; }
-    .footer-brand p { margin: 1.2rem 0 1.5rem; color: #5a6e5a; font-size: 0.9rem; }
-    .social-links { display: flex; gap: 1.2rem; }
-    .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #fff; border-radius: 50%; color: #2c3e2f; text-decoration: none; }
-    .footer-col h4 { color: #2c3e2f; font-size: 1rem; font-weight: 700; margin-bottom: 1.2rem; position: relative; display: inline-block; }
-    .footer-col h4::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 32px; height: 2px; background: #f3ac00; }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 0.7rem; }
-    .footer-col a { color: #5a6e5a; text-decoration: none; font-size: 0.9rem; }
-    .newsletter-input { display: flex; border-bottom: 2px solid #e0d6cc; padding-bottom: 0.5rem; }
-    .newsletter-input input { background: transparent; border: none; padding: 0.4rem 0; width: 100%; outline: none; }
-    .newsletter-input button { background: none; border: none; font-size: 1.1rem; color: #f3ac00; cursor: pointer; }
-    .footer-bottom { max-width: 1280px; margin: 2rem auto 0; padding-top: 1.8rem; border-top: 1px solid #e0d6cc; display: flex; justify-content: space-between; color: #7a8a7a; font-size: 0.8rem; flex-wrap: wrap; }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand p {
+      margin: 1.2rem 0 1.5rem;
+      color: #5a6e5a;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      border-radius: 50%;
+      color: #2c3e2f;
+      text-decoration: none;
+    }
+
+    .footer-col h4 {
+      color: #2c3e2f;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: #f3ac00;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #5a6e5a;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-input {
+      display: flex;
+      border-bottom: 2px solid #e0d6cc;
+      padding-bottom: 0.5rem;
+    }
+
+    .newsletter-input input {
+      background: transparent;
+      border: none;
+      padding: 0.4rem 0;
+      width: 100%;
+      outline: none;
+    }
+
+    .newsletter-input button {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      color: #f3ac00;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0d6cc;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8a7a;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+    }
 
     /* ===== RESPONSIVE: MOBILE SINGLE COLUMN ===== */
     @media (max-width: 1024px) {
-      .desktop-nav { display: none; }
-      .hamburger { display: flex; }
-      .right-icons .icon-btn:not(.hamburger) { display: none; }
-      .right-icons .auth-buttons { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-visual { order: -1; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .category-grid { grid-template-columns: repeat(3, 1fr); }
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .age-grid { grid-template-columns: repeat(2, 1fr); }
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .right-icons .icon-btn:not(.hamburger) {
+        display: none;
+      }
+
+      .right-icons .auth-buttons {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .age-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
-      .main-header { padding: 0.7rem 1rem; }
-      .hero { padding: 3rem 1rem; }
-      .section { padding: 3rem 1rem; }
-      .stats-strip { padding: 1rem; }
-      .category-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .product-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .age-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .blog-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .footer-container { grid-template-columns: 1fr; text-align: center; }
-      .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-      .social-links { justify-content: center; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .hero-img-grid { max-width: 300px; margin: 0 auto; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .main-header {
+        padding: 0.7rem 1rem;
+      }
+
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .stats-strip {
+        padding: 1rem;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .age-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-img-grid {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
     }
 
     @media (max-width: 480px) {
-      .category-grid { grid-template-columns: 1fr; }
-      .hero-cta { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
-      .hero-trust { flex-wrap: wrap; justify-content: center; }
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-trust {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
-  </style>
+@media(max-width:768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}  </style>
 </head>
 
 <body>
@@ -1272,7 +1664,8 @@
         <button class="icon-btn" id="searchBtn"><i class="fas fa-search"></i></button>
         <div class="auth-buttons"><a href="login.html" class="auth-link login">Log in</a></div>
         <button class="icon-btn" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-        <button class="icon-btn" id="rtlToggle" style="font-weight:600;font-size:0.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button>
+        <button class="icon-btn" id="rtlToggle"
+          style="font-weight:600;font-size:0.85rem;width:auto;padding:0 12px;border-radius:40px;">RTL</button>
         <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -1283,7 +1676,8 @@
     <ul class="mobile-nav-links">
       <li class="mobile-nav-item" id="mobileCatItem">
         <div class="mobile-dropdown-toggle"><span>Home</span><span><i class="fas fa-chevron-down"></i></span></div>
-        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div>
+        <div class="mobile-dropdown-content" id="mobileCategoriesDropdown"><a href="index.html">Home 1</a><a
+            href="home2.html">Home 2</a></div>
       </li>
       <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
       <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
@@ -1292,8 +1686,14 @@
       <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
       <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
       <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-      <li class="mobile-nav-item"><div class="mobile-auth"><button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button></div></li>
-      <li class="mobile-nav-item"><div style="display:flex;gap:1rem;padding:0.8rem 0;"><button class="icon-btn" id="mobileDarkToggle" style="flex:1;background:rgba(243,172,0,0.1);border-radius:40px;">🌙 Dark</button><button class="icon-btn" id="mobileRtlToggle" style="flex:1;border-radius:40px;">RTL</button></div></li>
+      <li class="mobile-nav-item">
+        <div class="mobile-auth"><button class="mobile-auth-btn" id="mobileLoginBtn">Log in</button></div>
+      </li>
+      <li class="mobile-nav-item">
+        <div style="display:flex;gap:1rem;padding:0.8rem 0;"><button class="icon-btn" id="mobileDarkToggle"
+            style="flex:1;background:rgba(243,172,0,0.1);border-radius:40px;">🌙 Dark</button><button class="icon-btn"
+            id="mobileRtlToggle" style="flex:1;border-radius:40px;">RTL</button></div>
+      </li>
     </ul>
   </div>
 
@@ -1303,28 +1703,283 @@
         <div class="hero-content">
           <div class="hero-tag"><i class="fas fa-seedling"></i> Montessori-Inspired Play</div>
           <h1 class="hero-title">Handcrafted <em>Wooden</em> Toys for <span class="green">Curious Minds</span></h1>
-          <p class="hero-desc">Each toy is thoughtfully designed to spark imagination, develop motor skills, and grow with your child. 100% eco-friendly, sustainably sourced.</p>
-          <div class="hero-cta"><button class="btn-primary"><i class="fas fa-play-circle"></i> Shop Collections</button><button class="btn-secondary"><i class="fas fa-gift"></i> Find the Perfect Gift</button></div>
-          <div class="hero-trust"><div class="trust-item"><i class="fas fa-check-circle"></i> BIS Certified Safe</div><div class="trust-item"><i class="fas fa-leaf"></i> Sustainably Made</div><div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Rating</div></div>
+          <p class="hero-desc">Each toy is thoughtfully designed to spark imagination, develop motor skills, and grow
+            with your child. 100% eco-friendly, sustainably sourced.</p>
+          <div class="hero-cta"><button class="btn-primary"><i class="fas fa-play-circle"></i> Shop
+              Collections</button><button class="btn-secondary"><i class="fas fa-gift"></i> Find the Perfect
+              Gift</button></div>
+          <div class="hero-trust">
+            <div class="trust-item"><i class="fas fa-check-circle"></i> BIS Certified Safe</div>
+            <div class="trust-item"><i class="fas fa-leaf"></i> Sustainably Made</div>
+            <div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Rating</div>
+          </div>
         </div>
-        <div class="hero-visual"><div class="hero-img-grid"><div class="toy-card-img tall"><img src="images\img (37).jpg" class="img-placeholder"><div class="toy-label">Puzzles & Stacking</div></div><div class="toy-card-img"><img src="images\img (38).jpg" class="img-placeholder"><div class="toy-label">Motor Skills</div></div><div class="toy-card-img"><img src="images\img (39).jpg" class="img-placeholder"><div class="toy-label">Creative Arts</div></div></div><div class="floating-badge bottom-right">🚚 Free Shipping!</div></div>
+        <div class="hero-visual">
+          <div class="hero-img-grid">
+            <div class="toy-card-img tall"><img src="images\img (37).jpg" class="img-placeholder">
+              <div class="toy-label">Puzzles & Stacking</div>
+            </div>
+            <div class="toy-card-img"><img src="images\img (38).jpg" class="img-placeholder">
+              <div class="toy-label">Motor Skills</div>
+            </div>
+            <div class="toy-card-img"><img src="images\img (39).jpg" class="img-placeholder">
+              <div class="toy-label">Creative Arts</div>
+            </div>
+          </div>
+          <div class="floating-badge bottom-right">🚚 Free Shipping!</div>
+        </div>
       </div>
     </section>
 
-    <div class="stats-strip"><div class="stats-inner"><div class="stat-block"><span class="stat-num">50K+</span><div class="stat-label">Happy Families</div></div><div class="stat-block"><span class="stat-num">200+</span><div class="stat-label">Handcrafted Toys</div></div><div class="stat-block"><span class="stat-num">100%</span><div class="stat-label">Non-Toxic Materials</div></div><div class="stat-block"><span class="stat-num">4.9★</span><div class="stat-label">Average Rating</div></div></div></div>
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-block"><span class="stat-num">50K+</span>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">200+</span>
+          <div class="stat-label">Handcrafted Toys</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">100%</span>
+          <div class="stat-label">Non-Toxic Materials</div>
+        </div>
+        <div class="stat-block"><span class="stat-num">4.9★</span>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
 
-    <section class="section section-alt"><div class="section-inner"><div class="section-header"><div class="section-eyebrow"><i class="fas fa-shapes"></i> Browse By Type</div><h2 class="section-title">Shop By Category</h2><p class="section-sub">From first building blocks to complex puzzles — every toy sparks a different kind of wonder.</p></div><div class="category-grid"><a class="cat-card" href="#"><div class="cat-image"><img src="images\img (40).jpg"></div><div class="cat-content"><div class="cat-name">Wooden Building Blocks</div><div class="cat-count">48 products</div></div></a><a class="cat-card" href="#"><div class="cat-image"><img src="images\img (41).jpg"></div><div class="cat-content"><div class="cat-name">Puzzles & Games</div><div class="cat-count">62 products</div></div></a><a class="cat-card" href="#"><div class="cat-image"><img src="images\img (42).jpg"></div><div class="cat-content"><div class="cat-name">Arts & Crafts</div><div class="cat-count">35 products</div></div></a><a class="cat-card" href="#"><div class="cat-image"><img src="images\img (43).jpg"></div><div class="cat-content"><div class="cat-name">Learning & STEM</div><div class="cat-count">29 products</div></div></a><a class="cat-card" href="#"><div class="cat-image"><img src="images\img (44).jpg"></div><div class="cat-content"><div class="cat-name">Plush & Soft Toys</div><div class="cat-count">41 products</div></div></a></div></div></section>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-shapes"></i> Browse By Type</div>
+          <h2 class="section-title">Shop By Category</h2>
+          <p class="section-sub">From first building blocks to complex puzzles — every toy sparks a different kind of
+            wonder.</p>
+        </div>
+        <div class="category-grid"><a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (40).jpg"></div>
+            <div class="cat-content">
+              <div class="cat-name">Wooden Building Blocks</div>
+              <div class="cat-count">48 products</div>
+            </div>
+          </a><a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (41).jpg"></div>
+            <div class="cat-content">
+              <div class="cat-name">Puzzles & Games</div>
+              <div class="cat-count">62 products</div>
+            </div>
+          </a><a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (42).jpg"></div>
+            <div class="cat-content">
+              <div class="cat-name">Arts & Crafts</div>
+              <div class="cat-count">35 products</div>
+            </div>
+          </a><a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (43).jpg"></div>
+            <div class="cat-content">
+              <div class="cat-name">Learning & STEM</div>
+              <div class="cat-count">29 products</div>
+            </div>
+          </a><a class="cat-card" href="#">
+            <div class="cat-image"><img src="images\img (44).jpg"></div>
+            <div class="cat-content">
+              <div class="cat-name">Plush & Soft Toys</div>
+              <div class="cat-count">41 products</div>
+            </div>
+          </a></div>
+      </div>
+    </section>
 
-    <section class="section"><div class="section-inner"><div class="section-header"><div class="section-eyebrow"><i class="fas fa-fire-alt"></i> Most Loved</div><h2 class="section-title">Bestselling Toys</h2><p class="section-sub">Tried, tested, and adored by thousands of kids and parents across India.</p></div><div class="product-grid"><div class="product-card"><div class="product-img"><img src="images\img (45).jpg"><span class="product-badge badge-bestseller">Bestseller</span><button class="product-wishlist"><i class="far fa-heart"></i></button></div><div class="product-info"><div class="product-age">Ages 2–5</div><div class="product-name">Rainbow Stacking Tower</div><div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div><div class="product-price-row"><div><span class="product-price">₹ 1,249</span><span class="product-price-old">₹ 1,599</span></div><button class="add-to-cart"><i class="fas fa-plus"></i></button></div></div></div><div class="product-card"><div class="product-img"><img src="images\img (43).jpg"><span class="product-badge badge-montessori">Montessori</span><button class="product-wishlist"><i class="far fa-heart"></i></button></div><div class="product-info"><div class="product-age">Ages 3–7</div><div class="product-name">Alphabet Shape Sorter</div><div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(198)</span></div><div class="product-price-row"><div><span class="product-price">₹ 899</span><span class="product-price-old">₹ 1,199</span></div><button class="add-to-cart"><i class="fas fa-plus"></i></button></div></div></div><div class="product-card"><div class="product-img"><img src="images\img (44).jpg"><span class="product-badge badge-new">New</span><button class="product-wishlist"><i class="far fa-heart"></i></button></div><div class="product-info"><div class="product-age">Ages 3–8</div><div class="product-name">Wooden Train Set — Forest Edition</div><div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(87)</span></div><div class="product-price-row"><div><span class="product-price">₹ 2,499</span><span class="product-price-old">₹ 2,999</span></div><button class="add-to-cart"><i class="fas fa-plus"></i></button></div></div></div><div class="product-card"><div class="product-img"><img src="images\img (45).jpg"><span class="product-badge badge-montessori">Montessori</span><button class="product-wishlist"><i class="far fa-heart"></i></button></div><div class="product-info"><div class="product-age">Ages 1–4</div><div class="product-name">Sensory Nature Exploration Kit</div><div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(254)</span></div><div class="product-price-row"><div><span class="product-price">₹ 1,799</span><span class="product-price-old">₹ 2,199</span></div><button class="add-to-cart"><i class="fas fa-plus"></i></button></div></div></div></div><div class="view-all-wrap"><a href="#" class="view-all">View All 200+ Products <i class="fas fa-arrow-right"></i></a></div></div></section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-fire-alt"></i> Most Loved</div>
+          <h2 class="section-title">Bestselling Toys</h2>
+          <p class="section-sub">Tried, tested, and adored by thousands of kids and parents across India.</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (45).jpg"><span
+                class="product-badge badge-bestseller">Bestseller</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 2–5</div>
+              <div class="product-name">Rainbow Stacking Tower</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 1,249</span><span class="product-price-old">₹ 1,599</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (43).jpg"><span
+                class="product-badge badge-montessori">Montessori</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 3–7</div>
+              <div class="product-name">Alphabet Shape Sorter</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(198)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 899</span><span class="product-price-old">₹ 1,199</span></div><button
+                  class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (44).jpg"><span
+                class="product-badge badge-new">New</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 3–8</div>
+              <div class="product-name">Wooden Train Set — Forest Edition</div>
+              <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(87)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 2,499</span><span class="product-price-old">₹ 2,999</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img"><img src="images\img (45).jpg"><span
+                class="product-badge badge-montessori">Montessori</span><button class="product-wishlist"><i
+                  class="far fa-heart"></i></button></div>
+            <div class="product-info">
+              <div class="product-age">Ages 1–4</div>
+              <div class="product-name">Sensory Nature Exploration Kit</div>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(254)</span></div>
+              <div class="product-price-row">
+                <div><span class="product-price">₹ 1,799</span><span class="product-price-old">₹ 2,199</span></div>
+                <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-wrap"><a href="#" class="view-all">View All 200+ Products <i
+              class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </section>
 
-    <section class="section age-guide"><div class="section-inner"><div class="section-header"><div class="section-eyebrow"><i class="fas fa-child"></i> Smart Shopping</div><h2 class="section-title">Shop By Your Child's Age</h2><p class="section-sub">Every stage of development brings new capabilities. We curate toys that perfectly match your child's current milestones.</p></div><div class="age-grid"><a class="age-card age-0" href="#"><span class="age-emoji"><img src="images\img (46).jpg"></span><div class="age-range">0 – 12 mo</div><div class="age-title">Sensory Starters</div><div class="age-desc">Soft, safe, and stimulating toys to develop touch, sight, and sound.</div><span class="age-count">24 Toys</span></a><a class="age-card age-1" href="#"><span class="age-emoji"><img src="images\img (47).jpg"></span><div class="age-range">1 – 3 yrs</div><div class="age-title">Early Explorers</div><div class="age-desc">Stacking, sorting, and grasping toys for growing motor skills.</div><span class="age-count">58 Toys</span></a><a class="age-card age-2" href="#"><span class="age-emoji"><img src="images\img (48).jpg"></span><div class="age-range">3 – 6 yrs</div><div class="age-title">Creative Thinkers</div><div class="age-desc">Puzzles, building sets, and imaginative play for preschoolers.</div><span class="age-count">72 Toys</span></a><a class="age-card age-3" href="#"><span class="age-emoji"><img src="images\img (49).jpg"></span><div class="age-range">6 – 12 yrs</div><div class="age-title">Problem Solvers</div><div class="age-desc">STEM kits, strategy games, and complex builds for school-age kids.</div><span class="age-count">49 Toys</span></a></div></div></section>
+    <section class="section age-guide">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-child"></i> Smart Shopping</div>
+          <h2 class="section-title">Shop By Your Child's Age</h2>
+          <p class="section-sub">Every stage of development brings new capabilities. We curate toys that perfectly match
+            your child's current milestones.</p>
+        </div>
+        <div class="age-grid"><a class="age-card age-0" href="#"><span class="age-emoji"><img
+                src="images\img (46).jpg"></span>
+            <div class="age-range">0 – 12 mo</div>
+            <div class="age-title">Sensory Starters</div>
+            <div class="age-desc">Soft, safe, and stimulating toys to develop touch, sight, and sound.</div><span
+              class="age-count">24 Toys</span>
+          </a><a class="age-card age-1" href="#"><span class="age-emoji"><img src="images\img (47).jpg"></span>
+            <div class="age-range">1 – 3 yrs</div>
+            <div class="age-title">Early Explorers</div>
+            <div class="age-desc">Stacking, sorting, and grasping toys for growing motor skills.</div><span
+              class="age-count">58 Toys</span>
+          </a><a class="age-card age-2" href="#"><span class="age-emoji"><img src="images\img (48).jpg"></span>
+            <div class="age-range">3 – 6 yrs</div>
+            <div class="age-title">Creative Thinkers</div>
+            <div class="age-desc">Puzzles, building sets, and imaginative play for preschoolers.</div><span
+              class="age-count">72 Toys</span>
+          </a><a class="age-card age-3" href="#"><span class="age-emoji"><img src="images\img (49).jpg"></span>
+            <div class="age-range">6 – 12 yrs</div>
+            <div class="age-title">Problem Solvers</div>
+            <div class="age-desc">STEM kits, strategy games, and complex builds for school-age kids.</div><span
+              class="age-count">49 Toys</span>
+          </a></div>
+      </div>
+    </section>
 
-    <section class="section section-alt"><div class="section-inner"><div class="section-header"><div class="section-eyebrow"><i class="fas fa-lightbulb"></i> Play Better</div><h2 class="section-title">From The Toyza Play Studio</h2><p class="section-sub">Expert guides, activity ideas, and Montessori tips for parents who love to engage.</p></div><div class="blog-grid"><div class="blog-card"><div class="blog-thumb"><img src="images\img (50).jpg"><span class="blog-tag">Montessori</span></div><div class="blog-content"><div class="blog-title">5 Wooden Toy Activities That Teach Math Without Worksheets</div><div class="blog-meta"><i class="far fa-clock"></i> 4 min read • <i class="far fa-calendar"></i> 15 Mar 2026</div></div></div><div class="blog-card"><div class="blog-thumb"><img src="images\img (51).jpg"></div><div class="blog-content"><div class="blog-title">Why Natural Materials Matter in Early Childhood Play</div><div class="blog-meta"><i class="far fa-clock"></i> 6 min read • <i class="far fa-calendar"></i> 8 Mar 2026</div></div></div><div class="blog-card"><div class="blog-thumb"><img src="images\img (52).jpg"></div><div class="blog-content"><div class="blog-title">Screen vs. Wooden Toys: What the Research Actually Says</div><div class="blog-meta"><i class="far fa-clock"></i> 8 min read • <i class="far fa-calendar"></i> 1 Mar 2026</div></div></div></div><div class="view-all-wrap"><a href="#" class="view-all">Read All Articles <i class="fas fa-arrow-right"></i></a></div></div></section>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-eyebrow"><i class="fas fa-lightbulb"></i> Play Better</div>
+          <h2 class="section-title">From The Toyza Play Studio</h2>
+          <p class="section-sub">Expert guides, activity ideas, and Montessori tips for parents who love to engage.</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (50).jpg"><span class="blog-tag">Montessori</span></div>
+            <div class="blog-content">
+              <div class="blog-title">5 Wooden Toy Activities That Teach Math Without Worksheets</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 4 min read • <i class="far fa-calendar"></i> 15 Mar
+                2026</div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (51).jpg"></div>
+            <div class="blog-content">
+              <div class="blog-title">Why Natural Materials Matter in Early Childhood Play</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 6 min read • <i class="far fa-calendar"></i> 8 Mar
+                2026</div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-thumb"><img src="images\img (52).jpg"></div>
+            <div class="blog-content">
+              <div class="blog-title">Screen vs. Wooden Toys: What the Research Actually Says</div>
+              <div class="blog-meta"><i class="far fa-clock"></i> 8 min read • <i class="far fa-calendar"></i> 1 Mar
+                2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-wrap"><a href="#" class="view-all">Read All Articles <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
 
-    <div class="newsletter-banner"><div class="nl-inner"><h2>Join 50,000+ Playful Families</h2><p>Get early access to new arrivals, exclusive discounts, and free Montessori activity guides delivered to your inbox.</p><div class="nl-form"><input type="email" placeholder="Enter your email address" id="nlEmailInput"><button id="nlSubmitBtn">Get 10% Off</button></div></div></div>
+    <div class="newsletter-banner">
+      <div class="nl-inner">
+        <h2>Join 50,000+ Playful Families</h2>
+        <p>Get early access to new arrivals, exclusive discounts, and free Montessori activity guides delivered to your
+          inbox.</p>
+        <div class="nl-form"><input type="email" placeholder="Enter your email address" id="nlEmailInput"><button
+            id="nlSubmitBtn">Get 10% Off</button></div>
+      </div>
+    </div>
   </main>
 
-  <footer class="unique-footer"><div class="footer-container"><div class="footer-brand"><a href="index.html" style="text-decoration:none;"><span style="color:#f3ac00;font-size:1.8rem;font-weight:800;">Toyza</span></a><p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-pinterest"></i></a></div></div><div class="footer-col"><h4>Explore</h4><ul><li><a href="#">Shop All</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Cards</a></li></ul></div><div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns & Exchanges</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Contact Us</a></li></ul></div><div class="footer-col newsletter"><h4>MailBox</h4><p>Get 10% off your first order + early access to sales.</p><div class="newsletter-input"><input type="email" placeholder="Your email address" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div></div><div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></span></div></footer>
+  <footer class="unique-footer">
+    <div class="footer-container">
+      <div class="footer-brand"><a href="index.html" style="text-decoration:none;"><span
+            style="color:#f3ac00;font-size:1.8rem;font-weight:800;">Toyza</span></a>
+        <p>Curating joyful, eco-conscious toys that spark imagination and nurture young minds.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+              class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i
+              class="fab fa-pinterest"></i></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Shop All</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Bestsellers</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>MailBox</h4>
+        <p>Get 10% off your first order + early access to sales.</p>
+        <div class="newsletter-input"><input type="email" placeholder="Your email address"
+            id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a
+          href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
+  </footer>
 
   <script>
     (function () {
