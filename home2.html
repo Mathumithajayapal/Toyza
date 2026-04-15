@@ -332,7 +332,7 @@ body.dark-mode .auth-link.login {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── SECTION 2: CATEGORIES BY AGE ── */
+    /* ── SECTION 2: CATEGORIES BY AGE - FIXED 4-COLUMN GRID ── */
     .categories-section {
       padding: 90px 2rem;
       background: #ffffff;
@@ -343,7 +343,14 @@ body.dark-mode .auth-link.login {
     .link-arrow { color: #c98a00; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; transition: gap 0.2s; }
     body.dark-mode .link-arrow { color: #aaaaaa; }
     .link-arrow:hover { gap: 10px; color: #f3ac00; }
-    .age-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    
+    /* FIXED: 4 cards in a row on desktop */
+    .age-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    
     .age-card {
       position: relative;
       border-radius: 20px;
@@ -351,6 +358,8 @@ body.dark-mode .auth-link.login {
       display: block;
       text-decoration: none;
       transition: transform 0.3s ease;
+      aspect-ratio: 4 / 3;
+      height: 200px;
     }
     .age-card:hover { transform: translateY(-6px); }
     .age-card-bg {
@@ -376,6 +385,7 @@ body.dark-mode .auth-link.login {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      height: 100%;
     }
     .age-card-tag {
       position: absolute;
@@ -624,15 +634,12 @@ body.dark-mode .auth-link.login {
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE (hide desktop search icon on mobile) ── */
+    /* ── RESPONSIVE (FIXED) ── */
     @media (max-width: 1024px) {
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
       .right-icons .auth-buttons { display: none; }
-      /* Hide the main search icon button only on mobile/tablet */
-      .right-icons .icon-btn#searchBtn {
-        display: none;
-      }
+      .right-icons .icon-btn#searchBtn { display: none; }
       #darkModeToggle, #rtlToggle { display: none; }
       .hero { padding: 60px 1.5rem 50px; }
       .age-cards { grid-template-columns: repeat(2, 1fr); }
@@ -675,12 +682,6 @@ body.dark-mode .auth-link.login {
     .right-icons {
       gap: 0;
     }
-    .age-cards {
-  display: grid;
-  grid-template-columns: 1fr; /* one card per row */
-  gap: 20px;
-}
-
   </style>
 </head>
 <body>
@@ -718,7 +719,7 @@ body.dark-mode .auth-link.login {
   </div>
 </header>
 
-<!-- MOBILE MENU (search icon added inside hamburger menu) -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenuBtn">&#10005;</button>
   <ul class="mobile-nav-links">
@@ -735,7 +736,6 @@ body.dark-mode .auth-link.login {
     <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
     <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
     <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-    <!-- Mobile Search Icon Item (visible only inside hamburger) -->
     <li class="mobile-nav-item">
       <div class="mobile-dropdown-toggle" id="mobileSearchToggle" style="cursor:pointer;">
         <span><i class="fas fa-search" style="margin-right: 10px;"></i> Search</span>
@@ -764,7 +764,7 @@ body.dark-mode .auth-link.login {
 
 <main>
 
-<!-- SECTION 1: HERO WITH BACKGROUND IMAGE -->
+<!-- SECTION 1: HERO -->
 <section class="hero">
   <div class="hero-left">
     <h1>Toys that<br><em>spark wonder</em> every day</h1>
@@ -775,7 +775,7 @@ body.dark-mode .auth-link.login {
   </div>
 </section>
 
-<!-- SECTION 2: SHOP BY AGE -->
+<!-- SECTION 2: SHOP BY AGE - FIXED 4-COLUMN GRID -->
 <section class="categories-section reveal">
   <div class="categories-inner">
     <div class="categories-head">
@@ -941,20 +941,17 @@ body.dark-mode .auth-link.login {
   const loginDesktop = document.getElementById('loginBtnDesktop');
   const mobileLogin = document.getElementById('mobileLoginBtn');
   
-  // Mobile search toggle elements
   const mobileSearchToggle = document.getElementById('mobileSearchToggle');
   const mobileSearchContent = document.getElementById('mobileSearchContent');
   const mobileSearchInput = document.getElementById('mobileSearchInput');
   const mobileSearchSubmit = document.getElementById('mobileSearchSubmit');
 
-  // Mobile menu
   const openMenu = () => { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; };
   const closeMenu = () => { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; };
   hamburger?.addEventListener('click', openMenu);
   closeMenuBtn?.addEventListener('click', closeMenu);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-  // Dark mode
   const applyDark = (isDark) => {
     document.body.classList.toggle('dark-mode', isDark);
     localStorage.setItem('toyzaDarkMode', isDark);
@@ -965,7 +962,6 @@ body.dark-mode .auth-link.login {
   darkToggle?.addEventListener('click', () => applyDark(!document.body.classList.contains('dark-mode')));
   mobileDark?.addEventListener('click', () => applyDark(!document.body.classList.contains('dark-mode')));
 
-  // RTL
   const applyRTL = (isRTL) => {
     document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
     localStorage.setItem('toyzaRTLMode', isRTL);
@@ -976,7 +972,6 @@ body.dark-mode .auth-link.login {
   rtlToggle?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
   mobileRtl?.addEventListener('click', () => applyRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
 
-  // Mobile category dropdown
   if (mobileCatToggle && mobileCatContent) {
     mobileCatToggle.addEventListener('click', () => {
       mobileCatContent.classList.toggle('active');
@@ -985,7 +980,6 @@ body.dark-mode .auth-link.login {
     });
   }
 
-  // Mobile search dropdown
   if (mobileSearchToggle && mobileSearchContent) {
     mobileSearchToggle.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -995,12 +989,10 @@ body.dark-mode .auth-link.login {
     });
   }
 
-  // Handle mobile search submission
   const performMobileSearch = () => {
     const query = mobileSearchInput?.value.trim();
     if (query) {
       alert(`Searching for: "${query}" (demo action - integrate with your search backend)`);
-      // You can replace with actual search logic: window.location.href = `/search?q=${encodeURIComponent(query)}`;
       mobileSearchInput.value = '';
       mobileSearchContent.classList.remove('active');
     } else {
@@ -1010,7 +1002,6 @@ body.dark-mode .auth-link.login {
   mobileSearchSubmit?.addEventListener('click', performMobileSearch);
   mobileSearchInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') performMobileSearch(); });
 
-  // Newsletter
   const handleNewsletter = () => {
     const email = newsletterEmail?.value.trim();
     if (email && email.includes('@') && email.includes('.')) {
@@ -1023,11 +1014,9 @@ body.dark-mode .auth-link.login {
   newsletterBtn?.addEventListener('click', handleNewsletter);
   newsletterEmail?.addEventListener('keypress', e => { if (e.key === 'Enter') handleNewsletter(); });
 
-  // Auth
   loginDesktop?.addEventListener('click', () => { window.location.href = "login.html"; });
   mobileLogin?.addEventListener('click', () => { window.location.href = "login.html"; });
 
-  // Add to cart
   document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -1038,12 +1027,10 @@ body.dark-mode .auth-link.login {
     });
   });
 
-  // Wishlist
   document.querySelectorAll('.product-wish').forEach(btn => {
     btn.addEventListener('click', e => { e.stopPropagation(); btn.classList.toggle('wished'); });
   });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
