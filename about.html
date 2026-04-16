@@ -1450,6 +1450,36 @@ body.dark-mode .quote-card {
     text-align: center;
   }
 }
+/* ===== MOBILE (phones) ===== */
+@media (max-width: 767px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* 1 column */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    gap: 2rem;
+  }
+}
 
   </style>
 </head>

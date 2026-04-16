@@ -682,6 +682,27 @@ body.dark-mode .auth-link.login {
     .right-icons {
       gap: 0;
     }
+    /* Desktop */
+.age-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .age-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - ONE BY ONE */
+@media (max-width: 680px) {
+  .age-cards {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
   </style>
 </head>
 <body>
