@@ -1480,7 +1480,100 @@ body.dark-mode .quote-card {
     gap: 2rem;
   }
 }
+.footer-bottom {
+  max-width: 1280px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0d6cc;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  font-size: 0.85rem;
+  color: #7a8a7a;
+  gap: 1rem;
+}
+
+/* Left text */
+.footer-bottom span:first-child {
+  font-weight: 500;
+}
+
+/* Right links container */
+.footer-bottom span:last-child {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Links */
+.footer-bottom a {
+  text-decoration: none;
+  color: #7a8a7a;
+  position: relative;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+/* Underline animation */
+.footer-bottom a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #f3ac00;
+  transition: width 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #f3ac00;
+}
+
+.footer-bottom a:hover::after {
+  width: 100%;
+}
+body.dark-mode .footer-bottom {
+  border-top-color: #2a2a2a;
+  color: #aaaaaa;
+}
+
+body.dark-mode .footer-bottom a {
+  color: #aaaaaa;
+}
+
+body.dark-mode .footer-bottom a:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .footer-bottom a::after {
+  background-color: #ffffff;
+}@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom span:last-child {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center everything inside */
+    text-align: center;
+  }
+
+  .footer-brand > div { 
+    justify-content: center; /* center logo row */
+  }
+}
   </style>
 </head>
 
@@ -1654,7 +1747,8 @@ body.dark-mode .quote-card {
       <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
       <div class="footer-col newsletter"><h4>MailBox</h4><p>Get 10% off + early access.</p><div class="newsletter-input"><input type="email" placeholder="Your email" id="footerNewsletterEmail"><button id="footerNewsletterBtn"><i class="fas fa-arrow-right"></i></button></div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
+    <div class="footer-bottom"><span>© 2026 Toyza. All rights reserved.</span><span><a href="#">Privacy Policy</a><a
+          href="#">Terms of Use</a><a href="#">Accessibility</a></span></div>
   </footer>
 
   <script>

@@ -898,6 +898,18 @@
   background-color: #e09c00;
   transform: translateY(-1px);
 }
+@media (max-width: 767px) {
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center everything inside */
+    text-align: center;
+  }
+
+  .footer-brand > div { 
+    justify-content: center; /* center logo row */
+  }
+}
   </style>
 </head>
 <body>
