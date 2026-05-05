@@ -1096,16 +1096,7 @@
             position: relative;
         }
 
-        .steps-grid::before {
-            content: '';
-            position: absolute;
-            top: 3.2rem;
-            left: calc(12.5% + 2rem);
-            right: calc(12.5% + 2rem);
-            height: 2px;
-            background: repeating-linear-gradient(90deg, #f3ac00 0, #f3ac00 10px, transparent 10px, transparent 20px);
-        }
-
+  
         .step-card {
             text-align: center;
             position: relative;
@@ -1737,6 +1728,22 @@ body.dark-mode .footer-bottom a::after {
     gap: 1rem;
   }
 }
+.card-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e2f;
+    margin-top: auto; /* 👈 THIS PUSHES PRICE TO BOTTOM */
+}.collection-card {
+    border-radius: 24px;
+    overflow: hidden;
+    background: #faf7f2;
+    border: 1px solid #e0d9cc;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
     </style>
 </head>
 
@@ -1908,8 +1915,8 @@ body.dark-mode .footer-bottom a::after {
                     <div class="card-body">
                         <p class="card-tag">All Ages</p>
                         <h3 class="card-title">Birthday Surprise Box</h3>
-                        <p class="card-desc">A curated mystery collection wrapped in our signature kraft paper — perfect
-                            for the child who has everything.</p>
+                       <p class="card-desc">Storytelling cards, puppet sets, and imaginative play kits that bring
+                            stories to life.</p>
                         <p class="card-price">From ₹3,499 <span>Most loved</span></p>
                     </div>
                 </div>
