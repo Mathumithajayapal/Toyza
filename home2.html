@@ -437,8 +437,15 @@ body.dark-mode .auth-link.login {
       justify-content: center; position: relative; overflow: hidden;
     }
     body.dark-mode .product-img-wrap { background: #1a1a1a; }
-    .product-img-wrap img { width: 65%; height: 65%; object-fit: contain; transition: transform 0.3s; }
-    .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps full image visible */
+}.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container fully */
+}    .product-card:hover .product-img-wrap img { transform: scale(1.08); }
     .product-ribbon {
       position: absolute; top: 12px; left: 12px;
       background: #f3ac00; color: #2c3e2f; font-size: 0.65rem; font-weight: 800;
@@ -734,7 +741,7 @@ body.dark-mode .auth-link.login {
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="service.html" class="nav-link">Service</a></li>
         <li><a href="toysage.html" class="nav-link">Toys By Age</a></li>
-        <li><a href="playStudio.html" class="nav-link">playStudio</a></li>
+        <li><a href="Playstudio.html" class="nav-link">Playstudio</a></li>
         <li><a href="gifts.html" class="nav-link">Gifting</a></li>
         <li><a href="newarrivals.html" class="nav-link">New Arrivals</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -765,7 +772,7 @@ body.dark-mode .auth-link.login {
     <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
     <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
     <li class="mobile-nav-item"><a href="toysage.html" class="mobile-nav-link">Toys By Age</a></li>
-    <li class="mobile-nav-item"><a href="playStudio.html" class="mobile-nav-link">playStudio</a></li>
+    <li class="mobile-nav-item"><a href="Playstudio.html" class="mobile-nav-link">Playstudio</a></li>
     <li class="mobile-nav-item"><a href="gifts.html" class="mobile-nav-link">Gifting</a></li>
     <li class="mobile-nav-item"><a href="newarrivals.html" class="mobile-nav-link">New Arrivals</a></li>
     <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
@@ -897,7 +904,7 @@ body.dark-mode .auth-link.login {
       <div class="why-card"><div class="why-card-num">02</div><div class="why-card-icon"><i class="fa-solid fa-brain"></i></div><h3>Developmentally Designed</h3><p>Our experts curate each toy to match real developmental milestones — fostering motor skills, cognition, and creativity.</p></div>
       <div class="why-card"><div class="why-card-num">03</div><div class="why-card-icon"><i class="fa-solid fa-gift"></i></div><h3>Beautiful Gift Wrapping</h3><p>Premium gifting experience with eco-wrap options, handwritten cards, and same-day delivery in major cities.</p></div>
       <div class="why-card"><div class="why-card-num">04</div><div class="why-card-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div><h3>Safety First, Always</h3><p>Rigorous BIS, CE, and ASTM safety testing on every product before it reaches your child's hands.</p></div>
-      <div class="why-card"><div class="why-card-num">05</div><div class="why-card-icon"><i class="fa-solid fa-palette"></i></div><h3>playStudio Experiences</h3><p>Exclusive in-store and virtual play workshops where children learn through guided, expert-led creative sessions.</p></div>
+      <div class="why-card"><div class="why-card-num">05</div><div class="why-card-icon"><i class="fa-solid fa-palette"></i></div><h3>Playstudio Experiences</h3><p>Exclusive in-store and virtual play workshops where children learn through guided, expert-led creative sessions.</p></div>
       <div class="why-card"><div class="why-card-num">06</div><div class="why-card-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div><h3>Hassle-Free Returns</h3><p>Not the right fit? Easy 30-day returns with no questions asked. Your satisfaction is our commitment.</p></div>
     </div>
     <div class="why-bottom">
