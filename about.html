@@ -1171,51 +1171,7 @@
       line-height: 1.4;
     }
 
-    /* Gallery Mosaic */
-    .gallery-mosaic {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .gallery-title {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .gallery-sub {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #6b7c6b;
-    }
-
-    .mosaic-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-    }
-
-    .mosaic-item {
-      background: #fef5e0;
-      border-radius: 28px;
-      padding: 1rem;
-      text-align: center;
-      transition: all 0.2s;
-      border: 1px solid #f0e4d8;
-    }
-
-    .mosaic-item img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .mosaic-item p {
-      margin-top: 0.5rem;
-      font-weight: 500;
-    }
+   
 
     /* Team Section */
     .team-creative {
@@ -1574,6 +1530,34 @@ body.dark-mode .footer-bottom a::after {
     justify-content: center; /* center logo row */
   }
 }
+/* ===== HERO TEXT FULL WHITE IN DARK MODE ===== */
+body.dark-mode .hero-left h1,
+body.dark-mode .hero-desc,
+body.dark-mode .hero-accent,
+body.dark-mode .stat-item .stat-number,
+body.dark-mode .stat-item .stat-label {
+  color: #ffffff !important;
+}
+
+/* Optional: make tag clean */
+body.dark-mode .hero-tag {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+/* ===== HERO TEXT WHITE IN LIGHT MODE ===== */
+.hero-left h1,
+.hero-desc,
+.hero-accent,
+.stat-item .stat-number,
+.stat-item .stat-label {
+  color: #ffffff !important;
+}
+
+/* Optional: hero tag */
+.hero-tag {
+  background: #ffffff;
+  color: #000000;
+}
   </style>
 </head>
 
@@ -1646,27 +1630,55 @@ body.dark-mode .footer-bottom a::after {
 
   <main>
     <!-- HERO BANNER -->
-    <div class="hero-section">
-      <div class="hero-overlay">
-        <div class="hero-container">
-          <div class="hero-left">
-            <span class="hero-tag"><i class="fas fa-star"></i> 5 Years of Joy</span>
-            <h1>Where <span class="hero-accent">tiny hands</span><br>build <span class="hero-accent">big dreams</span> ✨</h1>
-            <p class="hero-desc">Toyza is more than toys — it's a playground of imagination, safety, and sustainable happiness for 50,000+ families worldwide.</p>
-            <a href="#" class="hero-btn">Explore the magic <i class="fas fa-arrow-right"></i></a>
-            <div class="hero-stats">
-              <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Happy Families</div></div>
-              <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Toys Curated</div></div>
-              <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Eco-Friendly</div></div>
-            </div>
+     <!-- SIMPLE HERO -->
+<div class="hero-section" style="
+  background-image: url('images/toy (1).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+">
+  <div class="hero-overlay" style="
+  background: rgba(0,0,0,0.5);
+  padding: 3rem 2rem;
+">
+    <div class="hero-container" style="flex-direction: column; text-align: center;">
+
+      <div class="hero-left" style="max-width: 700px;">
+        <span class="hero-tag"><i class="fas fa-star"></i> About Toyza</span>
+
+        <h1 style="color:#2c3e2f; text-shadow:none;">
+          Where <span class="hero-accent">tiny hands</span> build 
+          <span class="hero-accent">big dreams</span> ✨
+        </h1>
+
+        <p class="hero-desc" style="color:#5a6e5a; margin: 1rem auto;">
+          Toyza is more than toys — it's a playground of imagination, safety, 
+          and sustainable happiness for families around the world.
+        </p>
+
+        <a href="#" class="hero-btn">Explore the magic <i class="fas fa-arrow-right"></i></a>
+
+        <div class="hero-stats" style="justify-content:center;">
+          <div class="stat-item">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Happy Families</div>
           </div>
-          <div class="hero-right">
-            <div class="hero-card"><img src="images/toy (6).jpg" alt="Toyza joyful play"></div>
-            <div class="hero-badge-bottom"><i class="fas fa-heart"></i> 5 Years of Smiles</div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Toys Curated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Eco-Friendly</div>
           </div>
         </div>
       </div>
+
     </div>
+  </div>
+</div>
+   
 
     <!-- Playful Story Row -->
     <div class="story-playful">
@@ -1696,6 +1708,13 @@ body.dark-mode .footer-bottom a::after {
       </div>
     </div>
 
+     <!-- Vision & Mission -->
+    <div class="vision-mission">
+            <div class="vm-card mission"><h2>Our Mission</h2><p>To design and deliver high-quality educational toys that support child development, encourage creativity, and bring meaningful play experiences to families everywhere.</p></div>
+
+      <div class="vm-card vision"><h2>Our Vision</h2><p>To inspire a world where every child learns through joyful play, creativity, and imagination using safe and sustainable toys.</p></div>
+    </div>
+
     <!-- Team Section -->
     <div class="team-creative">
       <h2 class="team-title">Meet the Dream Team</h2>
@@ -1708,23 +1727,8 @@ body.dark-mode .footer-bottom a::after {
       </div>
     </div>
 
-    <!-- Vision & Mission -->
-    <div class="vision-mission">
-      <div class="vm-card vision"><h2>Our Vision</h2><p>To inspire a world where every child learns through joyful play, creativity, and imagination using safe and sustainable toys.</p></div>
-      <div class="vm-card mission"><h2>Our Mission</h2><p>To design and deliver high-quality educational toys that support child development, encourage creativity, and bring meaningful play experiences to families everywhere.</p></div>
-    </div>
-
-    <!-- Gallery Mosaic -->
-    <div class="gallery-mosaic">
-      <h2 class="gallery-title">Toyza moments</h2>
-      <p class="gallery-sub">Real play, real smiles</p>
-      <div class="mosaic-grid">
-        <div class="mosaic-item"><img src="images/toy (9).jpg" alt="Wooden toys"><p>Wooden wonders</p></div>
-        <div class="mosaic-item"><img src="images/toy (10).jpg" alt="Arts and crafts"><p>Art explosion</p></div>
-        <div class="mosaic-item"><img src="images/toy (11).jpg" alt="STEM learning"><p>STEM explorers</p></div>
-        <div class="mosaic-item"><img src="images/toy (12).jpg" alt="Family playing"><p>Family bonding</p></div>
-      </div>
-    </div>
+   
+   
 
     <!-- CTA Section -->
     <div class="cta-about">
